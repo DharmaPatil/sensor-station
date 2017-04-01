@@ -1,0 +1,6 @@
+*.zip
+.mxproject
+*/Backup/*
+*.bak
+Sensor_Station/MDK-ARM/Sensor_Station
+Sensor_Station.uvguix.Alexey
