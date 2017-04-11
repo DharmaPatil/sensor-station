@@ -52,6 +52,7 @@
 #include "Sensors.h"
 #include "Time.h"
 #include "sd_card.h"
+#include "esp8266.h"
 
 /* USER CODE END Includes */
 
@@ -80,10 +81,16 @@ FATFS fs;
 /*
 */
 
-int fputc(int c, FILE *f) {	
-	HAL_UART_Transmit( &huart1, (uint8_t*)&c, 1, HAL_MAX_DELAY );
-	return c;
-}
+//int fputc(int c, FILE *f) {	
+//	HAL_UART_Transmit( &huart1, (uint8_t*)&c, 1, HAL_MAX_DELAY );
+//	return c;
+//}
+
+
+
+#define NTP_PACKET_SIZE 48 
+uint8_t buffer_ntp[NTP_PACKET_SIZE];
+char buffer_tx[300];
 
 
 /* USER CODE END PV */
@@ -150,10 +157,134 @@ int main(void)
 
   /* USER CODE BEGIN 2 */
 
-	SD_Init();
 
+	char str[40];
+
+	OLED_Init();
+	OLED_Clear();
+	font = &font_medium;
+
+	WiFi_Init();
+	HAL_GPIO_WritePin( WIFI_RESET_GPIO_Port, WIFI_RESET_Pin, GPIO_PIN_SET );
+	HAL_Delay(1000);
+	WiFi_Clear_Flags();
+
+
+	sprintf( buffer_tx, "AT+CWMODE=1\r\n" );
+	HAL_UART_Transmit( &huart1, (uint8_t*)buffer_tx, strlen(buffer_tx), 100 );
+	sprintf( str, "Client mode - %d", WiFi_Wait_Response(100) );
+	OLED_Print( str, 0, 40 );
+		
+	WiFi_Clear_Flags();
+	//#define AP_NAME "A.S.Tech Zyxel"
+	//#define AP_PASSWORD "areyougonnadie"	
+	#define AP_NAME "LG_v10"
+	#define AP_PASSWORD "12345678"
+	sprintf( buffer_tx, "AT+CWJAP=\"%s\",\"%s\"\r\n", AP_NAME, AP_PASSWORD );
+	HAL_UART_Transmit( &huart1, (uint8_t*)buffer_tx, strlen(buffer_tx), 100 );
+	uint8_t response = WiFi_Wait_Response(80);
+	sprintf( str, "Connect to AP - %d", response );
+	OLED_Print( str, 0, 24 );
+
+	if ( response == 0 ) { // connected succesfully
+
+		WiFi_Clear_Flags();
+		sprintf( buffer_tx, "AT+CIPMUX=1\r\n" );
+		HAL_UART_Transmit( &huart1, (uint8_t*)buffer_tx, strlen(buffer_tx), 100 );
+		sprintf( str, "Multi-conn - %d\r\n", WiFi_Wait_Response(100) );
+		OLED_Print( str, 0, 8 );
+
+		HAL_Delay(1000);
+
+		OLED_Clear();
+
+		WiFi_Clear_Flags();
+		sprintf( buffer_tx, "AT+CIPSTART=0,\"UDP\",\"91.226.136.155\",123,123,0\r\n" );
+		HAL_UART_Transmit( &huart1, (uint8_t*)buffer_tx, strlen(buffer_tx), 100 );
+		sprintf( str, "UDP - %d\r\n", WiFi_Wait_Response(100) );
+		OLED_Print( str, 0, 40 );
+
+		WiFi_Clear_Flags();
+		sprintf( buffer_tx, "AT+CIPSEND=0,48\r\n" );
+		HAL_UART_Transmit( &huart1, (uint8_t*)buffer_tx, strlen(buffer_tx), 100 );
+		sprintf( str, "Prepare - %d\r\n", WiFi_Wait_Response(100) );
+		OLED_Print( str, 0, 24 );
+		
+		memset( buffer_ntp, 0, sizeof(buffer_ntp) );
+		buffer_ntp[0] = 0xE3;
+		buffer_ntp[1] = 0;   
+		buffer_ntp[2] = 6;
+		buffer_ntp[3] = 0xEC; 
+		buffer_ntp[12] = 49;
+		buffer_ntp[13] = 0x4E;
+		buffer_ntp[14] = 49;
+		buffer_ntp[15] = 52;
+		HAL_UART_Transmit( &huart1, (uint8_t*)buffer_ntp, sizeof(buffer_ntp), 100 );
+		
+		HAL_Delay(1000);
+
+		uint32_t highWord = rx_buffer[(uint8_t)(rx_buffer_pointer-48+40)] *256 + rx_buffer[(uint8_t)(rx_buffer_pointer-48+41)];
+		uint32_t lowWord  = rx_buffer[(uint8_t)(rx_buffer_pointer-48+42)] *256 + rx_buffer[(uint8_t)(rx_buffer_pointer-48+43)];
+		uint32_t secsSince1900 = highWord << 16 | lowWord;
+		uint32_t seventyYears = 2208988800UL;
+		uint32_t epoch = secsSince1900 - seventyYears;
+		sprintf( str, "Time: %d:%02d:%02d \r\n", (epoch % 86400) / 3600, (epoch % 3600) / 60, epoch % 60 );
+		OLED_Print( str, 0, 8 );
+
+		while(1) {
+			HAL_Delay(200);
+			LED( LED_RED, 1 );
+			HAL_Delay(200);
+			LED( LED_RED, 0 );	
+		}
+		
+	} else {
+		
+		sprintf( str, "Reset WiFi" );
+		OLED_Print( str, 0, 8 );
+		
+		HAL_GPIO_WritePin( WIFI_RESET_GPIO_Port, WIFI_RESET_Pin, GPIO_PIN_RESET );
+		HAL_Delay(1000);
+		HAL_GPIO_WritePin( WIFI_RESET_GPIO_Port, WIFI_RESET_Pin, GPIO_PIN_SET );
+		HAL_Delay(1000);
+		
+		OLED_Clear();
+		
+		WiFi_Clear_Flags();
+		sprintf( buffer_tx, "AT+CWMODE_CUR=2\r\n" ); 
+		HAL_UART_Transmit( &huart1, (uint8_t*)buffer_tx, strlen(buffer_tx), 100 );
+		sprintf( str, "Switch to AP - %d", WiFi_Wait_Response(100) );
+		OLED_Print( str, 0, 40 );
+		
+		
+		WiFi_Clear_Flags();
+		sprintf( buffer_tx, "AT+CWSAP=\"ESP_AP\",\"password\",8,3\r\n" ); 
+		HAL_UART_Transmit( &huart1, (uint8_t*)buffer_tx, strlen(buffer_tx), 100 );
+		sprintf( str, "Create AP - %d", WiFi_Wait_Response(100) );
+		OLED_Print( str, 0, 24 );
+				
+		while(1) {
+			HAL_Delay(200);
+			LED( LED_RED, 1 );
+			HAL_Delay(200);
+			LED( LED_RED, 0 );	
+		}
+		
+	}		
 	
 	
+	
+
+
+
+
+
+
+
+
+/*
+
+	SD_Init();
 	printf("FAT_FS \r\n");
 	
 	printf("Mount: %d\r\n", f_mount(&fs, USER_Path, 1) );
@@ -196,13 +327,13 @@ int main(void)
 	
 	while (1) {};
 	
-		
+	*/	
 
 	HAL_Delay(100);
-	OLED_Init();
+	
 	Time_Start_Interrupts();
 
-	char str[100];
+	//char str[100];
 	/*
 	sprintf(str," Sensor station");
 	OLED_Send_String_HD(1,str);
