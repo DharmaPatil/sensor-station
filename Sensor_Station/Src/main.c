@@ -53,7 +53,7 @@
 #include "Time.h"
 #include "sd_card.h"
 #include "esp8266.h"
-
+#include "sequencer.h"
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
@@ -91,6 +91,8 @@ FATFS fs;
 #define NTP_PACKET_SIZE 48 
 uint8_t buffer_ntp[NTP_PACKET_SIZE];
 char buffer_tx[300];
+
+char ozzy[] = "2E 2- 2G 2- 1G 1- 1a 1- 2a 2- 1c 1b 1c 1b 1c 1b 1G 1- 2G 1a 1- 2a 2-";
 
 
 /* USER CODE END PV */
@@ -163,6 +165,130 @@ int main(void)
 	OLED_Init();
 	OLED_Clear();
 	font = &font_medium;
+	
+	while(1) {
+		uint8_t data[5] = { 0, 0, 0, 0, 0 };
+		#define BARO_ADDRESS 0xEF  // 0xEE // 111011Cx	
+		
+		
+		signed long long int c[7];
+		signed long long int d[3];
+		
+		for ( int i = 0; i < 7; i++ ) {
+			data[0] = 0xA0 | ( i<<1 );
+			HAL_I2C_Master_Transmit( &hi2c2, BARO_ADDRESS, data, 1, HAL_MAX_DELAY );
+			HAL_I2C_Master_Receive( &hi2c2, BARO_ADDRESS, data+1, 2, HAL_MAX_DELAY );
+			c[i] = data[1]*256 + data[2];
+			//sprintf( str, "%d", c[i] );
+			//OLED_Print( str, (i/4)*64, 48 - (i%4)*16);	
+		}
+		
+		
+		
+		data[0] = 0x48; // D1 - 4096
+		HAL_I2C_Master_Transmit( &hi2c2, BARO_ADDRESS, data, 1, HAL_MAX_DELAY );
+		HAL_Delay(50);
+		data[0] = 0x00;
+		HAL_I2C_Master_Transmit( &hi2c2, BARO_ADDRESS, data, 1, HAL_MAX_DELAY );
+		HAL_I2C_Master_Receive( &hi2c2, BARO_ADDRESS, data+1, 3, HAL_MAX_DELAY );
+		d[1] = (data[1]*256 + data[2])*256 + data[3];
+		
+		
+		data[0] = 0x58; // D2 - 4096
+		HAL_I2C_Master_Transmit( &hi2c2, BARO_ADDRESS, data, 1, HAL_MAX_DELAY );
+		HAL_Delay(50);
+		data[0] = 0x00;
+		HAL_I2C_Master_Transmit( &hi2c2, BARO_ADDRESS, data, 1, HAL_MAX_DELAY );
+		HAL_I2C_Master_Receive( &hi2c2, BARO_ADDRESS, data+1, 3, HAL_MAX_DELAY );
+		d[2] = (data[1]*256 + data[2])*256 + data[3];
+		
+		signed long long int dT;
+		signed long long int temp;
+		
+		signed long long int OFF;
+		signed long long int SENS;
+		signed long long int p;
+		
+		
+		signed long long int T2;
+		signed long long int OFF2;
+		signed long long int SENS2;
+		
+		
+		dT = d[2] - c[5]*(1<<8);
+		temp = 2000 + (dT*c[6])/(1<<23);
+		
+		OFF = c[2]*(1<<16) + (c[4]*dT)/(1<<7);
+		SENS = c[1]*(1<<15) + (c[3]*dT)/(1<<8);
+		
+		
+		OFF2 = 0;
+		SENS2 = 0;
+		
+		if ( temp < 2000 ) {
+			T2 = dT*dT/(1<<31);
+			OFF2 = 5*(temp-2000)*(temp-2000)/2;
+			SENS2 = 5*(temp-2000)*(temp-2000)/4;
+		}
+		
+		if ( temp < -1500 ) {
+			OFF2 = OFF2 + 7*(temp+1500)*(temp+1500);
+			SENS2 = SENS2 + 11*(temp+1500)*(temp+1500)/2;
+		}
+		
+		OFF = OFF - OFF2;
+		SENS = SENS - SENS2;
+		
+		
+		p = ( d[1]*SENS/(1<<21)-OFF ) / (1<<15);
+
+		double p_mm = 750.0617 * p / 100000; 
+
+
+
+
+		OLED_Clear();
+		sprintf( str, "P = %d", (int)p );
+		OLED_Print( str, 0, 40 );	
+		sprintf( str, "P = %.2f mmHg", p_mm );
+		OLED_Print( str, 0, 20 );	
+		//sprintf( str, "%d", sizeof(sens) );
+		//OLED_Print( str, 0, 20 );	
+		HAL_Delay(100);
+	
+	}
+	
+
+
+	
+	
+	
+	
+	
+	
+
+
+
+
+
+
+	while (1) {};
+
+
+
+
+
+	sprintf( str, "Sequencer" );
+	OLED_Print( str, 10, 20 );
+	Sequencer_Init();
+	Sequencer_Start( ozzy );
+	while (1) {
+		HAL_Delay(100);
+		Sequencer_Tick();
+	}
+	while (1) {};
+
+
 
 	WiFi_Init();
 	HAL_GPIO_WritePin( WIFI_RESET_GPIO_Port, WIFI_RESET_Pin, GPIO_PIN_SET );
@@ -795,7 +921,7 @@ static void MX_TIM3_Init(void)
   TIM_OC_InitTypeDef sConfigOC;
 
   htim3.Instance = TIM3;
-  htim3.Init.Prescaler = 72;
+  htim3.Init.Prescaler = 71;
   htim3.Init.CounterMode = TIM_COUNTERMODE_UP;
   htim3.Init.Period = 1000;
   htim3.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
