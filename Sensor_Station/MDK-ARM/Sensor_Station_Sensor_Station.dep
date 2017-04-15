@@ -1,13 +1,13 @@
 Dependencies for Project 'Sensor_Station', Target 'Sensor_Station': (DO NOT MODIFY !)
-F (../Middlewares/Third_Party/FatFs/src/ff_gen_drv.c)(0x577AB8D5)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "\\vmware-host\Shared Folders\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\ff_gen_drv.o --omf_browse sensor_station\ff_gen_drv.crf --depend sensor_station\ff_gen_drv.d)
+F (../Middlewares/Third_Party/FatFs/src/ff_gen_drv.c)(0x577AB8D5)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "Z:\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\ff_gen_drv.o --omf_browse sensor_station\ff_gen_drv.crf --depend sensor_station\ff_gen_drv.d)
 I (../Middlewares/Third_Party/FatFs/src/ff_gen_drv.h)(0x577AB8D5)
 I (../Middlewares/Third_Party/FatFs/src/diskio.h)(0x577AB8D5)
 I (../Middlewares/Third_Party/FatFs/src/integer.h)(0x577AB8D5)
 I (../Middlewares/Third_Party/FatFs/src/ff.h)(0x577AB8D5)
-I (../Inc/ffconf.h)(0x58F11242)
+I (../Inc/ffconf.h)(0x58F25C43)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x577AB8CB)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58F11247)
-I (../Inc/main.h)(0x58F11247)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58F25C47)
+I (../Inc/main.h)(0x58F25C47)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x577AB8CB)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x577AB8B8)
@@ -41,14 +41,14 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x577AB8CB)
-F (../Middlewares/Third_Party/FatFs/src/option/syscall.c)(0x577AB8D5)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "\\vmware-host\Shared Folders\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\syscall.o --omf_browse sensor_station\syscall.crf --depend sensor_station\syscall.d)
+F (../Middlewares/Third_Party/FatFs/src/option/syscall.c)(0x577AB8D5)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "Z:\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\syscall.o --omf_browse sensor_station\syscall.crf --depend sensor_station\syscall.d)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdlib.h)(0x52FE0ABE)
 I (../Middlewares/Third_Party/FatFs/src/option/../ff.h)(0x577AB8D5)
 I (../Middlewares/Third_Party/FatFs/src/option/../integer.h)(0x577AB8D5)
-I (../Inc/ffconf.h)(0x58F11242)
+I (../Inc/ffconf.h)(0x58F25C43)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x577AB8CB)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58F11247)
-I (../Inc/main.h)(0x58F11247)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58F25C47)
+I (../Inc/main.h)(0x58F25C47)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x577AB8CB)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x577AB8B8)
@@ -82,15 +82,15 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x577AB8CB)
-F (../Middlewares/Third_Party/FatFs/src/diskio.c)(0x577AB8D5)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "\\vmware-host\Shared Folders\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\diskio.o --omf_browse sensor_station\diskio.crf --depend sensor_station\diskio.d)
+F (../Middlewares/Third_Party/FatFs/src/diskio.c)(0x577AB8D5)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "Z:\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\diskio.o --omf_browse sensor_station\diskio.crf --depend sensor_station\diskio.d)
 I (../Middlewares/Third_Party/FatFs/src/diskio.h)(0x577AB8D5)
 I (../Middlewares/Third_Party/FatFs/src/integer.h)(0x577AB8D5)
 I (../Middlewares/Third_Party/FatFs/src/ff_gen_drv.h)(0x577AB8D5)
 I (../Middlewares/Third_Party/FatFs/src/ff.h)(0x577AB8D5)
-I (../Inc/ffconf.h)(0x58F11242)
+I (../Inc/ffconf.h)(0x58F25C43)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x577AB8CB)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58F11247)
-I (../Inc/main.h)(0x58F11247)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58F25C47)
+I (../Inc/main.h)(0x58F25C47)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x577AB8CB)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x577AB8B8)
@@ -124,13 +124,13 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x577AB8CB)
-F (../Middlewares/Third_Party/FatFs/src/ff.c)(0x577AB8D5)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "\\vmware-host\Shared Folders\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\ff.o --omf_browse sensor_station\ff.crf --depend sensor_station\ff.d)
+F (../Middlewares/Third_Party/FatFs/src/ff.c)(0x577AB8D5)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "Z:\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\ff.o --omf_browse sensor_station\ff.crf --depend sensor_station\ff.d)
 I (../Middlewares/Third_Party/FatFs/src/ff.h)(0x577AB8D5)
 I (../Middlewares/Third_Party/FatFs/src/integer.h)(0x577AB8D5)
-I (../Inc/ffconf.h)(0x58F11242)
+I (../Inc/ffconf.h)(0x58F25C43)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x577AB8CB)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58F11247)
-I (../Inc/main.h)(0x58F11247)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58F25C47)
+I (../Inc/main.h)(0x58F25C47)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x577AB8CB)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x577AB8B8)
@@ -166,11 +166,11 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x577AB8CB)
 I (../Middlewares/Third_Party/FatFs/src/diskio.h)(0x577AB8D5)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdarg.h)(0x52FE0ABE)
-F (startup_stm32f103xb.s)(0x58F1124E)(--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork --pd "__MICROLIB SETA 1"-I "\\vmware-host\Shared Folders\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"--list startup_stm32f103xb.lst --xref -o sensor_station\startup_stm32f103xb.o --depend sensor_station\startup_stm32f103xb.d)
-F (../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Src/usbd_msc_bot.c)(0x577AB8D3)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "\\vmware-host\Shared Folders\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\usbd_msc_bot.o --omf_browse sensor_station\usbd_msc_bot.crf --depend sensor_station\usbd_msc_bot.d)
+F (startup_stm32f103xb.s)(0x58F25C4C)(--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork --pd "__MICROLIB SETA 1"-I "Z:\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"--list startup_stm32f103xb.lst --xref -o sensor_station\startup_stm32f103xb.o --depend sensor_station\startup_stm32f103xb.d)
+F (../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Src/usbd_msc_bot.c)(0x577AB8D3)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "Z:\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\usbd_msc_bot.o --omf_browse sensor_station\usbd_msc_bot.crf --depend sensor_station\usbd_msc_bot.d)
 I (../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc/usbd_msc_bot.h)(0x577AB8D3)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h)(0x577AB8D4)
-I (../Inc/usbd_conf.h)(0x58F11244)
+I (../Inc/usbd_conf.h)(0x58F25C45)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdio.h)(0x52FE0ABE)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdlib.h)(0x52FE0ABE)
 I (C:\Program Files\Keil\ARM\ARMCC\include\string.h)(0x52FE0ABE)
@@ -183,8 +183,8 @@ I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x577AB8CA)
 I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x577AB8CA)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h)(0x577AB8B8)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x577AB8CB)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58F11247)
-I (../Inc/main.h)(0x58F11247)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58F25C47)
+I (../Inc/main.h)(0x58F25C47)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x577AB8CB)
@@ -214,10 +214,10 @@ I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h)(0x577AB8D4)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h)(0x577AB8D4)
 I (../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc/usbd_msc.h)(0x577AB8D3)
 I (../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc/usbd_msc_scsi.h)(0x577AB8D3)
-F (../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Src/usbd_msc_scsi.c)(0x577AB8D4)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "\\vmware-host\Shared Folders\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\usbd_msc_scsi.o --omf_browse sensor_station\usbd_msc_scsi.crf --depend sensor_station\usbd_msc_scsi.d)
+F (../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Src/usbd_msc_scsi.c)(0x577AB8D4)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "Z:\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\usbd_msc_scsi.o --omf_browse sensor_station\usbd_msc_scsi.crf --depend sensor_station\usbd_msc_scsi.d)
 I (../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc/usbd_msc_bot.h)(0x577AB8D3)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h)(0x577AB8D4)
-I (../Inc/usbd_conf.h)(0x58F11244)
+I (../Inc/usbd_conf.h)(0x58F25C45)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdio.h)(0x52FE0ABE)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdlib.h)(0x52FE0ABE)
 I (C:\Program Files\Keil\ARM\ARMCC\include\string.h)(0x52FE0ABE)
@@ -230,8 +230,8 @@ I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x577AB8CA)
 I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x577AB8CA)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h)(0x577AB8B8)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x577AB8CB)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58F11247)
-I (../Inc/main.h)(0x58F11247)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58F25C47)
+I (../Inc/main.h)(0x58F25C47)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x577AB8CB)
@@ -262,10 +262,10 @@ I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h)(0x577AB8D4
 I (../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc/usbd_msc_scsi.h)(0x577AB8D3)
 I (../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc/usbd_msc.h)(0x577AB8D3)
 I (../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc/usbd_msc_data.h)(0x577AB8D3)
-F (../Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c)(0x577AB8D4)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "\\vmware-host\Shared Folders\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\usbd_ctlreq.o --omf_browse sensor_station\usbd_ctlreq.crf --depend sensor_station\usbd_ctlreq.d)
+F (../Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c)(0x577AB8D4)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "Z:\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\usbd_ctlreq.o --omf_browse sensor_station\usbd_ctlreq.crf --depend sensor_station\usbd_ctlreq.d)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h)(0x577AB8D4)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h)(0x577AB8D4)
-I (../Inc/usbd_conf.h)(0x58F11244)
+I (../Inc/usbd_conf.h)(0x58F25C45)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdio.h)(0x52FE0ABE)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdlib.h)(0x52FE0ABE)
 I (C:\Program Files\Keil\ARM\ARMCC\include\string.h)(0x52FE0ABE)
@@ -278,8 +278,8 @@ I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x577AB8CA)
 I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x577AB8CA)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h)(0x577AB8B8)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x577AB8CB)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58F11247)
-I (../Inc/main.h)(0x58F11247)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58F25C47)
+I (../Inc/main.h)(0x58F25C47)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x577AB8CB)
@@ -306,11 +306,11 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x577AB8CB)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h)(0x577AB8D4)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h)(0x577AB8D4)
-F (../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Src/usbd_msc.c)(0x577AB8D3)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "\\vmware-host\Shared Folders\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\usbd_msc.o --omf_browse sensor_station\usbd_msc.crf --depend sensor_station\usbd_msc.d)
+F (../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Src/usbd_msc.c)(0x577AB8D3)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "Z:\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\usbd_msc.o --omf_browse sensor_station\usbd_msc.crf --depend sensor_station\usbd_msc.d)
 I (../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc/usbd_msc.h)(0x577AB8D3)
 I (../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc/usbd_msc_bot.h)(0x577AB8D3)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h)(0x577AB8D4)
-I (../Inc/usbd_conf.h)(0x58F11244)
+I (../Inc/usbd_conf.h)(0x58F25C45)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdio.h)(0x52FE0ABE)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdlib.h)(0x52FE0ABE)
 I (C:\Program Files\Keil\ARM\ARMCC\include\string.h)(0x52FE0ABE)
@@ -323,8 +323,8 @@ I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x577AB8CA)
 I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x577AB8CA)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h)(0x577AB8B8)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x577AB8CB)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58F11247)
-I (../Inc/main.h)(0x58F11247)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58F25C47)
+I (../Inc/main.h)(0x58F25C47)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x577AB8CB)
@@ -353,10 +353,10 @@ I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h)(0x577AB8D4)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h)(0x577AB8D4)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h)(0x577AB8D4)
 I (../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc/usbd_msc_scsi.h)(0x577AB8D3)
-F (../Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c)(0x577AB8D4)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "\\vmware-host\Shared Folders\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\usbd_ioreq.o --omf_browse sensor_station\usbd_ioreq.crf --depend sensor_station\usbd_ioreq.d)
+F (../Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c)(0x577AB8D4)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "Z:\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\usbd_ioreq.o --omf_browse sensor_station\usbd_ioreq.crf --depend sensor_station\usbd_ioreq.d)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h)(0x577AB8D4)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h)(0x577AB8D4)
-I (../Inc/usbd_conf.h)(0x58F11244)
+I (../Inc/usbd_conf.h)(0x58F25C45)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdio.h)(0x52FE0ABE)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdlib.h)(0x52FE0ABE)
 I (C:\Program Files\Keil\ARM\ARMCC\include\string.h)(0x52FE0ABE)
@@ -369,8 +369,8 @@ I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x577AB8CA)
 I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x577AB8CA)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h)(0x577AB8B8)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x577AB8CB)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58F11247)
-I (../Inc/main.h)(0x58F11247)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58F25C47)
+I (../Inc/main.h)(0x58F25C47)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x577AB8CB)
@@ -397,9 +397,9 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x577AB8CB)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h)(0x577AB8D4)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h)(0x577AB8D4)
-F (../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Src/usbd_msc_data.c)(0x577AB8D4)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "\\vmware-host\Shared Folders\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\usbd_msc_data.o --omf_browse sensor_station\usbd_msc_data.crf --depend sensor_station\usbd_msc_data.d)
+F (../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Src/usbd_msc_data.c)(0x577AB8D4)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "Z:\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\usbd_msc_data.o --omf_browse sensor_station\usbd_msc_data.crf --depend sensor_station\usbd_msc_data.d)
 I (../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc/usbd_msc_data.h)(0x577AB8D3)
-I (../Inc/usbd_conf.h)(0x58F11244)
+I (../Inc/usbd_conf.h)(0x58F25C45)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdio.h)(0x52FE0ABE)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdlib.h)(0x52FE0ABE)
 I (C:\Program Files\Keil\ARM\ARMCC\include\string.h)(0x52FE0ABE)
@@ -412,8 +412,8 @@ I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x577AB8CA)
 I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x577AB8CA)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h)(0x577AB8B8)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x577AB8CB)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58F11247)
-I (../Inc/main.h)(0x58F11247)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58F25C47)
+I (../Inc/main.h)(0x58F25C47)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x577AB8CB)
@@ -439,9 +439,9 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x577AB8CB)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h)(0x577AB8D4)
-F (../Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c)(0x577AB8D4)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "\\vmware-host\Shared Folders\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\usbd_core.o --omf_browse sensor_station\usbd_core.crf --depend sensor_station\usbd_core.d)
+F (../Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c)(0x577AB8D4)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "Z:\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\usbd_core.o --omf_browse sensor_station\usbd_core.crf --depend sensor_station\usbd_core.d)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h)(0x577AB8D4)
-I (../Inc/usbd_conf.h)(0x58F11244)
+I (../Inc/usbd_conf.h)(0x58F25C45)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdio.h)(0x52FE0ABE)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdlib.h)(0x52FE0ABE)
 I (C:\Program Files\Keil\ARM\ARMCC\include\string.h)(0x52FE0ABE)
@@ -454,8 +454,8 @@ I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x577AB8CA)
 I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x577AB8CA)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h)(0x577AB8B8)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x577AB8CB)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58F11247)
-I (../Inc/main.h)(0x58F11247)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58F25C47)
+I (../Inc/main.h)(0x58F25C47)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x577AB8CB)
@@ -483,10 +483,10 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x577AB8CB)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h)(0x577AB8D4)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h)(0x577AB8D4)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h)(0x577AB8D4)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.c)(0x577AB8CB)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "\\vmware-host\Shared Folders\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\stm32f1xx_hal_spi.o --omf_browse sensor_station\stm32f1xx_hal_spi.crf --depend sensor_station\stm32f1xx_hal_spi.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.c)(0x577AB8CB)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "Z:\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\stm32f1xx_hal_spi.o --omf_browse sensor_station\stm32f1xx_hal_spi.crf --depend sensor_station\stm32f1xx_hal_spi.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x577AB8CB)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58F11247)
-I (../Inc/main.h)(0x58F11247)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58F25C47)
+I (../Inc/main.h)(0x58F25C47)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x577AB8CB)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x577AB8B8)
@@ -520,10 +520,10 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x577AB8CB)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c)(0x577AB8CB)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "\\vmware-host\Shared Folders\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\stm32f1xx_hal_gpio.o --omf_browse sensor_station\stm32f1xx_hal_gpio.crf --depend sensor_station\stm32f1xx_hal_gpio.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c)(0x577AB8CB)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "Z:\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\stm32f1xx_hal_gpio.o --omf_browse sensor_station\stm32f1xx_hal_gpio.crf --depend sensor_station\stm32f1xx_hal_gpio.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x577AB8CB)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58F11247)
-I (../Inc/main.h)(0x58F11247)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58F25C47)
+I (../Inc/main.h)(0x58F25C47)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x577AB8CB)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x577AB8B8)
@@ -557,10 +557,10 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x577AB8CB)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c)(0x577AB8CB)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "\\vmware-host\Shared Folders\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\stm32f1xx_hal_flash_ex.o --omf_browse sensor_station\stm32f1xx_hal_flash_ex.crf --depend sensor_station\stm32f1xx_hal_flash_ex.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c)(0x577AB8CB)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "Z:\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\stm32f1xx_hal_flash_ex.o --omf_browse sensor_station\stm32f1xx_hal_flash_ex.crf --depend sensor_station\stm32f1xx_hal_flash_ex.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x577AB8CB)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58F11247)
-I (../Inc/main.h)(0x58F11247)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58F25C47)
+I (../Inc/main.h)(0x58F25C47)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x577AB8CB)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x577AB8B8)
@@ -594,10 +594,10 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x577AB8CB)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c)(0x577AB8CB)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "\\vmware-host\Shared Folders\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\stm32f1xx_hal_cortex.o --omf_browse sensor_station\stm32f1xx_hal_cortex.crf --depend sensor_station\stm32f1xx_hal_cortex.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c)(0x577AB8CB)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "Z:\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\stm32f1xx_hal_cortex.o --omf_browse sensor_station\stm32f1xx_hal_cortex.crf --depend sensor_station\stm32f1xx_hal_cortex.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x577AB8CB)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58F11247)
-I (../Inc/main.h)(0x58F11247)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58F25C47)
+I (../Inc/main.h)(0x58F25C47)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x577AB8CB)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x577AB8B8)
@@ -631,10 +631,10 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x577AB8CB)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c)(0x577AB8CB)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "\\vmware-host\Shared Folders\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\stm32f1xx_hal_rcc.o --omf_browse sensor_station\stm32f1xx_hal_rcc.crf --depend sensor_station\stm32f1xx_hal_rcc.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c)(0x577AB8CB)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "Z:\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\stm32f1xx_hal_rcc.o --omf_browse sensor_station\stm32f1xx_hal_rcc.crf --depend sensor_station\stm32f1xx_hal_rcc.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x577AB8CB)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58F11247)
-I (../Inc/main.h)(0x58F11247)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58F25C47)
+I (../Inc/main.h)(0x58F25C47)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x577AB8CB)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x577AB8B8)
@@ -668,10 +668,10 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x577AB8CB)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rtc_ex.c)(0x577AB8CB)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "\\vmware-host\Shared Folders\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\stm32f1xx_hal_rtc_ex.o --omf_browse sensor_station\stm32f1xx_hal_rtc_ex.crf --depend sensor_station\stm32f1xx_hal_rtc_ex.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rtc_ex.c)(0x577AB8CB)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "Z:\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\stm32f1xx_hal_rtc_ex.o --omf_browse sensor_station\stm32f1xx_hal_rtc_ex.crf --depend sensor_station\stm32f1xx_hal_rtc_ex.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x577AB8CB)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58F11247)
-I (../Inc/main.h)(0x58F11247)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58F25C47)
+I (../Inc/main.h)(0x58F25C47)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x577AB8CB)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x577AB8B8)
@@ -705,10 +705,10 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x577AB8CB)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi_ex.c)(0x577AB8CB)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "\\vmware-host\Shared Folders\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\stm32f1xx_hal_spi_ex.o --omf_browse sensor_station\stm32f1xx_hal_spi_ex.crf --depend sensor_station\stm32f1xx_hal_spi_ex.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi_ex.c)(0x577AB8CB)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "Z:\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\stm32f1xx_hal_spi_ex.o --omf_browse sensor_station\stm32f1xx_hal_spi_ex.crf --depend sensor_station\stm32f1xx_hal_spi_ex.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x577AB8CB)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58F11247)
-I (../Inc/main.h)(0x58F11247)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58F25C47)
+I (../Inc/main.h)(0x58F25C47)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x577AB8CB)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x577AB8B8)
@@ -742,10 +742,10 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x577AB8CB)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c)(0x577AB8CB)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "\\vmware-host\Shared Folders\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\stm32f1xx_hal_gpio_ex.o --omf_browse sensor_station\stm32f1xx_hal_gpio_ex.crf --depend sensor_station\stm32f1xx_hal_gpio_ex.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c)(0x577AB8CB)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "Z:\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\stm32f1xx_hal_gpio_ex.o --omf_browse sensor_station\stm32f1xx_hal_gpio_ex.crf --depend sensor_station\stm32f1xx_hal_gpio_ex.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x577AB8CB)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58F11247)
-I (../Inc/main.h)(0x58F11247)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58F25C47)
+I (../Inc/main.h)(0x58F25C47)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x577AB8CB)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x577AB8B8)
@@ -779,10 +779,10 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x577AB8CB)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c)(0x577AB8CB)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "\\vmware-host\Shared Folders\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\stm32f1xx_hal_dma.o --omf_browse sensor_station\stm32f1xx_hal_dma.crf --depend sensor_station\stm32f1xx_hal_dma.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c)(0x577AB8CB)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "Z:\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\stm32f1xx_hal_dma.o --omf_browse sensor_station\stm32f1xx_hal_dma.crf --depend sensor_station\stm32f1xx_hal_dma.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x577AB8CB)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58F11247)
-I (../Inc/main.h)(0x58F11247)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58F25C47)
+I (../Inc/main.h)(0x58F25C47)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x577AB8CB)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x577AB8B8)
@@ -816,10 +816,10 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x577AB8CB)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pcd.c)(0x577AB8CB)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "\\vmware-host\Shared Folders\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\stm32f1xx_hal_pcd.o --omf_browse sensor_station\stm32f1xx_hal_pcd.crf --depend sensor_station\stm32f1xx_hal_pcd.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pcd.c)(0x577AB8CB)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "Z:\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\stm32f1xx_hal_pcd.o --omf_browse sensor_station\stm32f1xx_hal_pcd.crf --depend sensor_station\stm32f1xx_hal_pcd.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x577AB8CB)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58F11247)
-I (../Inc/main.h)(0x58F11247)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58F25C47)
+I (../Inc/main.h)(0x58F25C47)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x577AB8CB)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x577AB8B8)
@@ -853,10 +853,10 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x577AB8CB)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c)(0x577AB8CB)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "\\vmware-host\Shared Folders\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\stm32f1xx_hal_pwr.o --omf_browse sensor_station\stm32f1xx_hal_pwr.crf --depend sensor_station\stm32f1xx_hal_pwr.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c)(0x577AB8CB)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "Z:\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\stm32f1xx_hal_pwr.o --omf_browse sensor_station\stm32f1xx_hal_pwr.crf --depend sensor_station\stm32f1xx_hal_pwr.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x577AB8CB)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58F11247)
-I (../Inc/main.h)(0x58F11247)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58F25C47)
+I (../Inc/main.h)(0x58F25C47)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x577AB8CB)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x577AB8B8)
@@ -890,10 +890,10 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x577AB8CB)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c)(0x577AB8CB)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "\\vmware-host\Shared Folders\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\stm32f1xx_hal_rcc_ex.o --omf_browse sensor_station\stm32f1xx_hal_rcc_ex.crf --depend sensor_station\stm32f1xx_hal_rcc_ex.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c)(0x577AB8CB)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "Z:\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\stm32f1xx_hal_rcc_ex.o --omf_browse sensor_station\stm32f1xx_hal_rcc_ex.crf --depend sensor_station\stm32f1xx_hal_rcc_ex.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x577AB8CB)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58F11247)
-I (../Inc/main.h)(0x58F11247)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58F25C47)
+I (../Inc/main.h)(0x58F25C47)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x577AB8CB)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x577AB8B8)
@@ -927,10 +927,10 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x577AB8CB)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c)(0x577AB8CB)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "\\vmware-host\Shared Folders\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\stm32f1xx_hal_uart.o --omf_browse sensor_station\stm32f1xx_hal_uart.crf --depend sensor_station\stm32f1xx_hal_uart.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c)(0x577AB8CB)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "Z:\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\stm32f1xx_hal_uart.o --omf_browse sensor_station\stm32f1xx_hal_uart.crf --depend sensor_station\stm32f1xx_hal_uart.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x577AB8CB)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58F11247)
-I (../Inc/main.h)(0x58F11247)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58F25C47)
+I (../Inc/main.h)(0x58F25C47)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x577AB8CB)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x577AB8B8)
@@ -964,10 +964,10 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x577AB8CB)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pcd_ex.c)(0x577AB8CB)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "\\vmware-host\Shared Folders\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\stm32f1xx_hal_pcd_ex.o --omf_browse sensor_station\stm32f1xx_hal_pcd_ex.crf --depend sensor_station\stm32f1xx_hal_pcd_ex.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pcd_ex.c)(0x577AB8CB)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "Z:\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\stm32f1xx_hal_pcd_ex.o --omf_browse sensor_station\stm32f1xx_hal_pcd_ex.crf --depend sensor_station\stm32f1xx_hal_pcd_ex.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x577AB8CB)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58F11247)
-I (../Inc/main.h)(0x58F11247)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58F25C47)
+I (../Inc/main.h)(0x58F25C47)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x577AB8CB)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x577AB8B8)
@@ -1001,10 +1001,10 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x577AB8CB)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rtc.c)(0x577AB8CB)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "\\vmware-host\Shared Folders\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\stm32f1xx_hal_rtc.o --omf_browse sensor_station\stm32f1xx_hal_rtc.crf --depend sensor_station\stm32f1xx_hal_rtc.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rtc.c)(0x577AB8CB)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "Z:\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\stm32f1xx_hal_rtc.o --omf_browse sensor_station\stm32f1xx_hal_rtc.crf --depend sensor_station\stm32f1xx_hal_rtc.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x577AB8CB)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58F11247)
-I (../Inc/main.h)(0x58F11247)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58F25C47)
+I (../Inc/main.h)(0x58F25C47)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x577AB8CB)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x577AB8B8)
@@ -1038,10 +1038,10 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x577AB8CB)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_usb.c)(0x577AB8CB)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "\\vmware-host\Shared Folders\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\stm32f1xx_ll_usb.o --omf_browse sensor_station\stm32f1xx_ll_usb.crf --depend sensor_station\stm32f1xx_ll_usb.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_usb.c)(0x577AB8CB)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "Z:\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\stm32f1xx_ll_usb.o --omf_browse sensor_station\stm32f1xx_ll_usb.crf --depend sensor_station\stm32f1xx_ll_usb.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x577AB8CB)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58F11247)
-I (../Inc/main.h)(0x58F11247)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58F25C47)
+I (../Inc/main.h)(0x58F25C47)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x577AB8CB)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x577AB8B8)
@@ -1075,10 +1075,10 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x577AB8CB)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.c)(0x577AB8CB)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "\\vmware-host\Shared Folders\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\stm32f1xx_hal_i2c.o --omf_browse sensor_station\stm32f1xx_hal_i2c.crf --depend sensor_station\stm32f1xx_hal_i2c.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.c)(0x577AB8CB)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "Z:\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\stm32f1xx_hal_i2c.o --omf_browse sensor_station\stm32f1xx_hal_i2c.crf --depend sensor_station\stm32f1xx_hal_i2c.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x577AB8CB)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58F11247)
-I (../Inc/main.h)(0x58F11247)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58F25C47)
+I (../Inc/main.h)(0x58F25C47)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x577AB8CB)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x577AB8B8)
@@ -1112,10 +1112,10 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x577AB8CB)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c)(0x577AB8CB)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "\\vmware-host\Shared Folders\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\stm32f1xx_hal_tim.o --omf_browse sensor_station\stm32f1xx_hal_tim.crf --depend sensor_station\stm32f1xx_hal_tim.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c)(0x577AB8CB)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "Z:\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\stm32f1xx_hal_tim.o --omf_browse sensor_station\stm32f1xx_hal_tim.crf --depend sensor_station\stm32f1xx_hal_tim.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x577AB8CB)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58F11247)
-I (../Inc/main.h)(0x58F11247)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58F25C47)
+I (../Inc/main.h)(0x58F25C47)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x577AB8CB)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x577AB8B8)
@@ -1149,10 +1149,10 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x577AB8CB)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c)(0x577AB8CB)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "\\vmware-host\Shared Folders\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\stm32f1xx_hal_adc.o --omf_browse sensor_station\stm32f1xx_hal_adc.crf --depend sensor_station\stm32f1xx_hal_adc.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c)(0x577AB8CB)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "Z:\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\stm32f1xx_hal_adc.o --omf_browse sensor_station\stm32f1xx_hal_adc.crf --depend sensor_station\stm32f1xx_hal_adc.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x577AB8CB)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58F11247)
-I (../Inc/main.h)(0x58F11247)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58F25C47)
+I (../Inc/main.h)(0x58F25C47)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x577AB8CB)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x577AB8B8)
@@ -1186,10 +1186,10 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x577AB8CB)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c)(0x577AB8CB)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "\\vmware-host\Shared Folders\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\stm32f1xx_hal.o --omf_browse sensor_station\stm32f1xx_hal.crf --depend sensor_station\stm32f1xx_hal.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c)(0x577AB8CB)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "Z:\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\stm32f1xx_hal.o --omf_browse sensor_station\stm32f1xx_hal.crf --depend sensor_station\stm32f1xx_hal.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x577AB8CB)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58F11247)
-I (../Inc/main.h)(0x58F11247)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58F25C47)
+I (../Inc/main.h)(0x58F25C47)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x577AB8CB)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x577AB8B8)
@@ -1223,10 +1223,10 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x577AB8CB)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c)(0x577AB8CB)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "\\vmware-host\Shared Folders\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\stm32f1xx_hal_tim_ex.o --omf_browse sensor_station\stm32f1xx_hal_tim_ex.crf --depend sensor_station\stm32f1xx_hal_tim_ex.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c)(0x577AB8CB)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "Z:\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\stm32f1xx_hal_tim_ex.o --omf_browse sensor_station\stm32f1xx_hal_tim_ex.crf --depend sensor_station\stm32f1xx_hal_tim_ex.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x577AB8CB)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58F11247)
-I (../Inc/main.h)(0x58F11247)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58F25C47)
+I (../Inc/main.h)(0x58F25C47)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x577AB8CB)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x577AB8B8)
@@ -1260,10 +1260,10 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x577AB8CB)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c)(0x577AB8CB)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "\\vmware-host\Shared Folders\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\stm32f1xx_hal_flash.o --omf_browse sensor_station\stm32f1xx_hal_flash.crf --depend sensor_station\stm32f1xx_hal_flash.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c)(0x577AB8CB)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "Z:\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\stm32f1xx_hal_flash.o --omf_browse sensor_station\stm32f1xx_hal_flash.crf --depend sensor_station\stm32f1xx_hal_flash.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x577AB8CB)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58F11247)
-I (../Inc/main.h)(0x58F11247)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58F25C47)
+I (../Inc/main.h)(0x58F25C47)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x577AB8CB)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x577AB8B8)
@@ -1297,10 +1297,10 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x577AB8CB)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c)(0x577AB8CB)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "\\vmware-host\Shared Folders\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\stm32f1xx_hal_adc_ex.o --omf_browse sensor_station\stm32f1xx_hal_adc_ex.crf --depend sensor_station\stm32f1xx_hal_adc_ex.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c)(0x577AB8CB)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "Z:\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\stm32f1xx_hal_adc_ex.o --omf_browse sensor_station\stm32f1xx_hal_adc_ex.crf --depend sensor_station\stm32f1xx_hal_adc_ex.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x577AB8CB)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58F11247)
-I (../Inc/main.h)(0x58F11247)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58F25C47)
+I (../Inc/main.h)(0x58F25C47)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x577AB8CB)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x577AB8B8)
@@ -1334,7 +1334,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x577AB8CB)
-F (../Src/system_stm32f1xx.c)(0x58DF5772)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "\\vmware-host\Shared Folders\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\system_stm32f1xx.o --omf_browse sensor_station\system_stm32f1xx.crf --depend sensor_station\system_stm32f1xx.d)
+F (../Src/system_stm32f1xx.c)(0x58DF5772)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "Z:\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\system_stm32f1xx.o --omf_browse sensor_station\system_stm32f1xx.crf --depend sensor_station\system_stm32f1xx.d)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x577AB8B8)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h)(0x577AB8B8)
 I (../Drivers/CMSIS/Include/core_cm3.h)(0x577AB8CA)
@@ -1344,8 +1344,8 @@ I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x577AB8CA)
 I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x577AB8CA)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h)(0x577AB8B8)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x577AB8CB)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58F11247)
-I (../Inc/main.h)(0x58F11247)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58F25C47)
+I (../Inc/main.h)(0x58F25C47)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x577AB8CB)
@@ -1371,7 +1371,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x577AB8CB)
-F (../Src/usbd_conf.c)(0x58F11244)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "\\vmware-host\Shared Folders\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\usbd_conf.o --omf_browse sensor_station\usbd_conf.crf --depend sensor_station\usbd_conf.d)
+F (../Src/usbd_conf.c)(0x58F25C45)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "Z:\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\usbd_conf.o --omf_browse sensor_station\usbd_conf.crf --depend sensor_station\usbd_conf.d)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x577AB8B8)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h)(0x577AB8B8)
 I (../Drivers/CMSIS/Include/core_cm3.h)(0x577AB8CA)
@@ -1381,8 +1381,8 @@ I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x577AB8CA)
 I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x577AB8CA)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h)(0x577AB8B8)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x577AB8CB)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58F11247)
-I (../Inc/main.h)(0x58F11247)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58F25C47)
+I (../Inc/main.h)(0x58F25C47)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x577AB8CB)
@@ -1409,7 +1409,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x577AB8CB)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h)(0x577AB8D4)
-I (../Inc/usbd_conf.h)(0x58F11244)
+I (../Inc/usbd_conf.h)(0x58F25C45)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdlib.h)(0x52FE0ABE)
 I (C:\Program Files\Keil\ARM\ARMCC\include\string.h)(0x52FE0ABE)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h)(0x577AB8D4)
@@ -1418,16 +1418,16 @@ I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h)(0x577AB8D4
 I (../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc/usbd_msc.h)(0x577AB8D3)
 I (../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc/usbd_msc_bot.h)(0x577AB8D3)
 I (../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc/usbd_msc_scsi.h)(0x577AB8D3)
-F (../Src/user_diskio.c)(0x58F11243)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "\\vmware-host\Shared Folders\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\user_diskio.o --omf_browse sensor_station\user_diskio.crf --depend sensor_station\user_diskio.d)
+F (../Src/user_diskio.c)(0x58F25C44)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "Z:\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\user_diskio.o --omf_browse sensor_station\user_diskio.crf --depend sensor_station\user_diskio.d)
 I (C:\Program Files\Keil\ARM\ARMCC\include\string.h)(0x52FE0ABE)
 I (../Middlewares/Third_Party/FatFs/src/ff_gen_drv.h)(0x577AB8D5)
 I (../Middlewares/Third_Party/FatFs/src/diskio.h)(0x577AB8D5)
 I (../Middlewares/Third_Party/FatFs/src/integer.h)(0x577AB8D5)
 I (../Middlewares/Third_Party/FatFs/src/ff.h)(0x577AB8D5)
-I (../Inc/ffconf.h)(0x58F11242)
+I (../Inc/ffconf.h)(0x58F25C43)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x577AB8CB)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58F11247)
-I (../Inc/main.h)(0x58F11247)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58F25C47)
+I (../Inc/main.h)(0x58F25C47)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x577AB8CB)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x577AB8B8)
@@ -1462,14 +1462,14 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x577AB8CB)
 I (../Inc/sd_card.h)(0x58DF5772)
-F (../Src/fatfs.c)(0x58F11243)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "\\vmware-host\Shared Folders\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\fatfs.o --omf_browse sensor_station\fatfs.crf --depend sensor_station\fatfs.d)
-I (../Inc/fatfs.h)(0x58F11243)
+F (../Src/fatfs.c)(0x58F25C44)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "Z:\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\fatfs.o --omf_browse sensor_station\fatfs.crf --depend sensor_station\fatfs.d)
+I (../Inc/fatfs.h)(0x58F25C44)
 I (../Middlewares/Third_Party/FatFs/src/ff.h)(0x577AB8D5)
 I (../Middlewares/Third_Party/FatFs/src/integer.h)(0x577AB8D5)
-I (../Inc/ffconf.h)(0x58F11242)
+I (../Inc/ffconf.h)(0x58F25C43)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x577AB8CB)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58F11247)
-I (../Inc/main.h)(0x58F11247)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58F25C47)
+I (../Inc/main.h)(0x58F25C47)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x577AB8CB)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x577AB8B8)
@@ -1505,10 +1505,10 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x577AB8CB)
 I (../Middlewares/Third_Party/FatFs/src/ff_gen_drv.h)(0x577AB8D5)
 I (../Middlewares/Third_Party/FatFs/src/diskio.h)(0x577AB8D5)
-I (../Inc/user_diskio.h)(0x58F11243)
-F (../Src/usbd_desc.c)(0x58F11245)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "\\vmware-host\Shared Folders\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\usbd_desc.o --omf_browse sensor_station\usbd_desc.crf --depend sensor_station\usbd_desc.d)
+I (../Inc/user_diskio.h)(0x58F25C44)
+F (../Src/usbd_desc.c)(0x58F25C45)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "Z:\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\usbd_desc.o --omf_browse sensor_station\usbd_desc.crf --depend sensor_station\usbd_desc.d)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h)(0x577AB8D4)
-I (../Inc/usbd_conf.h)(0x58F11244)
+I (../Inc/usbd_conf.h)(0x58F25C45)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdio.h)(0x52FE0ABE)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdlib.h)(0x52FE0ABE)
 I (C:\Program Files\Keil\ARM\ARMCC\include\string.h)(0x52FE0ABE)
@@ -1521,8 +1521,8 @@ I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x577AB8CA)
 I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x577AB8CA)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h)(0x577AB8B8)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x577AB8CB)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58F11247)
-I (../Inc/main.h)(0x58F11247)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58F25C47)
+I (../Inc/main.h)(0x58F25C47)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x577AB8CB)
@@ -1550,13 +1550,13 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x577AB8CB)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h)(0x577AB8D4)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h)(0x577AB8D4)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h)(0x577AB8D4)
-I (../Inc/usbd_desc.h)(0x58F11244)
-F (../Src/usbd_storage_if.c)(0x58F11245)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "\\vmware-host\Shared Folders\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\usbd_storage_if.o --omf_browse sensor_station\usbd_storage_if.crf --depend sensor_station\usbd_storage_if.d)
-I (../Inc/usbd_storage_if.h)(0x58F11245)
+I (../Inc/usbd_desc.h)(0x58F25C45)
+F (../Src/usbd_storage_if.c)(0x58F25C46)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "Z:\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\usbd_storage_if.o --omf_browse sensor_station\usbd_storage_if.crf --depend sensor_station\usbd_storage_if.d)
+I (../Inc/usbd_storage_if.h)(0x58F25C46)
 I (../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc/usbd_msc.h)(0x577AB8D3)
 I (../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc/usbd_msc_bot.h)(0x577AB8D3)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h)(0x577AB8D4)
-I (../Inc/usbd_conf.h)(0x58F11244)
+I (../Inc/usbd_conf.h)(0x58F25C45)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdio.h)(0x52FE0ABE)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdlib.h)(0x52FE0ABE)
 I (C:\Program Files\Keil\ARM\ARMCC\include\string.h)(0x52FE0ABE)
@@ -1569,8 +1569,8 @@ I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x577AB8CA)
 I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x577AB8CA)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h)(0x577AB8B8)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x577AB8CB)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58F11247)
-I (../Inc/main.h)(0x58F11247)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58F25C47)
+I (../Inc/main.h)(0x58F25C47)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x577AB8CB)
@@ -1600,8 +1600,8 @@ I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h)(0x577AB8D4)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h)(0x577AB8D4)
 I (../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc/usbd_msc_scsi.h)(0x577AB8D3)
 I (../Inc/sd_card.h)(0x58DF5772)
-F (../Src/usb_device.c)(0x58F11244)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "\\vmware-host\Shared Folders\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\usb_device.o --omf_browse sensor_station\usb_device.crf --depend sensor_station\usb_device.d)
-I (../Inc/usb_device.h)(0x58F11244)
+F (../Src/usb_device.c)(0x58F25C44)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "Z:\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\usb_device.o --omf_browse sensor_station\usb_device.crf --depend sensor_station\usb_device.d)
+I (../Inc/usb_device.h)(0x58F25C45)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x577AB8B8)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h)(0x577AB8B8)
 I (../Drivers/CMSIS/Include/core_cm3.h)(0x577AB8CA)
@@ -1611,8 +1611,8 @@ I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x577AB8CA)
 I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x577AB8CA)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h)(0x577AB8B8)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x577AB8CB)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58F11247)
-I (../Inc/main.h)(0x58F11247)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58F25C47)
+I (../Inc/main.h)(0x58F25C47)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x577AB8CB)
@@ -1639,21 +1639,21 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x577AB8CB)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h)(0x577AB8D4)
-I (../Inc/usbd_conf.h)(0x58F11244)
+I (../Inc/usbd_conf.h)(0x58F25C45)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdlib.h)(0x52FE0ABE)
 I (C:\Program Files\Keil\ARM\ARMCC\include\string.h)(0x52FE0ABE)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h)(0x577AB8D4)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h)(0x577AB8D4)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h)(0x577AB8D4)
-I (../Inc/usbd_desc.h)(0x58F11244)
+I (../Inc/usbd_desc.h)(0x58F25C45)
 I (../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc/usbd_msc.h)(0x577AB8D3)
 I (../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc/usbd_msc_bot.h)(0x577AB8D3)
 I (../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc/usbd_msc_scsi.h)(0x577AB8D3)
-I (../Inc/usbd_storage_if.h)(0x58F11245)
-F (../Src/stm32f1xx_hal_msp.c)(0x58F11246)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "\\vmware-host\Shared Folders\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\stm32f1xx_hal_msp.o --omf_browse sensor_station\stm32f1xx_hal_msp.crf --depend sensor_station\stm32f1xx_hal_msp.d)
+I (../Inc/usbd_storage_if.h)(0x58F25C46)
+F (../Src/stm32f1xx_hal_msp.c)(0x58F25C47)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "Z:\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\stm32f1xx_hal_msp.o --omf_browse sensor_station\stm32f1xx_hal_msp.crf --depend sensor_station\stm32f1xx_hal_msp.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x577AB8CB)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58F11247)
-I (../Inc/main.h)(0x58F11247)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58F25C47)
+I (../Inc/main.h)(0x58F25C47)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x577AB8CB)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x577AB8B8)
@@ -1687,10 +1687,10 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x577AB8CB)
-F (../Src/stm32f1xx_it.c)(0x58F11245)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "\\vmware-host\Shared Folders\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\stm32f1xx_it.o --omf_browse sensor_station\stm32f1xx_it.crf --depend sensor_station\stm32f1xx_it.d)
+F (../Src/stm32f1xx_it.c)(0x58F25C46)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "Z:\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\stm32f1xx_it.o --omf_browse sensor_station\stm32f1xx_it.crf --depend sensor_station\stm32f1xx_it.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x577AB8CB)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58F11247)
-I (../Inc/main.h)(0x58F11247)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58F25C47)
+I (../Inc/main.h)(0x58F25C47)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x577AB8CB)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x577AB8B8)
@@ -1724,11 +1724,11 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x577AB8CB)
-I (../Inc/stm32f1xx_it.h)(0x58F11246)
-F (../Src/main.c)(0x58F13BAB)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "\\vmware-host\Shared Folders\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\main.o --omf_browse sensor_station\main.crf --depend sensor_station\main.d)
-I (../Inc/main.h)(0x58F11247)
+I (../Inc/stm32f1xx_it.h)(0x58F25C46)
+F (../Src/main.c)(0x58F262EE)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "Z:\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\main.o --omf_browse sensor_station\main.crf --depend sensor_station\main.d)
+I (../Inc/main.h)(0x58F25C47)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x577AB8CB)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58F11247)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58F25C47)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x577AB8CB)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x577AB8B8)
@@ -1762,30 +1762,30 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x577AB8CB)
-I (../Inc/fatfs.h)(0x58F11243)
+I (../Inc/fatfs.h)(0x58F25C44)
 I (../Middlewares/Third_Party/FatFs/src/ff.h)(0x577AB8D5)
 I (../Middlewares/Third_Party/FatFs/src/integer.h)(0x577AB8D5)
-I (../Inc/ffconf.h)(0x58F11242)
+I (../Inc/ffconf.h)(0x58F25C43)
 I (../Middlewares/Third_Party/FatFs/src/ff_gen_drv.h)(0x577AB8D5)
 I (../Middlewares/Third_Party/FatFs/src/diskio.h)(0x577AB8D5)
-I (../Inc/user_diskio.h)(0x58F11243)
-I (../Inc/usb_device.h)(0x58F11244)
+I (../Inc/user_diskio.h)(0x58F25C44)
+I (../Inc/usb_device.h)(0x58F25C45)
 I (../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h)(0x577AB8D4)
-I (../Inc/usbd_conf.h)(0x58F11244)
+I (../Inc/usbd_conf.h)(0x58F25C45)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdlib.h)(0x52FE0ABE)
 I (C:\Program Files\Keil\ARM\ARMCC\include\string.h)(0x52FE0ABE)
-I (../Inc/OLED.h)(0x58DF5772)
+I (../Inc/OLED.h)(0x58F24BB7)
 I (../Inc/Sensors.h)(0x58DF5772)
 I (../Inc/Time.h)(0x58DF5772)
 I (../Inc/sd_card.h)(0x58DF5772)
 I (../Inc/esp8266.h)(0x58ED1D06)
 I (../Inc/sequencer.h)(0x58F114C3)
 I (C:\Program Files\Keil\ARM\ARMCC\include\math.h)(0x52FE0ABE)
-F (..\Src\OLED.c)(0x58DF5772)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "\\vmware-host\Shared Folders\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\oled.o --omf_browse sensor_station\oled.crf --depend sensor_station\oled.d)
-I (../Inc/OLED.h)(0x58DF5772)
+F (..\Src\OLED.c)(0x58F24B9E)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "Z:\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\oled.o --omf_browse sensor_station\oled.crf --depend sensor_station\oled.d)
+I (../Inc/OLED.h)(0x58F24BB7)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x577AB8CB)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58F11247)
-I (../Inc/main.h)(0x58F11247)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58F25C47)
+I (../Inc/main.h)(0x58F25C47)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x577AB8CB)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x577AB8B8)
@@ -1827,11 +1827,11 @@ I (..\Src\font_ultra.c)(0x58DF5772)
 I (..\Src\font_times.c)(0x58DF5772)
 I (..\Src\image_status.c)(0x58DF5772)
 I (..\Src\image_cloud.c)(0x58DF5772)
-F (..\Src\sd_card.c)(0x58DF5772)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "\\vmware-host\Shared Folders\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\sd_card.o --omf_browse sensor_station\sd_card.crf --depend sensor_station\sd_card.d)
+F (..\Src\sd_card.c)(0x58DF5772)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "Z:\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\sd_card.o --omf_browse sensor_station\sd_card.crf --depend sensor_station\sd_card.d)
 I (../Inc/sd_card.h)(0x58DF5772)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x577AB8CB)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58F11247)
-I (../Inc/main.h)(0x58F11247)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58F25C47)
+I (../Inc/main.h)(0x58F25C47)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x577AB8CB)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x577AB8B8)
@@ -1866,11 +1866,11 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x577AB8CB)
 I (C:\Program Files\Keil\ARM\ARMCC\include\string.h)(0x52FE0ABE)
-F (..\Src\Sensors.c)(0x58DF5772)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "\\vmware-host\Shared Folders\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\sensors.o --omf_browse sensor_station\sensors.crf --depend sensor_station\sensors.d)
+F (..\Src\Sensors.c)(0x58DF5772)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "Z:\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\sensors.o --omf_browse sensor_station\sensors.crf --depend sensor_station\sensors.d)
 I (../Inc/Sensors.h)(0x58DF5772)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x577AB8CB)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58F11247)
-I (../Inc/main.h)(0x58F11247)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58F25C47)
+I (../Inc/main.h)(0x58F25C47)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x577AB8CB)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x577AB8B8)
@@ -1904,11 +1904,11 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x577AB8CB)
-F (..\Src\Time.c)(0x58DF5772)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "\\vmware-host\Shared Folders\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\time.o --omf_browse sensor_station\time.crf --depend sensor_station\time.d)
+F (..\Src\Time.c)(0x58DF5772)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "Z:\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\time.o --omf_browse sensor_station\time.crf --depend sensor_station\time.d)
 I (../Inc/Time.h)(0x58DF5772)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x577AB8CB)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58F11247)
-I (../Inc/main.h)(0x58F11247)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58F25C47)
+I (../Inc/main.h)(0x58F25C47)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x577AB8CB)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x577AB8B8)
@@ -1942,11 +1942,11 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x577AB8CB)
-F (..\Src\esp8266.c)(0x58ED1C9B)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "\\vmware-host\Shared Folders\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\esp8266.o --omf_browse sensor_station\esp8266.crf --depend sensor_station\esp8266.d)
+F (..\Src\esp8266.c)(0x58ED1C9B)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "Z:\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\esp8266.o --omf_browse sensor_station\esp8266.crf --depend sensor_station\esp8266.d)
 I (../Inc/esp8266.h)(0x58ED1D06)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x577AB8CB)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58F11247)
-I (../Inc/main.h)(0x58F11247)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58F25C47)
+I (../Inc/main.h)(0x58F25C47)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x577AB8CB)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x577AB8B8)
@@ -1981,11 +1981,11 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h)(0x577AB8CB)
 I (C:\Program Files\Keil\ARM\ARMCC\include\string.h)(0x52FE0ABE)
-F (..\Src\sequencer.c)(0x58F114C2)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "\\vmware-host\Shared Folders\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\sequencer.o --omf_browse sensor_station\sequencer.crf --depend sensor_station\sequencer.d)
+F (..\Src\sequencer.c)(0x58F114C2)(-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/MSC/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Middlewares/Third_Party/FatFs/src -I../Drivers/CMSIS/Include --C99-I "Z:\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE"-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB -o sensor_station\sequencer.o --omf_browse sensor_station\sequencer.crf --depend sensor_station\sequencer.d)
 I (../Inc/sequencer.h)(0x58F114C3)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x577AB8CB)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58F11247)
-I (../Inc/main.h)(0x58F11247)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58F25C47)
+I (../Inc/main.h)(0x58F25C47)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x577AB8CB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x577AB8CB)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x577AB8B8)

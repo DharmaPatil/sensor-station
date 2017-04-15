@@ -46,6 +46,8 @@
 
 extern DMA_HandleTypeDef hdma_tim2_ch3;
 
+extern DMA_HandleTypeDef hdma_tim2_ch2_ch4;
+
 extern void Error_Handler(void);
 /* USER CODE BEGIN 0 */
 
@@ -316,12 +318,13 @@ void HAL_TIM_Base_MspInit(TIM_HandleTypeDef* htim_base)
     __HAL_RCC_TIM2_CLK_ENABLE();
   
     /**TIM2 GPIO Configuration    
-    PA2     ------> TIM2_CH3 
+    PA2     ------> TIM2_CH3
+    PA3     ------> TIM2_CH4 
     */
-    GPIO_InitStruct.Pin = DHT22_IN_Pin;
+    GPIO_InitStruct.Pin = DHT22_INT_Pin|DHT22_EXT_Pin;
     GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
-    HAL_GPIO_Init(DHT22_IN_GPIO_Port, &GPIO_InitStruct);
+    HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
     /* Peripheral DMA init*/
   
@@ -339,6 +342,24 @@ void HAL_TIM_Base_MspInit(TIM_HandleTypeDef* htim_base)
     }
 
     __HAL_LINKDMA(htim_base,hdma[TIM_DMA_ID_CC3],hdma_tim2_ch3);
+
+    hdma_tim2_ch2_ch4.Instance = DMA1_Channel7;
+    hdma_tim2_ch2_ch4.Init.Direction = DMA_PERIPH_TO_MEMORY;
+    hdma_tim2_ch2_ch4.Init.PeriphInc = DMA_PINC_DISABLE;
+    hdma_tim2_ch2_ch4.Init.MemInc = DMA_MINC_ENABLE;
+    hdma_tim2_ch2_ch4.Init.PeriphDataAlignment = DMA_PDATAALIGN_HALFWORD;
+    hdma_tim2_ch2_ch4.Init.MemDataAlignment = DMA_MDATAALIGN_HALFWORD;
+    hdma_tim2_ch2_ch4.Init.Mode = DMA_NORMAL;
+    hdma_tim2_ch2_ch4.Init.Priority = DMA_PRIORITY_LOW;
+    if (HAL_DMA_Init(&hdma_tim2_ch2_ch4) != HAL_OK)
+    {
+      Error_Handler();
+    }
+
+    /* Several peripheral DMA handle pointers point to the same DMA handle.
+     Be aware that there is only one channel to perform all the requested DMAs. */
+    __HAL_LINKDMA(htim_base,hdma[TIM_DMA_ID_CC2],hdma_tim2_ch2_ch4);
+    __HAL_LINKDMA(htim_base,hdma[TIM_DMA_ID_CC4],hdma_tim2_ch2_ch4);
 
   /* USER CODE BEGIN TIM2_MspInit 1 */
 
@@ -441,12 +462,15 @@ void HAL_TIM_Base_MspDeInit(TIM_HandleTypeDef* htim_base)
     __HAL_RCC_TIM2_CLK_DISABLE();
   
     /**TIM2 GPIO Configuration    
-    PA2     ------> TIM2_CH3 
+    PA2     ------> TIM2_CH3
+    PA3     ------> TIM2_CH4 
     */
-    HAL_GPIO_DeInit(DHT22_IN_GPIO_Port, DHT22_IN_Pin);
+    HAL_GPIO_DeInit(GPIOA, DHT22_INT_Pin|DHT22_EXT_Pin);
 
     /* Peripheral DMA DeInit*/
     HAL_DMA_DeInit(htim_base->hdma[TIM_DMA_ID_CC3]);
+    HAL_DMA_DeInit(htim_base->hdma[TIM_DMA_ID_CC2]);
+    HAL_DMA_DeInit(htim_base->hdma[TIM_DMA_ID_CC4]);
   /* USER CODE BEGIN TIM2_MspDeInit 1 */
 
   /* USER CODE END TIM2_MspDeInit 1 */

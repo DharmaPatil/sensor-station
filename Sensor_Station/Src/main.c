@@ -70,6 +70,7 @@ TIM_HandleTypeDef htim2;
 TIM_HandleTypeDef htim3;
 TIM_HandleTypeDef htim4;
 DMA_HandleTypeDef hdma_tim2_ch3;
+DMA_HandleTypeDef hdma_tim2_ch2_ch4;
 
 UART_HandleTypeDef huart1;
 
@@ -161,82 +162,106 @@ int main(void)
 
 
 	char str[40];
+	char str1[40];
+	char str2[40];
 
 	OLED_Init();
 	OLED_Clear();
 	font = &font_medium;
 	
 	
+	// DHT22
 	
 	GPIO_InitTypeDef GPIO_InitStruct_1;
 	GPIO_InitTypeDef GPIO_InitStruct_2;
+	uint16_t tim_data[50];
+	uint8_t result[5];
+	uint16_t temp16; 
+	uint16_t hum16;
+	float temp[2];
+	float hum[2];
+	uint8_t valid[2];
+	
+	uint16_t dht22_pin;
+	GPIO_TypeDef *dht22_port;
+	uint32_t dht22_tim_ch;
+	DMA_HandleTypeDef *dht22_dma;
+	
 	while (1) {
+		
+		for ( int i = 0; i < 2; i++ ) {
 			
-			uint16_t tim_data[50];
-			HAL_GPIO_WritePin( DHT22_IN_GPIO_Port, DHT22_IN_Pin, GPIO_PIN_SET );	
-			GPIO_InitStruct_1.Pin = DHT22_IN_Pin;
+			if ( i == 0 ) {
+				dht22_pin = DHT22_INT_Pin;
+				dht22_port = DHT22_INT_GPIO_Port;
+				dht22_tim_ch = TIM_CHANNEL_3;
+				dht22_dma = &hdma_tim2_ch3;
+			} else {
+				dht22_pin = DHT22_EXT_Pin;
+				dht22_port = DHT22_EXT_GPIO_Port;
+				dht22_tim_ch = TIM_CHANNEL_4;
+				dht22_dma = &hdma_tim2_ch2_ch4;	
+			}
+					
+			HAL_GPIO_WritePin( dht22_port, dht22_pin, GPIO_PIN_SET );	
+			GPIO_InitStruct_1.Pin = dht22_pin;
 			GPIO_InitStruct_1.Mode = GPIO_MODE_OUTPUT_OD;
 			GPIO_InitStruct_1.Speed = GPIO_SPEED_FREQ_LOW;
-			HAL_GPIO_Init(DHT22_IN_GPIO_Port, &GPIO_InitStruct_1);	
-			HAL_GPIO_WritePin( DHT22_IN_GPIO_Port, DHT22_IN_Pin, GPIO_PIN_RESET );	
+			HAL_GPIO_Init(dht22_port, &GPIO_InitStruct_1);	
+			HAL_GPIO_WritePin( dht22_port, dht22_pin, GPIO_PIN_RESET );	
 			HAL_Delay(3);	
-			HAL_GPIO_WritePin( DHT22_IN_GPIO_Port, DHT22_IN_Pin, GPIO_PIN_SET );	
+			HAL_GPIO_WritePin( dht22_port, dht22_pin, GPIO_PIN_SET );	
 			
 			// init as a alternative function
-			GPIO_InitStruct_2.Pin = DHT22_IN_Pin;
+			GPIO_InitStruct_2.Pin = dht22_pin;
 			GPIO_InitStruct_2.Mode = GPIO_MODE_INPUT;
 			GPIO_InitStruct_2.Pull = GPIO_NOPULL;
-			HAL_GPIO_Init(DHT22_IN_GPIO_Port, &GPIO_InitStruct_2);	
+			HAL_GPIO_Init(dht22_port, &GPIO_InitStruct_2);	
 			
 			HAL_TIM_Base_Start( &htim2 );
-			HAL_TIM_IC_Start_DMA( &htim2, TIM_CHANNEL_3, (uint32_t *)tim_data, 42 );
-			HAL_DMA_PollForTransfer( &hdma_tim2_ch3, HAL_DMA_FULL_TRANSFER, 50 );
-			HAL_TIM_IC_Stop_DMA( &htim2, TIM_CHANNEL_3 );
+			HAL_TIM_IC_Start_DMA( &htim2, dht22_tim_ch, (uint32_t *)tim_data, 42 );
+			HAL_DMA_PollForTransfer( dht22_dma, HAL_DMA_FULL_TRANSFER, 50 );
+			HAL_TIM_IC_Stop_DMA( &htim2, dht22_tim_ch );
 			
 			for (int i = 0; i < 41; i++ ) {
 				tim_data[i] = tim_data[i+1] - tim_data[i];
 			}
 			
-			uint8_t result[5];
 			for ( int byte = 0; byte < 5; byte++ ) {
 				result[byte] = 0;
 				for (int bit = 0; bit < 8; bit++) {
 					result[byte]<<=1;
-					if ( tim_data[byte*8+bit+1] > 105 ) {
+					if ( tim_data[byte*8+bit+1] > 105 )
 						result[byte] |= 1;
-					}
 				}
 			}
 			
-			uint16_t temp16 = ((result[2]&0x7F)<<8) + result[3];
-			uint16_t hum16 = (result[0]<<8) + result[1];
+			temp16 = ((result[2]&0x7F)<<8) + result[3];
+			hum16 = (result[0]<<8) + result[1];		
+			temp[i] = ((float)temp16)/10;
+			hum[i] = ((float)hum16)/10;
+			valid[i] = ((((result[0]+result[1]+result[2]+result[3])&0xFF) == result[4] ) && (dht22_dma->Instance->CNDTR == 0) );
 			
-			float temp = ((float)temp16)/10;
-			float hum = ((float)hum16)/10;
+		}
+
 			
-			OLED_Clear_Buffer();
-			
-			sprintf(str," Temp: %.1f~C", temp );
-			OLED_Print( str, 0, 40 );
-			
-			sprintf(str," Hum: %.0f%%", hum );
-			OLED_Print( str, 0, 20 );
-			
-			HAL_Delay(2500);	
+		OLED_Clear_Buffer();
 		
+		for ( int i = 0; i < 2; i++ ) {
+		
+			if ( valid[i] ) {
+				sprintf(str1," Temp: %.1f~C", temp[i] );
+				sprintf(str2," Hum: %.0f%%", hum[i] );
+			} else {
+				sprintf(str1," Temp: - - - " );
+				sprintf(str2," Hum: - - - " );
+			}
+			OLED_Print( str1, 0, i*32 + 16 );
+			OLED_Print( str2, 0, i*32 );	
+		}
+		HAL_Delay(2500);	
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 	
 	/*
@@ -869,7 +894,7 @@ static void MX_TIM2_Init(void)
   TIM_IC_InitTypeDef sConfigIC;
 
   htim2.Instance = TIM2;
-  htim2.Init.Prescaler = 72;
+  htim2.Init.Prescaler = 71;
   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
   htim2.Init.Period = 0xFFFF;
   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
@@ -901,6 +926,11 @@ static void MX_TIM2_Init(void)
   sConfigIC.ICPrescaler = TIM_ICPSC_DIV1;
   sConfigIC.ICFilter = 0;
   if (HAL_TIM_IC_ConfigChannel(&htim2, &sConfigIC, TIM_CHANNEL_3) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  if (HAL_TIM_IC_ConfigChannel(&htim2, &sConfigIC, TIM_CHANNEL_4) != HAL_OK)
   {
     Error_Handler();
   }
@@ -1029,6 +1059,9 @@ static void MX_DMA_Init(void)
   /* DMA1_Channel1_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(DMA1_Channel1_IRQn, 0, 0);
   HAL_NVIC_EnableIRQ(DMA1_Channel1_IRQn);
+  /* DMA1_Channel7_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA1_Channel7_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(DMA1_Channel7_IRQn);
 
 }
 

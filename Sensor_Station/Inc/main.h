@@ -55,8 +55,10 @@
 #define BUTTON_1_GPIO_Port GPIOA
 #define BUTTON_2_Pin GPIO_PIN_1
 #define BUTTON_2_GPIO_Port GPIOA
-#define DHT22_IN_Pin GPIO_PIN_2
-#define DHT22_IN_GPIO_Port GPIOA
+#define DHT22_INT_Pin GPIO_PIN_2
+#define DHT22_INT_GPIO_Port GPIOA
+#define DHT22_EXT_Pin GPIO_PIN_3
+#define DHT22_EXT_GPIO_Port GPIOA
 #define SPI1_CS_Pin GPIO_PIN_4
 #define SPI1_CS_GPIO_Port GPIOA
 #define CO2_SENSOR_Pin GPIO_PIN_0
