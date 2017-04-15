@@ -166,6 +166,80 @@ int main(void)
 	OLED_Clear();
 	font = &font_medium;
 	
+	
+	
+	GPIO_InitTypeDef GPIO_InitStruct_1;
+	GPIO_InitTypeDef GPIO_InitStruct_2;
+	while (1) {
+			
+			uint16_t tim_data[50];
+			HAL_GPIO_WritePin( DHT22_IN_GPIO_Port, DHT22_IN_Pin, GPIO_PIN_SET );	
+			GPIO_InitStruct_1.Pin = DHT22_IN_Pin;
+			GPIO_InitStruct_1.Mode = GPIO_MODE_OUTPUT_OD;
+			GPIO_InitStruct_1.Speed = GPIO_SPEED_FREQ_LOW;
+			HAL_GPIO_Init(DHT22_IN_GPIO_Port, &GPIO_InitStruct_1);	
+			HAL_GPIO_WritePin( DHT22_IN_GPIO_Port, DHT22_IN_Pin, GPIO_PIN_RESET );	
+			HAL_Delay(3);	
+			HAL_GPIO_WritePin( DHT22_IN_GPIO_Port, DHT22_IN_Pin, GPIO_PIN_SET );	
+			
+			// init as a alternative function
+			GPIO_InitStruct_2.Pin = DHT22_IN_Pin;
+			GPIO_InitStruct_2.Mode = GPIO_MODE_INPUT;
+			GPIO_InitStruct_2.Pull = GPIO_NOPULL;
+			HAL_GPIO_Init(DHT22_IN_GPIO_Port, &GPIO_InitStruct_2);	
+			
+			HAL_TIM_Base_Start( &htim2 );
+			HAL_TIM_IC_Start_DMA( &htim2, TIM_CHANNEL_3, (uint32_t *)tim_data, 42 );
+			HAL_DMA_PollForTransfer( &hdma_tim2_ch3, HAL_DMA_FULL_TRANSFER, 50 );
+			HAL_TIM_IC_Stop_DMA( &htim2, TIM_CHANNEL_3 );
+			
+			for (int i = 0; i < 41; i++ ) {
+				tim_data[i] = tim_data[i+1] - tim_data[i];
+			}
+			
+			uint8_t result[5];
+			for ( int byte = 0; byte < 5; byte++ ) {
+				result[byte] = 0;
+				for (int bit = 0; bit < 8; bit++) {
+					result[byte]<<=1;
+					if ( tim_data[byte*8+bit+1] > 105 ) {
+						result[byte] |= 1;
+					}
+				}
+			}
+			
+			uint16_t temp16 = ((result[2]&0x7F)<<8) + result[3];
+			uint16_t hum16 = (result[0]<<8) + result[1];
+			
+			float temp = ((float)temp16)/10;
+			float hum = ((float)hum16)/10;
+			
+			OLED_Clear_Buffer();
+			
+			sprintf(str," Temp: %.1f~C", temp );
+			OLED_Print( str, 0, 40 );
+			
+			sprintf(str," Hum: %.0f%%", hum );
+			OLED_Print( str, 0, 20 );
+			
+			HAL_Delay(2500);	
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	/*
 	while(1) {
 		uint8_t data[5] = { 0, 0, 0, 0, 0 };
 		#define BARO_ADDRESS 0xEF  // 0xEE // 111011Cx	
@@ -244,9 +318,6 @@ int main(void)
 
 		double p_mm = 750.0617 * p / 100000; 
 
-
-
-
 		OLED_Clear();
 		sprintf( str, "P = %d", (int)p );
 		OLED_Print( str, 0, 40 );	
@@ -258,7 +329,7 @@ int main(void)
 	
 	}
 	
-
+	*/
 
 	
 	
@@ -525,84 +596,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-		/*	
-			uint16_t tim_data[50];
-	
-			HAL_Delay(100);	
 
-			// init as a gpio
-			//HAL_GPIO_WritePin( DHT22_IN_GPIO_Port, DHT22_IN_Pin, GPIO_PIN_SET );
-			GPIO_InitTypeDef GPIO_InitStruct_1;
-			GPIO_InitTypeDef GPIO_InitStruct_2;
-		
-			HAL_GPIO_WritePin( DHT22_IN_GPIO_Port, DHT22_IN_Pin, GPIO_PIN_SET );	
-			GPIO_InitStruct_1.Pin = DHT22_IN_Pin;
-			GPIO_InitStruct_1.Mode = GPIO_MODE_OUTPUT_OD;
-			GPIO_InitStruct_1.Speed = GPIO_SPEED_FREQ_LOW;
-			HAL_GPIO_Init(DHT22_IN_GPIO_Port, &GPIO_InitStruct_1);	
-			HAL_Delay(1000);
-		
-			HAL_GPIO_WritePin( DHT22_IN_GPIO_Port, DHT22_IN_Pin, GPIO_PIN_RESET );	
-			HAL_Delay(2);	
-			
-			HAL_GPIO_WritePin( DHT22_IN_GPIO_Port, DHT22_IN_Pin, GPIO_PIN_SET );	
-			
-			// init as a alternative function
-			GPIO_InitStruct_2.Pin = DHT22_IN_Pin;
-			GPIO_InitStruct_2.Mode = GPIO_MODE_INPUT;
-			GPIO_InitStruct_2.Pull = GPIO_NOPULL;
-			HAL_GPIO_Init(DHT22_IN_GPIO_Port, &GPIO_InitStruct_2);	
-			
-			
-			HAL_TIM_Base_Start( &htim2 );
-			HAL_TIM_IC_Start_DMA( &htim2, TIM_CHANNEL_3, (uint32_t *)tim_data, 42 );
-			
-			HAL_Delay(1000);
-			
-			for (int i = 0; i < 41; i++ ) {
-				tim_data[i] = tim_data[i+1] - tim_data[i];
-			}
-			
-			uint8_t result[5];
-			
-			for ( int byte = 0; byte < 5; byte++ ) {
-				result[byte] = 0;
-				for (int bit = 0; bit < 8; bit++) {
-					result[byte]<<=1;
-					if ( tim_data[byte*8+bit+1] > 105 ) {
-						result[byte] |= 1;
-					}
-				}
-			}
-			
-			
-		#if 1	
-			uint16_t temp16 = ((result[2]&0x7F)<<8) + result[3];
-			uint16_t hum16 = (result[0]<<8) + result[1];
-			
-			float temp = ((float)temp16)/10;
-			float hum = ((float)hum16)/10;
-			
-			
-			sprintf(str," Temp: %.1f~C", temp );
-			OLED_Send_String_HD(1,str);
-			
-			sprintf(str," Hum: %.0f%%", hum );
-			OLED_Send_String_HD(2,str);
-		#endif	
-			
-		#if 0	
-			for ( int i = 0; i < 4; i++ ) {
-				sprintf(str,"%d", result[i] );
-				OLED_Send_String_HD(i,str);
-			}
-			HAL_Delay(500);
-		#endif	
-			
-		//while (1);	
-		
-		HAL_Delay(1000);	
-		*/
 
 
 

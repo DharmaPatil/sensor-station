@@ -39,5 +39,6 @@ void OLED_Init(void);
 void OLED_Clear(void);
 void OLED_Print( char *str, uint8_t x, uint8_t y );
 void OLED_Image( const uint8_t *image, uint8_t x, uint8_t y );
+void OLED_Clear_Buffer(void);
 
 #endif

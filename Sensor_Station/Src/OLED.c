@@ -71,6 +71,10 @@ void OLED_Clear() {
 	OLED_Send_Buffer(screen_buffer);
 }
 
+void OLED_Clear_Buffer() {
+	memset( screen_buffer, 0, 1024 );
+}
+
 
 void OLED_Send_Buffer(uint8_t *buf) {
   uint16_t i;	
