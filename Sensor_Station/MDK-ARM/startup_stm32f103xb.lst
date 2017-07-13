@@ -495,12 +495,11 @@ ARM Macro Assembler    Page 8
               00000000 
               00000000 
 Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=sensor_s
-tation\startup_stm32f103xb.d -osensor_station\startup_stm32f103xb.o -I"\vmware-
-host\Shared Folders\Projects\30. Sensor Station\Sensor_Station\MDK-ARM\RTE" -I"
-C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\Include" -I"C:\Program Fi
-les\Keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include" --predefine="__EVAL 
-SETA 1" --predefine="__MICROLIB SETA 1" --list=startup_stm32f103xb.lst startup_
-stm32f103xb.s
+tation\startup_stm32f103xb.d -osensor_station\startup_stm32f103xb.o -I"Z:\Proje
+cts\30. Sensor Station\Sensor_Station\MDK-ARM\RTE" -I"C:\Program Files\Keil\ARM
+\PACK\ARM\CMSIS\3.20.4\CMSIS\Include" -I"C:\Program Files\Keil\ARM\PACK\Keil\ST
+M32F1xx_DFP\1.0.5\Device\Include" --predefine="__EVAL SETA 1" --predefine="__MI
+CROLIB SETA 1" --list=startup_stm32f103xb.lst startup_stm32f103xb.s
 
 
 

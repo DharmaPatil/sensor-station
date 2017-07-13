@@ -668,16 +668,6 @@
               <FilePath>..\Src\sd_card.c</FilePath>
             </File>
             <File>
-              <FileName>Sensors.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Src\Sensors.c</FilePath>
-            </File>
-            <File>
-              <FileName>Time.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Src\Time.c</FilePath>
-            </File>
-            <File>
               <FileName>esp8266.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Src\esp8266.c</FilePath>
@@ -686,6 +676,31 @@
               <FileName>sequencer.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Src\sequencer.c</FilePath>
+            </File>
+            <File>
+              <FileName>dht22.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\dht22.c</FilePath>
+            </File>
+            <File>
+              <FileName>ms5611.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\ms5611.c</FilePath>
+            </File>
+            <File>
+              <FileName>interface.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\interface.c</FilePath>
+            </File>
+            <File>
+              <FileName>time_sync.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\time_sync.c</FilePath>
+            </File>
+            <File>
+              <FileName>tgs4161.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\tgs4161.c</FilePath>
             </File>
           </Files>
         </Group>

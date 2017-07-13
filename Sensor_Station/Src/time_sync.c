@@ -1,4 +1,4 @@
-#include "Time.h"
+#include "time_sync.h"
 
 extern RTC_HandleTypeDef hrtc;
 RTC_TimeTypeDef rtc_time;

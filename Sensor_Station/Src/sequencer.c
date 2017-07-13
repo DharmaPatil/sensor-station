@@ -58,7 +58,6 @@ void Sequencer_Tick( void ) {
 	divider++;
 	if ( divider == SEQ_STEP_LENGTH ) {
 		divider = 0;
-		// HAL_GPIO_WritePin( GPIOE, GPIO_PIN_13, GPIO_PIN_SET );
 		if ( seq_active ) {
 			if (countdown == 0) {
 				result = Sequencer_Get_Next( &note, &length );
@@ -74,7 +73,6 @@ void Sequencer_Tick( void ) {
 				countdown--;
 			}
 		}
-		// HAL_GPIO_WritePin( GPIOE, GPIO_PIN_13, GPIO_PIN_RESET );
 	}
 }
 
