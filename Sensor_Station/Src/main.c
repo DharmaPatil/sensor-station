@@ -54,9 +54,7 @@
 #include "sd_card.h"
 #include "esp8266.h"
 #include "sequencer.h"
-#include "dht22.h"
-#include "ms5611.h"
-#include "tgs4161.h"
+#include "sensors.h"
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
@@ -128,14 +126,14 @@ void HAL_SYSTICK_Callback(void) {
 /* USER CODE END PFP */
 
 /* USER CODE BEGIN 0 */
-
+char str[100];
 /* USER CODE END 0 */
 
 int main(void)
 {
 
   /* USER CODE BEGIN 1 */
-	char str[100];
+	
 	//Time_Set_Protection(1);
   /* USER CODE END 1 */
 
@@ -185,32 +183,25 @@ int main(void)
 
 	//////// DHT22 ////////
 
+
+	HAL_ADCEx_Calibration_Start(&hadc1);
 	OLED_Init();
 	font = &font_medium;
 
-	while (0) {
-		float hum, temp;
-		float pressure;
-		float emf;
-		int t1, t2, dt;
-		
-		
-		
-		t1 = HAL_GetTick();
+	while (1) {
+		float hum, temp, pressure, emf;
 		//DHT22_Conversion(1, &temp, &hum);  // 14 ms
 		//MS5611_Conversion(&pressure); // 27 ms
 		TGS4161_Conversion(&emf); // 20 ms
-		t2 = HAL_GetTick();
-		dt = t2 - t1;
-		
+
 		OLED_Clear();
-		//sprintf(str, "Temp: %.1f~C", temp);
-		//sprintf(str, "%.2f mmHg", pressure);
+		sprintf(str, "%.1f~C", temp);
+		OLED_Print( str, 20, 48 );
+		sprintf(str, "Humid: %.1f%%", hum);
+		OLED_Print( str, 20, 32 );
+		sprintf(str, "%.2f mmHg", pressure);
+		OLED_Print( str, 20, 16 );
 		sprintf(str, "%.3f mV", emf);
-		OLED_Print( str, 20, 40 );
-		//sprintf(str, "Humid: %.1f%%", hum);
-		//OLED_Print( str, 20, 20 );
-		sprintf(str, "Time: %d ms", dt);
 		OLED_Print( str, 20, 0 );
 		HAL_Delay(2000);
 	}
@@ -238,7 +229,7 @@ int main(void)
 
 	///////  WIFI  TIME SYNCRONIZATION  ////////////
 
-
+/*
 	int tick1, tick2;
 	
 	OLED_Init();
@@ -322,7 +313,6 @@ int main(void)
 		OLED_Print( str, 0, 8 );
 
 
-
 		while(1) {
 			HAL_Delay(200);
 			LED( LED_RED, 1 );
@@ -364,7 +354,7 @@ int main(void)
 		
 	}		
 	
-	
+*/	
 	
 
 
@@ -432,57 +422,8 @@ int main(void)
 	*/
 	//Baro_Test();
 	
-	HAL_ADCEx_Calibration_Start(&hadc1);
 	
-	/*
-	HAL_GPIO_WritePin(WIFI_RESET_GPIO_Port, WIFI_RESET_Pin, GPIO_PIN_SET);
 	
-	HAL_Delay(2000);
-	
-	char res_str[] = "AT+RST\r\n";
-	HAL_UART_Transmit( &huart1, (uint8_t*)res_str, strlen(res_str), HAL_MAX_DELAY );
-	HAL_UART_Receive( &huart1, (uint8_t*)str, 20, 500 );
-	
-	//sprintf(str,"AT\n\r");
-	//HAL_Delay(500);
-	str[20] = 0;
-	OLED_Send_String_HD(2,str+8);
-	*/
-	//HAL_Delay(1000);
-	//OLED_Clear();
-	HAL_Delay(200);
-	
-	/*sprintf(str,"-456");
-
-	font = &font_small;
-	OLED_Print(str, 0, 0 );
-
-	font = &font_medium;
-	OLED_Print(str, 10, 10 );
-
-
-	font = &font_large;
-	OLED_Print(str, 0, 30 );*/
-
-
-		OLED_Image(image_cloud,15,5);
-		OLED_Image(image_status,10,48);
-
-	while(1);
-
-	while(1) {
-		font = &font_times;
-		sprintf(str,"+23.5");
-		OLED_Print(str, 10, 10 );
-		HAL_Delay(2000);
-		OLED_Clear();
-		
-		
-		HAL_Delay(2000);
-		OLED_Clear();
-	}
-
-	while(1) {};
 
 
   /* USER CODE END 2 */
@@ -491,49 +432,6 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-
-
-
-
-		/*
-		uint8_t time[3];
-		Time_Get_Time(time);
-		sprintf(str,"   %02d:%02d:%02d",time[0],time[1],time[2]);
-		OLED_Send_String_HD(1,str);
-		*/
-		
-		/*
-		LED( LED_GREEN, 1 );
-		LED( LED_RED, 1 );
-		HAL_Delay(200);
-		LED( LED_GREEN, 0 );
-		LED( LED_RED, 0 );
-		HAL_Delay(200);
-		*/
-		
-		//Baro_Test();
-
-		//static float emf = 0;	
-		//emf = CO2_Sensor();
-
-	
-		while (!ms_flag) {};
-		ms_flag = 0;
-		//HAL_Delay(300);	
-			
-		{
-			static uint16_t cnt = 0;
-			static float emf_prevous = 0;
-			static float emf = 0;	
-			emf_prevous = emf;
-			emf = CO2_Sensor();
-			sprintf(str,"%6d %.4f",cnt,emf);
-			//OLED_Send_String(7,str,1);
-			cnt++;
-		}
-		
-	
-	
 		
   /* USER CODE END WHILE */
 
@@ -559,6 +457,7 @@ void SystemClock_Config(void)
   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
   RCC_OscInitStruct.HSEPredivValue = RCC_HSE_PREDIV_DIV1;
   RCC_OscInitStruct.LSEState = RCC_LSE_ON;
+  RCC_OscInitStruct.HSIState = RCC_HSI_ON;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
   RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL9;
