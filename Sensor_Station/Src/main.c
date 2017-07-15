@@ -52,7 +52,9 @@
 #include "usb_device.h"
 
 /* USER CODE BEGIN Includes */
+#include <stdio.h>
 #include "display/display.h"
+#include "sensors/sensors.h"
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
@@ -75,7 +77,7 @@ UART_HandleTypeDef huart1;
 
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
-
+char str[100];
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -145,26 +147,30 @@ int main(void)
 
   /* USER CODE BEGIN 2 */
   Display_Init();
+  font = &font_medium;
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+
+  float temp, hum, emf, press;
+
   while (1)
   {
-  	font = &font_medium;
-	  Display_Text("Med font", 0, 14);
-  	font = &font_small;
-  	Display_Text("Small font", 0, 0);
-  	font = &font_large;
-  	Display_Text("Lar ge", 0, 30);
-	  font = &font_times;
-	  Display_Text("9 3", 80, 0);
+  	DHT22_Conversion(0, &temp, &hum);
+  	MS5611_Conversion(&press);
+  	TGS4161_Conversion(&emf);
 
-//	  Display_Image(image_status, 0, 0);
-//	  Display_Image(image_cloud, 30, 30);
-
+  	sprintf(str, "Temp: %d %f", 14, (double)temp);
+	  Display_Text(str, 0, 48);
+  	sprintf(str, "Humid: %'.1f %%", hum);
+	  Display_Text(str, 0, 32);
+	  sprintf(str, "Press: %'.2f mm", press);
+	  Display_Text(str, 0, 16);
+	  sprintf(str, "Emf: %'.3f V", emf);
+	  Display_Text(str, 0, 0);
 	  Display_Refresh();
-	  HAL_Delay(1000);
+	  HAL_Delay(2500);
 
 
 
