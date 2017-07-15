@@ -1,0 +1,6 @@
+eclipse.preferences.version=1
+environment/project/fr.ac6.managedbuild.config.gnu.cross.exe.debug.871834383/PATH/delimiter=\:
+environment/project/fr.ac6.managedbuild.config.gnu.cross.exe.debug.871834383/PATH/operation=replace
+environment/project/fr.ac6.managedbuild.config.gnu.cross.exe.debug.871834383/PATH/value=/usr/local/Cellar/gcc-arm-none-eabi/20160928/bin\:/bin\:/usr/bin\:/usr/sbin\:/sbin
+environment/project/fr.ac6.managedbuild.config.gnu.cross.exe.debug.871834383/append=true
+environment/project/fr.ac6.managedbuild.config.gnu.cross.exe.debug.871834383/appendContributed=true

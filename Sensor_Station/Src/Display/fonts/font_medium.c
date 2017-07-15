@@ -96,10 +96,6 @@ const uint16_t medium_indexes[] = {
   621, // ''
 };
 
-const char medium_first_char = '!';
-const char medium_last_char = '~';
-const uint8_t medium_height = 3;
-
 const uint8_t medium_bitmaps[] = {
   //  '!' - 0
   0xE8,0x7F,0x00, // ...x.xxxxxxxxxx.
@@ -819,9 +815,9 @@ const uint8_t medium_bitmaps[] = {
 };
 
 const Font_TypeDef font_medium = {
-	medium_first_char,
-	medium_last_char,
-	medium_height,
+	'!',
+	'~',
+	3,
 	medium_indexes,
 	medium_bitmaps,
 };

@@ -17,10 +17,6 @@ const uint16_t times_indexes[] = {
   188, // ':'
 };
 
-const char times_first_char = '+';
-const char times_last_char = '9';
-const uint8_t times_height = 4;
-
 const uint8_t times_bitmaps[] = {
   //  '+' - 0
   0x00,0x40,0x00,0x00, // ..............x...............
@@ -228,9 +224,9 @@ const uint8_t times_bitmaps[] = {
 };
 
 const Font_TypeDef font_times = {
-	times_first_char,
-	times_last_char,
-	times_height,
+	'+',
+	'9',
+	4,
 	times_indexes,
 	times_bitmaps,
 };

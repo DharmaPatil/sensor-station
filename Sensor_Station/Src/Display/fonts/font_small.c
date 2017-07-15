@@ -96,10 +96,6 @@ const uint16_t small_indexes[] = {
   402, // ''
 };
 
-const char small_first_char = '!';
-const char small_last_char = '~';
-const uint8_t small_height = 2;
-
 const uint8_t small_bitmaps[] = {
   //  '!' - 0
   0xFA,0x00, // .x.xxxxx.
@@ -600,9 +596,9 @@ const uint8_t small_bitmaps[] = {
 };
 
 const Font_TypeDef font_small = {
-	small_first_char,
-	small_last_char,
-	small_height,
+	'!',
+	'~',
+	2,
 	small_indexes,
 	small_bitmaps,
 };

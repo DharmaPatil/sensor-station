@@ -3,6 +3,11 @@
   * @file           : usbd_storage_if.c
   * @brief          : Memory management layer
   ******************************************************************************
+  * This notice applies to any and all portions of this file
+  * that are not between comment pairs USER CODE BEGIN and
+  * USER CODE END. Other portions of this file, whether 
+  * inserted by the user or by software development tools
+  * are owned by their respective copyright owners.
   *
   * Copyright (c) 2017 STMicroelectronics International N.V. 
   * All rights reserved.
@@ -44,7 +49,6 @@
 /* Includes ------------------------------------------------------------------*/
 #include "usbd_storage_if.h"
 /* USER CODE BEGIN INCLUDE */
-#include "sd_card.h"
 /* USER CODE END INCLUDE */
 
 /** @addtogroup STM32_USB_OTG_DEVICE_LIBRARY
@@ -124,9 +128,6 @@ const int8_t  STORAGE_Inquirydata_FS[] = {/* 36 */
   */ 
   extern USBD_HandleTypeDef hUsbDeviceFS;
 /* USER CODE BEGIN EXPORTED_VARIABLES */
-
-extern int fputc(int c, FILE *f);
-
 /* USER CODE END EXPORTED_VARIABLES */
 
 /**
@@ -182,9 +183,6 @@ USBD_StorageTypeDef USBD_Storage_Interface_fops_FS =
 int8_t STORAGE_Init_FS (uint8_t lun)
 {
   /* USER CODE BEGIN 2 */ 
-	printf("1234\r\n");
-	//SD_Init();
-	//printf("5678\r\n");
   return (USBD_OK);
   /* USER CODE END 2 */ 
 }
@@ -199,9 +197,8 @@ int8_t STORAGE_Init_FS (uint8_t lun)
 int8_t STORAGE_GetCapacity_FS (uint8_t lun, uint32_t *block_num, uint16_t *block_size)
 {
   /* USER CODE BEGIN 3 */   
-	extern uint32_t card_capacity;
-  *block_num  = card_capacity; // STORAGE_BLK_NBR;  0x8000;//
-  *block_size = SD_SECTOR_SIZE;// STORAGE_BLK_SIZ;
+  *block_num  = STORAGE_BLK_NBR;
+  *block_size = STORAGE_BLK_SIZ;
   return (USBD_OK);
   /* USER CODE END 3 */ 
 }
@@ -247,12 +244,6 @@ int8_t STORAGE_Read_FS (uint8_t lun,
                         uint16_t blk_len)
 {
   /* USER CODE BEGIN 6 */ 
-	
-	for ( int i = 0; i < blk_len; i++ ) {
-		SD_Read_Sector( blk_addr+i, buf + i*512 );
-		//printf(".");
-	}	
-	
   return (USBD_OK);
   /* USER CODE END 6 */ 
 }
@@ -270,14 +261,6 @@ int8_t STORAGE_Write_FS (uint8_t lun,
                          uint16_t blk_len)
 {
   /* USER CODE BEGIN 7 */ 
-	
-	
-	for ( int i = 0; i < blk_len; i++ ) {
-		SD_Write_Sector( blk_addr+i, (uint8_t*)buf + i*512 );
-		//printf(",");
-	}
-	
-	
   return (USBD_OK);
   /* USER CODE END 7 */ 
 }

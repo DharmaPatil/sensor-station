@@ -17,10 +17,6 @@ const uint16_t ultra_indexes[] = {
   357, // ':'
 };
 
-const char ultra_first_char = '+';
-const char ultra_last_char = '9';
-const uint8_t ultra_height = 7;
-
 const uint8_t ultra_bitmaps[] = {
   //  '+' - 0
   0x00,0x00,0x80,0x3F,0x00,0x00,0x00, // .......................xxxxxxx....................
@@ -397,9 +393,9 @@ const uint8_t ultra_bitmaps[] = {
 };
 
 const Font_TypeDef font_ultra = {
-	ultra_first_char,
-	ultra_last_char,
-	ultra_height,
+	'+',
+	'9',
+	7,
 	ultra_indexes,
 	ultra_bitmaps,
 };

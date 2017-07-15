@@ -3,6 +3,11 @@
   * @file    user_diskio.c
   * @brief   This file includes a diskio driver skeleton to be completed by the user.
   ******************************************************************************
+  * This notice applies to any and all portions of this file
+  * that are not between comment pairs USER CODE BEGIN and
+  * USER CODE END. Other portions of this file, whether 
+  * inserted by the user or by software development tools
+  * are owned by their respective copyright owners.
   *
   * Copyright (c) 2017 STMicroelectronics International N.V. 
   * All rights reserved.
@@ -59,9 +64,6 @@
 /* Includes ------------------------------------------------------------------*/
 #include <string.h>
 #include "ff_gen_drv.h"
-#include "sd_card.h"
-
-extern int fputc(int c, FILE *f);
 
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
@@ -109,8 +111,7 @@ DSTATUS USER_initialize (
 )
 {
   /* USER CODE BEGIN INIT */
-		//Stat = SD_Init();
-		Stat = 0;
+    Stat = STA_NOINIT;
     return Stat;
   /* USER CODE END INIT */
 }
@@ -125,7 +126,7 @@ DSTATUS USER_status (
 )
 {
   /* USER CODE BEGIN STATUS */
-    Stat = 0;
+    Stat = STA_NOINIT;
     return Stat;
   /* USER CODE END STATUS */
 }
@@ -146,10 +147,6 @@ DRESULT USER_read (
 )
 {
   /* USER CODE BEGIN READ */
-		for ( int i = 0; i < count; i++ ) {
-			SD_Read_Sector( sector+i, buff + i*512 );
-			printf(".");
-		}	
     return RES_OK;
   /* USER CODE END READ */
 }
@@ -172,10 +169,6 @@ DRESULT USER_write (
 { 
   /* USER CODE BEGIN WRITE */
   /* USER CODE HERE */
-		for ( int i = 0; i < count; i++ ) {
-			SD_Write_Sector( sector+i, (uint8_t*)buff + i*512 );
-			printf(".");
-		}
     return RES_OK;
   /* USER CODE END WRITE */
 }
@@ -196,37 +189,7 @@ DRESULT USER_ioctl (
 )
 {
   /* USER CODE BEGIN IOCTL */
-	
-	
-	extern uint32_t card_capacity;
-	
     DRESULT res = RES_ERROR;
-		res = RES_OK;
-	
-	
-  switch (cmd)
-  {
-    case CTRL_SYNC:
-      res = RES_OK;
-      break;
- 
-    case GET_SECTOR_COUNT:
-      //SD_GetCardInfo(&CardInfo);
-      *(DWORD*)buff = card_capacity;
-      res = RES_OK;
-      break;
- 
-    case GET_SECTOR_SIZE:
-      *(DWORD*)buff = SD_SECTOR_SIZE;
-      res= RES_OK;
-      break;
- 
-    case GET_BLOCK_SIZE:
-      *(DWORD*)buff = SD_SECTOR_SIZE;
-      res= RES_OK;
-      break;
-  }
-	
     return res;
   /* USER CODE END IOCTL */
 }

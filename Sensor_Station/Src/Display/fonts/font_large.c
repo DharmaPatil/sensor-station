@@ -96,10 +96,6 @@ const uint16_t large_indexes[] = {
   1392, // ''
 };
 
-const char large_first_char = '!';
-const char large_last_char = '~';
-const uint8_t large_height = 4;
-
 const uint8_t large_bitmaps[] = {
   //  '!' - 0
   0xC0,0x03,0xFC,0x1F, // ......xxxx........xxxxxxxxxxx..
@@ -1589,10 +1585,10 @@ const uint8_t large_bitmaps[] = {
   0x00,0x00,0x0F,0x00, // ................xxxx...........
 };
 
-const Font_TypeDef font_large = {
-	large_first_char,
-	large_last_char,
-	large_height,
+Font_TypeDef font_large = {
+	'!',
+	'~',
+	4,
 	large_indexes,
 	large_bitmaps,
 };

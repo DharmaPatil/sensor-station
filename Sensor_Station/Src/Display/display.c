@@ -1,51 +1,53 @@
-#include "OLED.h"
+#include "display.h"
 
 uint8_t screen_buffer[1024];
 const Font_TypeDef* font;
 
-#include "font_small.c"
-#include "font_medium.c"
-#include "font_large.c"
-#include "font_ultra.c"
-#include "font_times.c"
-#include "image_status.c"
-#include "image_cloud.c"
+#include "fonts/font_small.c"
+#include "fonts/font_medium.c"
+#include "fonts/font_large.c"
+#include "fonts/font_ultra.c"
+#include "fonts/font_times.c"
+#include "images/image_status.c"
+#include "images/image_cloud.c"
 
-void Software_I2C_Init(void);
-void OLED_Send_Buffer(uint8_t *Image);
-void OLED_Send_Cmd(uint8_t command);	
-void OLED_Send_Byte(uint8_t val);
+static void Software_I2C_Init(void);
+static void Display_Send_Cmd(uint8_t command);
+static void Display_Send_Byte(uint8_t val);
 
 
-void OLED_Print( char *str, uint8_t x, uint8_t y ) {
+void Display_Text(char *str, uint8_t x, uint8_t y) {
 	char *c = str;
-	while ( *c != 0 ) {
-		if (( *c >= font->first_char ) && ( *c <= font->last_char )) {
+	while (*c != 0) {
+		if ((*c >= font->first_char) && (*c <= font->last_char)) {
 			uint16_t char_start_index = font->indexes[*c - font->first_char];
 			uint16_t char_stop_index = font->indexes[*c - font->first_char+1];
 			for (int col = char_start_index; col < char_stop_index; col++) { 
 				uint64_t column_src = 0;
 				uint64_t column_txt = 0;		
-				for ( int j = 0; j < font->height; j++ )
+				for (int j = 0; j < font->height; j++)
 					*(((uint8_t*)&column_txt)+j) = (font->bitmaps[col*font->height+j]) & 0xFF;   			
 				column_txt <<= y;	
-				memcpy( &column_src, &screen_buffer[x*8], 8 );	
+				memcpy(&column_src, &screen_buffer[x*8], 8);
 				column_src |= column_txt;
-				memcpy( &screen_buffer[x*8], &column_src, 8 ); 				
+				memcpy(&screen_buffer[x*8], &column_src, 8);
 				x++;
-				if ( x >= 128 ) break;
+				if (x >= 128) break;
 			}	
 		}
+		if (*c == ' ') {
+			x+=2*font->height;
+		} else {
+			x++;
+		}
 		x++;
-		x++;
-		if ( x >= 128 ) break;
+		if (x >= 128) break;
 		c++;
 	}
-	OLED_Send_Buffer(screen_buffer);
 }
 
 
-void OLED_Image( const uint8_t *image, uint8_t x, uint8_t y ) {
+void Display_Image(const uint8_t *image, uint8_t x, uint8_t y) {
 	uint8_t i;
 	uint8_t img_height, img_width;
 	img_width = image[0];
@@ -56,61 +58,56 @@ void OLED_Image( const uint8_t *image, uint8_t x, uint8_t y ) {
 		for ( int j = 0; j < img_height; j++ )
 			*(((uint8_t*)&column_img)+j) = ( image[i*img_height+j+2]) & 0xFF;   			
 		column_img <<= y;	
-		memcpy( &column_src, &screen_buffer[x*8], 8 );	
+		memcpy(&column_src, &screen_buffer[x*8], 8);
 		column_src |= column_img;
-		memcpy( &screen_buffer[x*8], &column_src, 8 ); 				
+		memcpy(&screen_buffer[x*8], &column_src, 8);
 		x++;
-		if ( x >= 128 ) break;		
+		if (x >= 128) break;
 	}
-	OLED_Send_Buffer(screen_buffer);	
 }
 
 
-void OLED_Clear() {
-	memset( screen_buffer, 0, 1024 );
-	OLED_Send_Buffer(screen_buffer);
-}
-
-void OLED_Clear_Buffer() {
-	memset( screen_buffer, 0, 1024 );
+void Display_Clear(void) {
+	memset(screen_buffer, 0, 1024);
 }
 
 
-void OLED_Send_Buffer(uint8_t *buf) {
+void Display_Refresh(void) {
   uint16_t i;	
-  OLED_Send_Cmd(0xA6);  // Set Normal Display
-  OLED_Send_Cmd(0xB0);  // Set page address to 0
-  OLED_Send_Cmd(0x40);  // Display start line register to 0
-  OLED_Send_Cmd(0x00);  // Set low col address to 0
-  OLED_Send_Cmd(0x10);  // Set high col address to 0
+  Display_Send_Cmd(0xA6);  // Set Normal Display
+  Display_Send_Cmd(0xB0);  // Set page address to 0
+  Display_Send_Cmd(0x40);  // Display start line register to 0
+  Display_Send_Cmd(0x00);  // Set low col address to 0
+  Display_Send_Cmd(0x10);  // Set high col address to 0
 	for(i = 0; i < 1024; i++) // fill the display's RAM with graphic... 128*64 pixel picture
-		OLED_Send_Byte(buf[i]);
+		Display_Send_Byte(screen_buffer[i]);
 }
 
 
-void OLED_Init(void) {
+void Display_Init(void) {
 	Software_I2C_Init();
 	HAL_Delay(20);
-	OLED_Send_Cmd(0xAE); // Disable
-  OLED_Send_Cmd(0x2E); //deactivate scrolling
-  OLED_Send_Cmd(0xA4); //Set all pixels OFF
-  OLED_Send_Cmd(0x20); //Set Memory Addressing Mode
-  OLED_Send_Cmd(0x01); //Set Memory Addressing Mode to Page addressing mode(RESET)
-	OLED_Send_Cmd(0x8D); // Charge pump settings
-	OLED_Send_Cmd(0x14); // Enable charge pump 
-	OLED_Send_Cmd(0x1B); // Enable charge pump 	
-	if (OLED_FLIP_X)
-		OLED_Send_Cmd(0xA1); // Right to Left
+	Display_Send_Cmd(0xAE); // Disable
+  Display_Send_Cmd(0x2E); //deactivate scrolling
+  Display_Send_Cmd(0xA4); //Set all pixels OFF
+  Display_Send_Cmd(0x20); //Set Memory Addressing Mode
+  Display_Send_Cmd(0x01); //Set Memory Addressing Mode to Page addressing mode(RESET)
+	Display_Send_Cmd(0x8D); // Charge pump settings
+	Display_Send_Cmd(0x14); // Enable charge pump
+	Display_Send_Cmd(0x1B); // Enable charge pump
+	if (DISPLAY_FLIP_X)
+		Display_Send_Cmd(0xA1); // Right to Left
 	else
-		OLED_Send_Cmd(0xA0); // Left to right
-	if (OLED_FLIP_Y)
-		OLED_Send_Cmd(0xC0); // Upside down 
+		Display_Send_Cmd(0xA0); // Left to right
+	if (DISPLAY_FLIP_Y)
+		Display_Send_Cmd(0xC0); // Upside down
 	else
-		OLED_Send_Cmd(0xC8); // Upside up	
-	OLED_Send_Cmd(0x81); // Brightness
-	OLED_Send_Cmd(OLED_BRIGHTNESS);
-	OLED_Send_Buffer(screen_buffer);
-	OLED_Send_Cmd(0xAF); // Enable
+		Display_Send_Cmd(0xC8); // Upside up
+	Display_Send_Cmd(0x81); // Brightness
+	Display_Send_Cmd(DISPLAY_BRIGHTNESS);
+	Display_Clear();
+	Display_Refresh();
+	Display_Send_Cmd(0xAF); // Enable
 }
 
 
@@ -147,7 +144,7 @@ void Software_I2C_Stop(void) {
 }
 
 
-void Software_I2C_Write(uint8_t data ) {	
+void Software_I2C_Write(uint8_t data) {
 	uint8_t i;
 	
 	for (i = 0; i < 8; i++) {
@@ -172,7 +169,7 @@ void Software_I2C_Write(uint8_t data ) {
 }
 
 
-void OLED_Send_Cmd(uint8_t command) {
+void Display_Send_Cmd(uint8_t command) {
   Software_I2C_Start();
 	Software_I2C_Write(0x78);
   Software_I2C_Write(0x80);
@@ -181,12 +178,11 @@ void OLED_Send_Cmd(uint8_t command) {
 }
 
 
-void OLED_Send_Byte(uint8_t val) {
+void Display_Send_Byte(uint8_t val) {
   Software_I2C_Start();
 	Software_I2C_Write(0x78); 
   Software_I2C_Write(0x40);
   Software_I2C_Write(val);
   Software_I2C_Stop();	
 }
-
 
