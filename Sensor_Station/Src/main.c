@@ -55,6 +55,8 @@
 #include <stdio.h>
 #include "display/display.h"
 #include "sensors/sensors.h"
+#include "sd_card/sd_card.h"
+#include "display/console.h"
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
@@ -78,6 +80,8 @@ UART_HandleTypeDef huart1;
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
 char str[100];
+FATFS fs;
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -101,9 +105,34 @@ void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
 /* USER CODE BEGIN PFP */
 /* Private function prototypes -----------------------------------------------*/
 
+#define PUTCHAR_PROTOTYPE int __io_putchar(int ch)
+
+
+int __io_putchar(int ch) {
+	Display_Text("3", 0, 0);
+	while(1){};
+	return ch;
+}
+
+
+int fputc(int ch, FILE *f) {
+	Display_Text("3", 0, 0);
+	while(1){};
+	//while(1){};
+	return ch;
+}
+
+
+
 /* USER CODE END PFP */
 
 /* USER CODE BEGIN 0 */
+
+
+//#define PUTCHAR_PROTOTYPE  int put(int ch)
+//#define PUTCHAR_PROTOTYPE int __io_putchar(int ch, FILE *f)
+
+
 
 /* USER CODE END 0 */
 
@@ -146,29 +175,134 @@ int main(void)
   MX_USB_DEVICE_Init();
 
   /* USER CODE BEGIN 2 */
+
   Display_Init();
+
+  Display_Clear();
+	Display_Refresh();
+	HAL_Delay(100);
+
+
+  //  //fprintf(str, "123");
+//
   font = &font_medium;
+
+  printf("123");
+
+	//Display_Text("3", 0, 0);
+
+  //sprintf(str, "fre");
+  //Display_Text(str, 25, 25);
+
+	Display_Refresh();
+//
+
+	while(1) {};
+
+
+//  HAL_Delay(400);
+//  Display_Init();
+  //font = &font_medium;
+//  SD_Init();
+//
+//  Display_Clear();
+//  sprintf(str, "Mount: %d\r\n", f_mount(&fs, USER_Path, 1) );
+  //Display_Text(str, 0, 48);
+  //Display_Refresh();
+//
+//	FIL testFile;
+//  uint8_t testBuffer[16] = "Successful!!!\r\n";
+//  UINT testBytes;
+//	FILINFO fno;
+//
+//	uint8_t filename[] = "log_0.txt";
+//
+//	for ( int i = 0; i < 10; i++ ) {
+//		filename[4] = '0' + i;
+//		uint8_t fr = f_stat((const char*)filename, &fno);
+//		//printf("Status(%d): %d\r\n", i, fr );
+//		if ( fr == FR_OK )
+//			continue;
+//
+//		sprintf(str, "Open: %d\r\n", f_open(&testFile, (const char*)filename, FA_WRITE | FA_CREATE_NEW ) );
+//	  Display_Text(str, 0, 32);
+//		sprintf(str, "Write: %d\r\n", f_write(&testFile, testBuffer, 16, &testBytes) );
+//	  Display_Text(str, 0, 16);
+//		sprintf(str, "Close: %d\r\n", f_close(&testFile) );
+//	  Display_Text(str, 0, 0);
+//		break;
+//	}
+//
+//
+//	Display_Refresh();
+//	sprintf(str, "Mount: %d\r\n", f_mount(&fs, USER_Path, 0) );
+//  while(1);
+
+
+
+
+
+
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 
-  float temp, hum, emf, press;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//	HAL_GPIO_WritePin(USB_ENABLE_GPIO_Port, USB_ENABLE_Pin, GPIO_PIN_SET);
+
+  //while(1) {};
+
+
+  int temp[2], hum[2], emf, press;
+  int cnt = 0;
+
 
   while (1)
   {
-  	DHT22_Conversion(0, &temp, &hum);
+
+  	DHT22_Conversion(0, &temp[0], &hum[0]);
+  	DHT22_Conversion(1, &temp[1], &hum[1]);
   	MS5611_Conversion(&press);
   	TGS4161_Conversion(&emf);
 
-  	sprintf(str, "Temp: %d %f", 14, (double)temp);
+  	Display_Clear();
+  	sprintf(str, "%d.%d~C", temp[0]/10, temp[0]%10);
 	  Display_Text(str, 0, 48);
-  	sprintf(str, "Humid: %'.1f %%", hum);
+  	sprintf(str, "%d%%", hum[0]/10);
 	  Display_Text(str, 0, 32);
-	  sprintf(str, "Press: %'.2f mm", press);
+
+  	sprintf(str, "%d.%d~C", temp[1]/10, temp[1]%10);
+	  Display_Text(str, 64, 48);
+  	sprintf(str, "%d%%", hum[1]/10);
+	  Display_Text(str, 64, 32);
+
+	  sprintf(str, "%d Pa", press);
 	  Display_Text(str, 0, 16);
-	  sprintf(str, "Emf: %'.3f V", emf);
-	  Display_Text(str, 0, 0);
+	  //extern int card_capacity;
+	  //sprintf(str, "SD: %d", card_capacity);
+	  //Display_Text(str, 0, 0);
 	  Display_Refresh();
 	  HAL_Delay(2500);
 

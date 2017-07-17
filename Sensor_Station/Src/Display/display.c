@@ -1,15 +1,15 @@
 #include "display.h"
 
-uint8_t screen_buffer[1024];
+static uint8_t screen_buffer[1024];
 const Font_TypeDef* font;
 
 #include "fonts/font_small.c"
 #include "fonts/font_medium.c"
-#include "fonts/font_large.c"
-#include "fonts/font_ultra.c"
-#include "fonts/font_times.c"
-#include "images/image_status.c"
-#include "images/image_cloud.c"
+//#include "fonts/font_large.c"
+//#include "fonts/font_ultra.c"
+//#include "fonts/font_times.c"
+//#include "images/image_status.c"
+//#include "images/image_cloud.c"
 
 static void Software_I2C_Init(void);
 static void Display_Send_Cmd(uint8_t command);

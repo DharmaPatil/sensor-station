@@ -9,7 +9,7 @@ extern I2C_HandleTypeDef hi2c2;
 #define BARO_ADDRESS 0xEF  // 0xEE // 111011Cx
 
 
-char MS5611_Conversion(float *pressure) {
+char MS5611_Conversion(int *pressure) {
 
 	uint8_t data[5] = { 0, 0, 0, 0, 0 };	
 	signed long long int c[7];
@@ -74,9 +74,9 @@ char MS5611_Conversion(float *pressure) {
 	
 	p = ( d[1]*SENS/(1<<21)-OFF ) / (1<<15);
 
-	double p_mm = 750.0617 * p / 100000; 
-
-	*pressure = (float)p_mm;
+	//double p_mm = 750.0617 * p / 100000;
+	//*pressure = (float)p_mm;
+	*pressure = p;
 	
 	return 0;
 }
@@ -84,7 +84,7 @@ char MS5611_Conversion(float *pressure) {
 
 
 
-char TGS4161_Conversion( float *emf ) {
+char TGS4161_Conversion(int *emf ) {
 	int sum = 0;
 	for (int i = 0; i < 10; i++) {
 		HAL_ADC_Start(&hadc1);
@@ -92,14 +92,14 @@ char TGS4161_Conversion( float *emf ) {
 		sum += HAL_ADC_GetValue(&hadc1);
 		HAL_Delay(2);
 	}
-	*emf = ((float)sum)/10 * 3.3f/4096;
+	*emf = sum*3300/4096/10;
 	return 0;
 }
 
 
 
 
-char DHT22_Conversion(uint8_t num, float *temperature, float *humidity) {
+char DHT22_Conversion(uint8_t num, int *temperature, int *humidity) {
 	GPIO_InitTypeDef GPIO_InitStruct_1;
 	GPIO_InitTypeDef GPIO_InitStruct_2;
 	uint16_t tim_data[50];
@@ -161,8 +161,10 @@ char DHT22_Conversion(uint8_t num, float *temperature, float *humidity) {
 	temp16 = ((result[2]&0x7F)<<8) + result[3];
 	hum16 = (result[0]<<8) + result[1];
 
-	*temperature = ((float)temp16)/10;
-	*humidity = ((float)hum16)/10;
+	//*temperature = ((float)temp16)/10;
+	//*humidity = ((float)hum16)/10;
+	*temperature = temp16;
+	*humidity = hum16;
 	valid = ((((result[0]+result[1]+result[2]+result[3])&0xFF) == result[4] ) && (dht22_dma->Instance->CNDTR == 0) );
 	
 	return valid;

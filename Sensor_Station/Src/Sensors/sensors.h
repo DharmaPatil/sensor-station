@@ -3,8 +3,8 @@
 
 #include "stm32f1xx_hal.h"
 
-char MS5611_Conversion(float *pressure);
-char TGS4161_Conversion(float *emf);
-char DHT22_Conversion(uint8_t num, float *temperature, float *humidity);
+char MS5611_Conversion(int *pressure);
+char TGS4161_Conversion(int *emf);
+char DHT22_Conversion(uint8_t num, int *temperature, int *humidity);
 
 #endif
