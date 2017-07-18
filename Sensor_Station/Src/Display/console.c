@@ -1,14 +1,18 @@
 #include "console.h"
 
-#define CONSOLE_LINES 8
-#define CONSOLE_CHARS 40
-#define CONSOLE_FONT  font_small
+#define CONSOLE_LINES 4
+#define CONSOLE_CHARS 32
+#define CONSOLE_FONT  font_medium
 
 static char console_array[CONSOLE_LINES][CONSOLE_CHARS+1] = {0,};
 static uint8_t c_line = 0;
 static uint8_t c_char = 0;
 static uint8_t scroll = 0;
 
+int __io_putchar(int ch) {
+	Console_Print_Char(ch);
+	return ch;
+}
 
 void Console_Print_Char(char c) {
 	console_array[c_line][c_char] = c;
@@ -21,6 +25,7 @@ void Console_Print_Char(char c) {
 		console_array[c_line][c_char] = 0;
 		c_line++;
 		c_char = 0;
+		Console_Output();
 	}
 	if (c_line >= CONSOLE_LINES) {
 		c_line = 0;
@@ -32,11 +37,16 @@ void Console_Print_Char(char c) {
 
 void Console_Output(void) {
 	font = &CONSOLE_FONT;
-	for (int i = 0; i < 1; i++) {
+	uint8_t i_line;
+	uint8_t y_display;
+	Display_Clear();
+	for (int i = 0; i < CONSOLE_LINES; i++) {
+		i_line = (i+c_line*scroll) % CONSOLE_LINES;
+		y_display = 64 - 64/CONSOLE_LINES*(i+1);
 		console_array[i][CONSOLE_CHARS] = 0;
-		Display_Text(&console_array[i][0], 0, 0);
-		Display_Refresh();
+		Display_Text(&console_array[i_line][0], 0, y_display );
 	}
+	Display_Refresh();
 }
 
 

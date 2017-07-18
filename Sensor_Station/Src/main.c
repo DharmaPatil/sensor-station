@@ -105,34 +105,9 @@ void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
 /* USER CODE BEGIN PFP */
 /* Private function prototypes -----------------------------------------------*/
 
-#define PUTCHAR_PROTOTYPE int __io_putchar(int ch)
-
-
-int __io_putchar(int ch) {
-	Display_Text("3", 0, 0);
-	while(1){};
-	return ch;
-}
-
-
-int fputc(int ch, FILE *f) {
-	Display_Text("3", 0, 0);
-	while(1){};
-	//while(1){};
-	return ch;
-}
-
-
-
 /* USER CODE END PFP */
 
 /* USER CODE BEGIN 0 */
-
-
-//#define PUTCHAR_PROTOTYPE  int put(int ch)
-//#define PUTCHAR_PROTOTYPE int __io_putchar(int ch, FILE *f)
-
-
 
 /* USER CODE END 0 */
 
@@ -178,24 +153,10 @@ int main(void)
 
   Display_Init();
 
-  Display_Clear();
-	Display_Refresh();
-	HAL_Delay(100);
-
-
-  //  //fprintf(str, "123");
-//
-  font = &font_medium;
-
-  printf("123");
-
-	//Display_Text("3", 0, 0);
-
-  //sprintf(str, "fre");
-  //Display_Text(str, 25, 25);
-
-	Display_Refresh();
-//
+  for (int i = 0; i < 8; i++) {
+  	printf("%d%d%d\n",i,i,i);
+  	HAL_Delay(500);
+  }
 
 	while(1) {};
 
