@@ -73,7 +73,14 @@ void MX_FATFS_Init(void)
 DWORD get_fattime(void)
 {
   /* USER CODE BEGIN get_fattime */
-  return 0;
+	uint32_t time = 0;
+	time |= (2025 - 1980)<<25; // yaer
+	time |= 7 << 21; // month
+	time |= 31 << 16; // day
+	time |= 12 << 11; // hours
+	time |= 34 << 5; // minutes
+	time |= 56 / 2; // seconds / 2
+  return time;
   /* USER CODE END get_fattime */  
 }
 
