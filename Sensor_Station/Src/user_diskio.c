@@ -150,9 +150,13 @@ DRESULT USER_read (
 )
 {
   /* USER CODE BEGIN READ */
+		//printf("pdrv: %d \r\n*b: %X \r\n", (int)pdrv, (int)buff);
+		//printf("sec: %d, cnt: %d \r\n", (int)sector, (int)count);
+		//Console_Output();
 		for ( int i = 0; i < count; i++ ) {
-			SD_Read_Sector( sector+i, buff + i*512 );
+			SD_Read_Sector( sector+i, buff + i*SD_SECTOR_SIZE );
 		}
+		//printf("OK\r\n");
     return RES_OK;
   /* USER CODE END READ */
 }
@@ -176,7 +180,7 @@ DRESULT USER_write (
   /* USER CODE BEGIN WRITE */
   /* USER CODE HERE */
 		for ( int i = 0; i < count; i++ ) {
-			SD_Write_Sector( sector+i, (uint8_t*)buff + i*512 );
+			SD_Write_Sector( sector+i, (uint8_t*)buff + i*SD_SECTOR_SIZE );
 		}
     return RES_OK;
   /* USER CODE END WRITE */

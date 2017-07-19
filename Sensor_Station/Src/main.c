@@ -81,7 +81,7 @@ UART_HandleTypeDef huart1;
 /* Private variables ---------------------------------------------------------*/
 char str[100];
 FATFS fs;
-
+FIL file;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -153,25 +153,57 @@ int main(void)
 
   Display_Init();
 
-  for (int i = 0; i < 8; i++) {
-  	printf("%d%d%d\n",i,i,i);
-  	HAL_Delay(500);
+//  font = &font_medium;
+
+  printf("Loading...\r\n");
+  Console_Output();
+  HAL_Delay(1000);
+
+  SD_Init();
+  //Console_Output();
+
+  HAL_Delay(1000);
+
+
+
+
+
+  printf("Mount: %d \r\n", f_mount(&fs, USER_Path, 1));
+
+  //DIR dir;
+
+
+  printf("Open: %d \r\n", f_open(&file, "input.txt", FA_READ));
+  while(!f_eof(&file)) {
+  	f_gets(str, sizeof(str), &file);
+  	printf("<%s>\r\n", str);
   }
+  f_close(&file);
 
-	while(1) {};
+  Console_Output();
+  HAL_Delay(1000);
+  f_unlink("input.txt");
+
+  printf("Open: %d \r\n", f_open(&file, "output.txt", FA_WRITE|FA_CREATE_ALWAYS) ); // check if existing
+  printf("Print: %d \r\n", f_printf(&file, "Text_FILE_Credfdfhdfhate\r\n") );
+  printf("Close: %d \r\n", f_close(&file) );
+
+  printf("Mount: %d \r\n", f_mount(&fs, USER_Path, 0));
 
 
-//  HAL_Delay(400);
-//  Display_Init();
-  //font = &font_medium;
-//  SD_Init();
+  //Console_Output();
+
+
+  //while(1) {};
+
+  HAL_GPIO_WritePin(USB_ENABLE_GPIO_Port, USB_ENABLE_Pin, GPIO_PIN_SET);
+
+
+
+  //printf("Mount: %d\n", f_mount(&fs, USER_Path, 1) );
+
+
 //
-//  Display_Clear();
-//  sprintf(str, "Mount: %d\r\n", f_mount(&fs, USER_Path, 1) );
-  //Display_Text(str, 0, 48);
-  //Display_Refresh();
-//
-//	FIL testFile;
 //  uint8_t testBuffer[16] = "Successful!!!\r\n";
 //  UINT testBytes;
 //	FILINFO fno;
@@ -197,7 +229,11 @@ int main(void)
 //
 //	Display_Refresh();
 //	sprintf(str, "Mount: %d\r\n", f_mount(&fs, USER_Path, 0) );
-//  while(1);
+  while(1) {
+  	if (!HAL_GPIO_ReadPin(BUTTON_1_GPIO_Port, BUTTON_1_Pin)) {
+  		NVIC_SystemReset();
+  	}
+  }
 
 
 
