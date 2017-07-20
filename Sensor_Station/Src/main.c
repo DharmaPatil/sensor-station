@@ -57,6 +57,7 @@
 #include "sensors/sensors.h"
 #include "sd_card/sd_card.h"
 #include "display/console.h"
+#include "settings/settings.h"
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
@@ -79,9 +80,8 @@ UART_HandleTypeDef huart1;
 
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
-char str[100];
+//char str[100];
 FATFS fs;
-FIL file;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -165,36 +165,10 @@ int main(void)
   HAL_Delay(1000);
 
 
-
-
-
   printf("Mount: %d \r\n", f_mount(&fs, USER_Path, 1));
+  Settings_Update();
+  printf("Unount: %d \r\n", f_mount(&fs, USER_Path, 0));
 
-  //DIR dir;
-
-
-  printf("Open: %d \r\n", f_open(&file, "input.txt", FA_READ));
-  while(!f_eof(&file)) {
-  	f_gets(str, sizeof(str), &file);
-  	printf("<%s>\r\n", str);
-  }
-  f_close(&file);
-
-  Console_Output();
-  HAL_Delay(1000);
-  f_unlink("input.txt");
-
-  printf("Open: %d \r\n", f_open(&file, "output.txt", FA_WRITE|FA_CREATE_ALWAYS) ); // check if existing
-  printf("Print: %d \r\n", f_printf(&file, "Text_FILE_Credfdfhdfhate\r\n") );
-  printf("Close: %d \r\n", f_close(&file) );
-
-  printf("Mount: %d \r\n", f_mount(&fs, USER_Path, 0));
-
-
-  //Console_Output();
-
-
-  //while(1) {};
 
   HAL_GPIO_WritePin(USB_ENABLE_GPIO_Port, USB_ENABLE_Pin, GPIO_PIN_SET);
 
@@ -284,23 +258,6 @@ int main(void)
   	MS5611_Conversion(&press);
   	TGS4161_Conversion(&emf);
 
-  	Display_Clear();
-  	sprintf(str, "%d.%d~C", temp[0]/10, temp[0]%10);
-	  Display_Text(str, 0, 48);
-  	sprintf(str, "%d%%", hum[0]/10);
-	  Display_Text(str, 0, 32);
-
-  	sprintf(str, "%d.%d~C", temp[1]/10, temp[1]%10);
-	  Display_Text(str, 64, 48);
-  	sprintf(str, "%d%%", hum[1]/10);
-	  Display_Text(str, 64, 32);
-
-	  sprintf(str, "%d Pa", press);
-	  Display_Text(str, 0, 16);
-	  //extern int card_capacity;
-	  //sprintf(str, "SD: %d", card_capacity);
-	  //Display_Text(str, 0, 0);
-	  Display_Refresh();
 	  HAL_Delay(2500);
 
 
