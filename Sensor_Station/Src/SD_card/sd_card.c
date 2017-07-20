@@ -2,7 +2,7 @@
 
 extern SPI_HandleTypeDef hspi1;
 
-uint8_t buffer[SD_SECTOR_SIZE];		
+// uint8_t buffer[SD_SECTOR_SIZE];
 
 uint32_t memory_size = 0;
 uint32_t card_capacity = 0;
@@ -24,9 +24,15 @@ uint8_t SD_version;
 #define READ_OCR            58  // read OCR		
 
 
-static uint8_t buffer_00[SD_SECTOR_SIZE];
-static uint8_t buffer_FF[SD_SECTOR_SIZE];
-
+//static uint8_t buffer_00[SD_SECTOR_SIZE];
+//static uint8_t buffer_FF[SD_SECTOR_SIZE];
+//
+//text	   data	    bss	    dec	    hex	filename
+//34368	    384	  19272	  54024	   d308	Sensor_Station.elf
+//text	   data	    bss	    dec	    hex	filename
+//35320	    384	  18248	  53952	   d2c0	Sensor_Station.elf
+//text	   data	    bss	    dec	    hex	filename
+//35320	    384	  17736	  53440	   d0c0	Sensor_Station.elf
 
 uint8_t spi_transfer(uint8_t data_tx) { 
 	uint8_t data_rx;
@@ -34,14 +40,14 @@ uint8_t spi_transfer(uint8_t data_tx) {
   return data_rx;
 }
 
-uint8_t spi_transfer_buffer(uint8_t *data_tx, uint8_t *data_rx) { 
-	if (data_rx == 0)
-		data_rx = buffer_00;
-	if (data_tx == 0)
-		data_tx = buffer_FF;	
-	HAL_SPI_TransmitReceive(&hspi1, data_tx, data_rx, SD_SECTOR_SIZE, 200);
-  return 0;
-}
+//uint8_t spi_transfer_buffer(uint8_t *data_tx, uint8_t *data_rx) {
+//	if (data_rx == 0)
+//		data_rx = buffer_00;
+//	if (data_tx == 0)
+//		data_tx = buffer_FF;
+//	HAL_SPI_TransmitReceive(&hspi1, data_tx, data_rx, SD_SECTOR_SIZE, 200);
+//  return 0;
+//}
 
 
 uint8_t SD_Send_Command(uint8_t cmd, uint32_t arg) {
@@ -199,8 +205,8 @@ uint8_t SD_Init(void) {
 	
 	printf("Done.\n");
 
-	memset(buffer_00, 0x00, SD_SECTOR_SIZE);
-	memset(buffer_FF, 0xFF, SD_SECTOR_SIZE);
+	//memset(buffer_00, 0x00, SD_SECTOR_SIZE);
+	//memset(buffer_FF, 0xFF, SD_SECTOR_SIZE);
 	
 	hspi1.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_8;
 	HAL_SPI_Init(&hspi1);
@@ -219,9 +225,10 @@ uint8_t SD_Read_Sector(uint32_t n,uint8_t *buf) {
 			CS_DISABLE; 
 			return 1;
 		}
-	//for (i = 0; i < SD_SECTOR_SIZE; i++)
-	//	*buf++ = spi_transfer(0xFF);
-	spi_transfer_buffer( 0, buf );		
+
+  for (i = 0; i < SD_SECTOR_SIZE; i++)
+		*buf++ = spi_transfer(0xFF);
+	//spi_transfer_buffer( 0, buf );
 		
   spi_transfer(0xFF); 
   spi_transfer(0xFF); 
@@ -238,9 +245,10 @@ uint8_t SD_Write_Sector(uint32_t n,uint8_t *buf) {
 		return 1;
   CS_ENABLE;
   spi_transfer(0xFE);
-  //for (i = 0; i < SD_SECTOR_SIZE; i++)
-	//	spi_transfer(*buf++);
-	spi_transfer_buffer( buf, 0 );	
+
+  for (i = 0; i < SD_SECTOR_SIZE; i++)
+		spi_transfer(*buf++);
+	//spi_transfer_buffer( buf, 0 );
 	
 	spi_transfer(0xFF); 
   spi_transfer(0xFF);
