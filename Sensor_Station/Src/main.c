@@ -63,6 +63,8 @@
 /* Private variables ---------------------------------------------------------*/
 ADC_HandleTypeDef hadc1;
 
+CRC_HandleTypeDef hcrc;
+
 I2C_HandleTypeDef hi2c2;
 
 RTC_HandleTypeDef hrtc;
@@ -97,6 +99,7 @@ static void MX_TIM4_Init(void);
 static void MX_TIM1_Init(void);
 static void MX_TIM3_Init(void);
 static void MX_TIM2_Init(void);
+static void MX_CRC_Init(void);
 
 void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
                                 
@@ -148,6 +151,7 @@ int main(void)
   MX_TIM2_Init();
   MX_FATFS_Init();
   MX_USB_DEVICE_Init();
+  MX_CRC_Init();
 
   /* USER CODE BEGIN 2 */
 
@@ -162,12 +166,12 @@ int main(void)
   SD_Init();
   //Console_Output();
 
-  HAL_Delay(1000);
+  HAL_Delay(500);
 
 
   printf("Mount: %d \r\n", f_mount(&fs, USER_Path, 1));
   Settings_Update();
-  printf("Unount: %d \r\n", f_mount(&fs, USER_Path, 0));
+  printf("Unmount: %d \r\n", f_mount(&fs, USER_Path, 0));
 
 
   HAL_GPIO_WritePin(USB_ENABLE_GPIO_Port, USB_ENABLE_Pin, GPIO_PIN_SET);
@@ -357,6 +361,18 @@ static void MX_ADC1_Init(void)
   sConfig.Rank = 1;
   sConfig.SamplingTime = ADC_SAMPLETIME_1CYCLE_5;
   if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
+  {
+    _Error_Handler(__FILE__, __LINE__);
+  }
+
+}
+
+/* CRC init function */
+static void MX_CRC_Init(void)
+{
+
+  hcrc.Instance = CRC;
+  if (HAL_CRC_Init(&hcrc) != HAL_OK)
   {
     _Error_Handler(__FILE__, __LINE__);
   }
