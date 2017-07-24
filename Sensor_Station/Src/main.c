@@ -58,6 +58,8 @@
 #include "sd_card/sd_card.h"
 #include "display/console.h"
 #include "settings/settings.h"
+#include "wifi/esp8266.h"
+#include "wifi/wifi.h"
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
@@ -161,7 +163,18 @@ int main(void)
 
   printf("Loading...\r\n");
   Console_Output();
-  HAL_Delay(1000);
+  //HAL_Delay(500);
+
+  //WiFi_Init();
+  WiFi_Connect();
+
+
+
+
+
+  while(1) {};
+
+
 
   SD_Init();
   //Console_Output();
