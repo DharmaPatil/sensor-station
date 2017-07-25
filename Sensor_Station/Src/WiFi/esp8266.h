@@ -6,21 +6,19 @@
 #include "stdio.h"
 #include "../Display/display.h"
 
+extern UART_HandleTypeDef huart1;
+#define H_UART &huart1
+
 extern uint8_t rx_buffer[256];
 extern uint8_t rx_buffer_pointer;
 
-enum wifi_status {
-	WIFI_STATUS_OK,
-	WIFI_STATUS_ERROR,
-	WIFI_STATUS_BUSY,
-	WIFI_STATUS_FAIL,
-	WIFI_STATUS_TIMEOUT
-};
-
 void WiFi_Init(void);
-uint8_t WiFi_Wait_Response( uint16_t timeout );
 void WiFi_Clear_Flags(void);
-void WiFi_Connect(void);
+void WiFi_Get_Flags(void);
+uint8_t WiFi_Wait_Response(uint16_t timeout);
+void WiFi_Send_Command(const char *s);
+void WiFi_Send_Message(uint8_t *buf, uint8_t len);
+
 
 
 #endif
