@@ -22,6 +22,84 @@ void HAL_RTCEx_RTCEventCallback( RTC_HandleTypeDef* hrtc ) {
 }
 
 
+uint8_t Leap_Year(uint32_t year) {
+	if (year % 4) // 1999, 2001...
+		return 0;
+	else {
+		if (!(year % 400)) // 2000
+			return 1;
+		else {
+			if (!(year % 100)) // 2100
+				return 0;
+			else
+				return 1; // 2004, 2008
+		}
+	}
+}
+
+
+void Date_Decode(uint32_t secs, uint32_t *date) {
+	uint32_t day, month, year;
+	uint32_t days;
+	uint32_t days_in_year;
+	uint32_t days_in_month;
+
+	days = secs / 86400;
+	year = 1970;
+	while (1) {
+		if (Leap_Year(year))
+			days_in_year = 366;
+		else
+			days_in_year = 365;
+
+		if (days >= days_in_year)
+			days -= days_in_year;
+		else
+			break;
+		year++;
+	}
+	for (month = 1; month <= 12; month++) {
+		switch (month) {
+		case 2:
+			if (Leap_Year(year))
+				days_in_month = 29;
+			else
+				days_in_month = 28;
+			break;
+		case 4:
+		case 6:
+		case 9:
+		case 11:
+			days_in_month = 30;
+			break;
+		default:
+			days_in_month = 31;
+			break;
+		}
+		if (days >= days_in_month) {
+			days -= days_in_month;
+		}
+		else {
+			break;
+		}
+	}
+	day = days + 1;
+	date[0] = day;
+	date[1] = month;
+	date[2] = year;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

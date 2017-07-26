@@ -22,7 +22,7 @@ uint8_t WiFi_Connect_to_AP(char *ssid, char *password) {
 }
 
 
-uint8_t WiFi_Synchronize_Time(char *server, RTC_TimeTypeDef *s_time) {
+uint8_t WiFi_Synchronize_Time(char *server, RTC_TimeTypeDef *s_time, RTC_DateTypeDef *s_date) {
 	uint8_t buffer_ntp[48];
 	uint8_t res;
 	WiFi_Clear_Flags();
@@ -48,15 +48,28 @@ uint8_t WiFi_Synchronize_Time(char *server, RTC_TimeTypeDef *s_time) {
 	buffer_ntp[15] = 52;
 	WiFi_Send_Message(buffer_ntp, sizeof(buffer_ntp));
 	HAL_Delay(1000);
-	uint32_t highWord = rx_buffer[(uint8_t)(rx_buffer_pointer-48+40)] *256 + rx_buffer[(uint8_t)(rx_buffer_pointer-48+41)];
-	uint32_t lowWord  = rx_buffer[(uint8_t)(rx_buffer_pointer-48+42)] *256 + rx_buffer[(uint8_t)(rx_buffer_pointer-48+43)];
-	uint32_t secsSince1900 = highWord << 16 | lowWord;
-	uint32_t seventyYears = 2208988800UL;
-	uint32_t epoch = secsSince1900 - seventyYears;
-	epoch += 3;
-	s_time->Hours = (epoch % 86400) / 3600;
-	s_time->Minutes = (epoch % 3600) / 60;
-	s_time->Seconds = epoch % 60;
+	uint32_t high_word = rx_buffer[(uint8_t)(rx_buffer_pointer-48+40)] *256 + rx_buffer[(uint8_t)(rx_buffer_pointer-48+41)];
+	uint32_t low_word  = rx_buffer[(uint8_t)(rx_buffer_pointer-48+42)] *256 + rx_buffer[(uint8_t)(rx_buffer_pointer-48+43)];
+	uint32_t seconds = high_word << 16 | low_word;
+	seconds -= 2208988800UL;
+	seconds += 3;
+
+	uint32_t date[3];
+	Date_Decode(seconds, date);
+
+	extern RTC_HandleTypeDef hrtc;
+
+	//hrtc.DateToUpdate.Date = date[0];
+	//hrtc.DateToUpdate.Month = date[1];
+	//hrtc.DateToUpdate.Year = date[2] - 2000;
+
+	s_date->Date = date[0];
+	s_date->Month = date[1];
+	s_date->Year = date[2] - 2000;
+
+	s_time->Hours = (seconds % 86400) / 3600;
+	s_time->Minutes = (seconds % 3600) / 60;
+	s_time->Seconds = seconds % 60;
 	return 0;
 }
 

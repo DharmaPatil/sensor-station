@@ -67,6 +67,19 @@ void Display_Image(const uint8_t *image, uint8_t x, uint8_t y) {
 }
 
 
+void Display_Erase(uint8_t x, uint8_t y, uint8_t w, uint8_t h) {
+	uint8_t i, j;
+	uint64_t *column_pnt;
+	for ( i = x; i <= x + w; i++ ) {
+		column_pnt = (uint64_t*)&screen_buffer[i*8];
+		for (j = y; j <= (y + h); j++) {
+			*column_pnt &= ~((uint64_t)1<<j);
+		}
+		if (i >= 128) break;
+	}
+}
+
+
 void Display_Clear(void) {
 	memset(screen_buffer, 0, 1024);
 }

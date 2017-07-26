@@ -60,6 +60,9 @@
 #include "settings/settings.h"
 #include "wifi/esp8266.h"
 #include "wifi/wifi.h"
+#include "time/time.h"
+#include "interface/interface.h"
+#include "interface/sequencer.h"
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
@@ -84,7 +87,6 @@ UART_HandleTypeDef huart1;
 
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
-//char str[100];
 FATFS fs;
 /* USER CODE END PV */
 
@@ -158,29 +160,73 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   Display_Init();
+	Time_Start_Interrupts();
 
-//  font = &font_medium;
+	RTC_TimeTypeDef s_time;
+	RTC_DateTypeDef s_date;
 
-  printf("Loading...\r\n");
-  Console_Output();
-  //HAL_Delay(500);
-
-  //WiFi_Init();
-  WiFi_Connect();
+	RTC_TimeTypeDef rtc_time;
+	RTC_DateTypeDef rtc_date;
 
 
 
+	SD_Init();
+  HAL_Delay(500);
+	printf("Mount: %d \r\n", f_mount(&fs, USER_Path, 1));
+	Settings_Update();
+	printf("Unmount: %d \r\n", f_mount(&fs, USER_Path, 0));
 
 
-  while(1) {};
+
+
+#if 0
+  WiFi_Init();
+  WiFi_Connect_to_AP("A.S.Tech Zyxel","areyougonnadie");
+	WiFi_Synchronize_Time("91.226.136.155", &s_time, &s_date);
+	HAL_RTC_SetDate(&hrtc, &s_date, RTC_FORMAT_BIN);
+	HAL_RTC_SetTime(&hrtc, &s_time, RTC_FORMAT_BIN );
+	HAL_RTCEx_BKUPWrite(&hrtc,RTC_BKP_DR1,0x32F2);
+#endif
+
+
+
+
+//	Sequencer_Init();
+//	Sequencer_Start();
+//	while (1) {
+//		Sequencer_Tick();
+//		HAL_Delay(100);
+//	}
+
+//	while (1) {
+//		if (Button(1))
+//			LED(1);
+//		if (Button(2))
+//			LED(0);
+//	}
+
+
+
+
+  while(1) {
+  	Time_Poll_Interrupts();
+  	HAL_RTC_GetTime( &hrtc, &rtc_time, RTC_FORMAT_BIN );
+  	HAL_RTC_GetDate( &hrtc, &rtc_date, RTC_FORMAT_BIN );
+
+  	printf("%02d:%02d:%02d ", rtc_time.Hours, rtc_time.Minutes, rtc_time.Seconds);
+  	printf("%d/%d/%d\r\n", rtc_date.Date, rtc_date.Month, rtc_date.Year);
+
+  	//HAL_Delay(500);
+  	//Display_Erase(8, 8, 48, 48);
+  	//Display_Refresh();
+
+
+  };
 
 
 
   SD_Init();
-  //Console_Output();
-
   HAL_Delay(500);
-
 
   printf("Mount: %d \r\n", f_mount(&fs, USER_Path, 1));
   Settings_Update();

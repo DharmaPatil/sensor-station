@@ -73,13 +73,21 @@ void MX_FATFS_Init(void)
 DWORD get_fattime(void)
 {
   /* USER CODE BEGIN get_fattime */
+	extern RTC_HandleTypeDef hrtc;
+
+	RTC_TimeTypeDef rtc_time;
+	RTC_DateTypeDef rtc_date;
+
+	HAL_RTC_GetTime( &hrtc, &rtc_time, RTC_FORMAT_BIN );
+	HAL_RTC_GetDate( &hrtc, &rtc_date, RTC_FORMAT_BIN );
+
 	uint32_t time = 0;
-	time |= (2025 - 1980)<<25; // yaer
-	time |= 7 << 21; // month
-	time |= 31 << 16; // day
-	time |= 12 << 11; // hours
-	time |= 34 << 5; // minutes
-	time |= 56 / 2; // seconds / 2
+	time |= (uint32_t)(rtc_date.Year + 20)<<25; // yaer
+	time |= (uint32_t)(rtc_date.Month) << 21; // month
+	time |= (uint32_t)(rtc_date.Date) << 16; // day
+	time |= rtc_time.Hours << 11; // hours
+	time |= rtc_time.Minutes << 5; // minutes
+	time |= rtc_time.Seconds >> 1; // seconds / 2
   return time;
   /* USER CODE END get_fattime */  
 }
