@@ -48,21 +48,11 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "stm32f1xx_hal.h"
-#include "fatfs.h"
 #include "usb_device.h"
 
 /* USER CODE BEGIN Includes */
-#include <stdio.h>
-#include "display/display.h"
-#include "sensors/sensors.h"
-#include "sd_card/sd_card.h"
-#include "display/console.h"
-#include "settings/settings.h"
-#include "wifi/esp8266.h"
-#include "wifi/wifi.h"
-#include "time/time.h"
-#include "interface/interface.h"
-#include "interface/sequencer.h"
+#include "includes.h"
+
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
@@ -163,11 +153,10 @@ int main(void)
 	Time_Start_Interrupts();
 
 	RTC_TimeTypeDef s_time;
-	RTC_DateTypeDef s_date;
+	//RTC_DateTypeDef s_date;
 
 	RTC_TimeTypeDef rtc_time;
 	RTC_DateTypeDef rtc_date;
-
 
 
 	SD_Init();
@@ -177,6 +166,13 @@ int main(void)
 	printf("Unmount: %d \r\n", f_mount(&fs, USER_Path, 0));
 
 
+	HAL_Delay(1000);
+
+	HAL_RTC_GetTime( &hrtc, &rtc_time, RTC_FORMAT_BIN );
+	HAL_RTC_GetDate( &hrtc, &rtc_date, RTC_FORMAT_BIN );
+
+	printf("%02d:%02d:%02d ", rtc_time.Hours, rtc_time.Minutes, rtc_time.Seconds);
+	printf("%d/%d/%d\r\n", rtc_date.Date, rtc_date.Month, rtc_date.Year);
 
 
 #if 0
@@ -184,12 +180,15 @@ int main(void)
   WiFi_Connect_to_AP("A.S.Tech Zyxel","areyougonnadie");
 	WiFi_Synchronize_Time("91.226.136.155", &s_time, &s_date);
 	HAL_RTC_SetDate(&hrtc, &s_date, RTC_FORMAT_BIN);
-	HAL_RTC_SetTime(&hrtc, &s_time, RTC_FORMAT_BIN );
+	HAL_RTC_SetTime(&hrtc, &s_time, RTC_FORMAT_BIN);
 	HAL_RTCEx_BKUPWrite(&hrtc,RTC_BKP_DR1,0x32F2);
 #endif
 
-
-
+	s_time.Hours = 23;
+	s_time.Minutes = 59;
+	s_time.Seconds = 50;
+//
+	HAL_RTC_SetTime(&hrtc, &s_time, RTC_FORMAT_BIN);
 
 //	Sequencer_Init();
 //	Sequencer_Start();

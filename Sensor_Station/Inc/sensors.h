@@ -1,7 +1,7 @@
 #ifndef SENSORS_H
 #define SENSORS_H
 
-#include "stm32f1xx_hal.h"
+#include "includes.h"
 
 char MS5611_Conversion(int *pressure);
 char TGS4161_Conversion(int *emf);

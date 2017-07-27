@@ -1,12 +1,8 @@
-#ifndef _ESP8266_H
-#define _ESP8266_H
+#ifndef ESP8266_H
+#define ESP8266_H
 
-#include "stm32f1xx_hal.h"
-#include "string.h"
-#include "stdio.h"
-#include "../Display/display.h"
+#include "includes.h"
 
-extern UART_HandleTypeDef huart1;
 #define H_UART &huart1
 
 extern uint8_t rx_buffer[256];

@@ -1,9 +1,8 @@
 #ifndef SETTINGS_H
 #define SETTINGS_H
 
-#include "stm32f1xx_hal.h"
-#include "ff.h"
-#include "string.h"
+#include "includes.h"
+
 
 
 #define SSID_STRING      "ssid"

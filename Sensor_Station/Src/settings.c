@@ -19,6 +19,7 @@ extern CRC_HandleTypeDef hcrc;
 
 FIL file;
 
+
 #define Pause HAL_Delay(700)
 
 void Settings_Update(void) {
@@ -152,7 +153,7 @@ static uint8_t Settings_Synchronize(network_settings_t *s, network_settings_t *s
 			strcpy(&(s->server[i][0]), &(s_new->server[i][0]));
 			changed = 1;
 			printf("Server %d updated:\r\n");
-			printf("%s\r\n", i+1, &(s->server[i][0])); Pause;
+			printf("%d: %s\r\n", i+1, &(s->server[i][0])); Pause;
 		}
 	}
 	return changed;

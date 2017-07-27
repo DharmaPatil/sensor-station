@@ -1,15 +1,29 @@
 #include "display.h"
 
+#define SW_I2C_SCL_GPIO  OLED_SCL_GPIO_Port
+#define SW_I2C_SCL_PIN   OLED_SCL_Pin
+
+#define SW_I2C_SDA_GPIO  OLED_SDA_GPIO_Port
+#define SW_I2C_SDA_PIN   OLED_SDA_Pin
+
+#define SW_I2C_DELAY  { asm("nop"); asm("nop"); asm("nop"); asm("nop"); asm("nop"); }
+
+#define DISPLAY_FLIP_X      0
+#define DISPLAY_FLIP_Y      0
+#define DISPLAY_BRIGHTNESS  255
+
+
 static uint8_t screen_buffer[1024];
 const Font_TypeDef* font;
 
-#include "fonts/font_small.c"
-#include "fonts/font_medium.c"
-//#include "fonts/font_large.c"
-//#include "fonts/font_ultra.c"
-//#include "fonts/font_times.c"
-//#include "images/image_status.c"
-//#include "images/image_cloud.c"
+#include "Graphics/fonts/font_small.c"
+#include "Graphics/fonts/font_medium.c"
+#include "Graphics/fonts/font_small_plus.c"
+//#include "Graphics/fonts/font_large.c"
+//#include "Graphics/fonts/font_ultra.c"
+//#include "Graphics/fonts/font_times.c"
+//#include "Graphics/images/image_status.c"
+//#include "Graphics/images/image_cloud.c"
 
 static void Software_I2C_Init(void);
 static void Display_Send_Cmd(uint8_t command);

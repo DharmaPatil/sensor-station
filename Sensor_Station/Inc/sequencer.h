@@ -1,15 +1,13 @@
 #ifndef SEQUENCER_H
 #define SEQUENCER_H
 
-#include "stm32f1xx_hal.h"
-#include <math.h>
+#include "includes.h"
 
 #define SEQ_BASE_FREQ 440
 
 #define SEQ_VOLUME_LOW  50
 #define SEQ_VOLUME_HIGH  80
 
-extern TIM_HandleTypeDef  htim3;
 #define SEQ_TIMER         htim3
 #define SEQ_CHANNEL       TIM_CHANNEL_4
 #define SEQ_REGISTER      CCR4

@@ -1,9 +1,5 @@
 #include "sd_card.h"
 
-extern SPI_HandleTypeDef hspi1;
-
-// uint8_t buffer[SD_SECTOR_SIZE];
-
 uint32_t memory_size = 0;
 uint32_t card_capacity = 0;
 	

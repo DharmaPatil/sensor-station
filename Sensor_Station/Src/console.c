@@ -2,7 +2,9 @@
 
 #define CONSOLE_LINES 4
 #define CONSOLE_CHARS 32
-#define CONSOLE_FONT  font_medium
+#define CONSOLE_FONT  font_medium //font_small_plus //small
+
+uint8_t console_mode = 0;
 
 static char console_array[CONSOLE_LINES][CONSOLE_CHARS+1] = {0,};
 static uint8_t c_line = 0;
@@ -36,6 +38,8 @@ void Console_Print_Char(char c) {
 
 
 void Console_Output(void) {
+	if (!console_mode)
+		return;
 	font = &CONSOLE_FONT;
 	uint8_t i_line;
 	uint8_t y_display;

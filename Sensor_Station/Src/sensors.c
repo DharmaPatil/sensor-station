@@ -1,10 +1,5 @@
 #include "sensors.h"
 
-extern ADC_HandleTypeDef hadc1;
-extern TIM_HandleTypeDef htim2;
-extern DMA_HandleTypeDef hdma_tim2_ch3;
-extern DMA_HandleTypeDef hdma_tim2_ch2_ch4;
-extern I2C_HandleTypeDef hi2c2;
 
 #define BARO_ADDRESS 0xEF  // 0xEE // 111011Cx
 

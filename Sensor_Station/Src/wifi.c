@@ -1,6 +1,5 @@
 #include "wifi.h"
 
-
 uint8_t WiFi_Connect_to_AP(char *ssid, char *password) {
 	uint8_t res;
 	HAL_GPIO_WritePin(WIFI_RESET_GPIO_Port, WIFI_RESET_Pin, GPIO_PIN_SET);

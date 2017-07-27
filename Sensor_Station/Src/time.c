@@ -1,6 +1,6 @@
 #include "time.h"
 
-extern RTC_HandleTypeDef hrtc;
+
 RTC_TimeTypeDef rtc_time;
 
 volatile uint8_t rtc_interrupt_flag = 0;
