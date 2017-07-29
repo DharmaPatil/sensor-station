@@ -114,7 +114,6 @@ void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
 /* USER CODE BEGIN 0 */
 
 network_settings_t settings;
-network_settings_t settings_new;
 /* USER CODE END 0 */
 
 int main(void)
@@ -124,8 +123,10 @@ int main(void)
 	uint8_t res;
 	uint8_t sd_card_availible = 0;
 	uint8_t fs_availible = 0;
-	uint8_t settings_changed = 0;
-	uint8_t settings_file_exist = 0;
+	uint8_t settings_exist = 0;
+	uint8_t wifi_connected = 0;
+	uint8_t time_synchonized = 0;
+	int file_counter = 0;
 
   /* USER CODE END 1 */
 
@@ -166,9 +167,11 @@ int main(void)
   Display_Init();
 	Time_Start_Interrupts();
 
-	console_mode = 0;
+	console_mode = 1;
 
 // FILE OPERATIONS
+
+
 
 	res = SD_Init();
 	if (!res) {
@@ -189,92 +192,62 @@ int main(void)
 			fs_availible = 1;
 		}
 	}
-	printf("\n");
-
-	res = Settings_Load_from_Flash(&settings);
-	if (!res) {
-		printf("Int.flash - OK \n");
-	} else {
-		printf("Int.flash CRC error \n");
-	}
-	printf("\n");
-
 
 	if (fs_availible) {
-		res = Settings_Load_from_File(&settings_new);
+		res = Settings_Load_from_File(&settings);
 		if (!res) {
-			settings_file_exist = 1;
-			settings_changed = Settings_Synchronize(&settings, &settings_new);
-			if (settings_changed) {
-				Settings_Save_to_Flash(&settings);
-				printf("Settings updated \n");
-			} else {
-				printf("Settings not changed \n");
-			}
+			settings_exist = 1;
+			printf("SSID: %s \n", settings.ssid);
+			printf("Password: %d* \n", strlen(settings.password));
+			printf("Server: %s \n", settings.server);
+			printf("Time zone: %d \n", settings.timezone);
 		} else {
-			settings_file_exist = 0;
-			printf("File read error: %d \n", res);
+			settings_exist = 0;
+			printf("Settings error: %d \n", res);
 		}
 	}
 
-	if ((settings_changed) || (!settings_file_exist)) {
-		res = Settings_Save_to_File(&settings);
-		if (!res) {
-			printf("File updated \n");
-		} else  {
-			printf("File write error: %d \n", res);
-		}
-	}
+// WIFI CONNECTION
 
-	res = f_mount(&fs, USER_Path, 0);
-	if (!res) {
-		printf("FS unmount OK \n");
-	} else {
-		printf("Cannot unmount FS \n");
-	}
+	settings_exist = 0;
 
-// CONNECTION TO WIFI
-
-	console_mode = 1;
-
-	uint8_t wifi_connection = 0;
-	uint8_t server_connection = 0;
-
-	printf("\n");
-	for (int i = 0; i < WIFI_MAX_NUM; i++) {
+	if (settings_exist) {
 		WiFi_Init();
-		printf("Connecting to: \n");
-		printf("%s \n", &(settings.ssid[i][0]));
-		printf("%s \n", &(settings.pass[i][0]));
-		res = WiFi_Connect_to_AP( &(settings.ssid[i][0]), &(settings.pass[i][0]));
+		printf("Connecting to WiFi... \n");
+		res = WiFi_Connect_to_AP(settings.ssid, settings.password);
 		if (!res) {
-			printf("Connected! \n");
-			wifi_connection = 1;
-			break;
+			printf("Successful \n");
+			wifi_connected = 1;
 		} else {
-			printf("Cannot connect \n");
+			printf("Error \n");
 		}
-		printf("\n");
-	}
 
-
-	if (wifi_connection) {
-		for (int i = 0; i < SERVER_MAX_NUM; i++) {
-			printf("Server %s \n", &(settings.server[i][0]));
-			res = WiFi_Synchronize_Time(&(settings.server[i][0]), &s_time, &s_date);
+		if (wifi_connected) {
+			printf("Synchronizing time... \n");
+			res = WiFi_Synchronize_Time(settings.server, &s_time, &s_date);
 			if (!res) {
-				server_connection = 1;
+				time_synchonized = 1;
 				HAL_RTC_SetDate(&hrtc, &s_date, RTC_FORMAT_BIN);
 				HAL_RTC_SetTime(&hrtc, &s_time, RTC_FORMAT_BIN);
 				HAL_RTCEx_BKUPWrite(&hrtc,RTC_BKP_DR1,0x32F2);
-				printf("Synchronized \n");
-				break;
+				printf("Successful \n");
 			} else {
-				printf("Cannot synchronize \n");
+				time_synchonized = 0;
+				printf("Error \n");
 			}
-			printf("\n");
 		}
 	}
+
+
+
+	//file_counter = Files_Find_First_Availible();
+
+
+	File_Start();
+	File_Write_Line("123\n\r456\n\r");
+	File_Stop();
+
+
 
 
 
@@ -290,7 +263,27 @@ int main(void)
 
 
 
-  HAL_GPIO_WritePin(USB_ENABLE_GPIO_Port, USB_ENABLE_Pin, GPIO_PIN_SET);
+	res = f_mount(&fs, USER_Path, 0);
+	if (!res) {
+		printf("FS unmount OK \n");
+	} else {
+		printf("Cannot unmount FS \n");
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  //HAL_GPIO_WritePin(USB_ENABLE_GPIO_Port, USB_ENABLE_Pin, GPIO_PIN_SET);
 
 
 
@@ -323,11 +316,13 @@ int main(void)
 //
 //	Display_Refresh();
 //	sprintf(str, "Mount: %d\r\n", f_mount(&fs, USER_Path, 0) );
-  while(1) {
+
+	/*
+	while(1) {
   	if (!HAL_GPIO_ReadPin(BUTTON_1_GPIO_Port, BUTTON_1_Pin)) {
   		NVIC_SystemReset();
   	}
-  }
+  }*/
 
 
 
@@ -374,9 +369,12 @@ int main(void)
   {
 
   	DHT22_Conversion(0, &temp[0], &hum[0]);
-  	DHT22_Conversion(1, &temp[1], &hum[1]);
-  	MS5611_Conversion(&press);
-  	TGS4161_Conversion(&emf);
+  	printf("%d.%1d~C  %d%% \n", temp[0]/10, temp[0]%10, hum[0]/10  );
+
+
+  	//DHT22_Conversion(1, &temp[1], &hum[1]);
+  	//MS5611_Conversion(&press);
+  	//TGS4161_Conversion(&emf);
 
 	  HAL_Delay(2500);
 

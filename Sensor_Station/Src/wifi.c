@@ -8,8 +8,8 @@ uint8_t WiFi_Connect_to_AP(char *ssid, char *password) {
 	HAL_Delay(1000);
 	WiFi_Clear_Flags();
 	HAL_Delay(500);
-	WiFi_Send_Command("AT+CWMODE=1\r\n");
-	res = WiFi_Wait_Response(100);
+	//WiFi_Send_Command("AT+CWMODE=1\r\n");
+	//res = WiFi_Wait_Response(100);
 	//printf("Client mode - %d \r\n", res);
 	WiFi_Clear_Flags();
 	WiFi_Send_Command("AT+CWJAP=\"");
@@ -36,10 +36,12 @@ uint8_t WiFi_Synchronize_Time(char *server, RTC_TimeTypeDef *s_time, RTC_DateTyp
 	WiFi_Send_Command("AT+CIPSTART=0,\"UDP\",\"");
 	WiFi_Send_Command(server);
 	WiFi_Send_Command("\",123,123,0\r\n");
-	//printf("UDP - %d\r\n", WiFi_Wait_Response(100));
+	res = WiFi_Wait_Response(100);
+	//printf("UDP - %d\r\n", res);
 	WiFi_Clear_Flags();
 	WiFi_Send_Command("AT+CIPSEND=0,48\r\n");
-	//printf("Prepare - %d\r\n", WiFi_Wait_Response(100));
+	res = WiFi_Wait_Response(100);
+	//printf("Prepare - %d\r\n", res);
 	memset( buffer_ntp, 0, sizeof(buffer_ntp) );
 	buffer_ntp[0] = 0xE3;
 	buffer_ntp[1] = 0;
@@ -60,11 +62,12 @@ uint8_t WiFi_Synchronize_Time(char *server, RTC_TimeTypeDef *s_time, RTC_DateTyp
 
 	WiFi_Clear_Flags();
 	WiFi_Send_Command("AT+CIPCLOSE=0\r\n");
-	printf("Close - %d\r\n", WiFi_Wait_Response(100));
+	//printf("Close - %d\r\n", WiFi_Wait_Response(100));
 
 	Date_Decode(seconds, date);
 
 	if ((date[2] < 2017) || (date[2] > 2030)) { // improbable date
+		printf("Date error \n");
 		return 1;
 	} else {
 		s_date->Date = date[0];

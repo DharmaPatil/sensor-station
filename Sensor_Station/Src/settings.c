@@ -1,11 +1,12 @@
 #include "settings.h"
 
-static uint8_t Scanf_w_Quotes(char *str, char *field, char *value, int *n);
-static uint32_t Settings_CRC(network_settings_t *s);
+static uint8_t Scanf_w_Quotes(char *str, char *field, char *value);
+//static uint32_t Settings_CRC(network_settings_t *s);
 
 
-FIL file;
+static FIL file;
 
+/*
 uint8_t Settings_Load_from_Flash(network_settings_t *s) {
 	uint8_t i;
 	memcpy(s, (int*)SETTINGS_ADDRESS, sizeof(network_settings_t));
@@ -27,9 +28,9 @@ uint8_t Settings_Load_from_Flash(network_settings_t *s) {
 		memset(s, 0, sizeof(network_settings_t));
 		return 1;
 	}
-}
+}*/
 
-
+/*
 uint8_t Settings_Save_to_Flash(network_settings_t *s) {
 	uint32_t i;
 	uint32_t page_error;
@@ -45,29 +46,29 @@ uint8_t Settings_Save_to_Flash(network_settings_t *s) {
 		HAL_FLASH_Program(FLASH_TYPEPROGRAM_WORD, SETTINGS_ADDRESS+i*4, *((uint32_t*)s+i));
 	HAL_FLASH_Lock();
 	return 0;
-}
+}*/
 
 
 uint8_t Settings_Load_from_File(network_settings_t *s) {
-	char str[WIFI_MAX_LEN*2+10];
-	char field[WIFI_MAX_LEN];
-	char value[WIFI_MAX_LEN];
+	char str[STR_MAX_LEN*2+10];
+	char field[STR_MAX_LEN];
+	char value[STR_MAX_LEN];
 	volatile FRESULT fr;
+
 	memset(s, 0, sizeof(network_settings_t));
   fr = f_open(&file, SETTINGS_FILENAME, FA_READ);
 	if (fr == FR_OK) {
 		while(!f_eof(&file)) {
-			int n;
 			f_gets(str, sizeof(str), &file);
-			Scanf_w_Quotes(str, field, value, &n);
+			Scanf_w_Quotes(str, field, value);
 			if (strcmp(field, SSID_STRING) == 0)
-				strcpy(s->ssid[n-1], value);
+				strcpy(s->ssid, value);
 			if (strcmp(field, PASSWORD_STRING) == 0)
-				strcpy(s->pass[n-1], value);
+				strcpy(s->password, value);
 			if (strcmp(field, SERVER_STRING) == 0)
-				strcpy(s->server[n-1], value);
+				strcpy(s->server, value);
 			if (strcmp(field, TIMEZONE_STRING) == 0)
-				s->timezone = n;
+				s->timezone = atoi(value);
 		}
 	}
   f_close(&file);
@@ -75,6 +76,10 @@ uint8_t Settings_Load_from_File(network_settings_t *s) {
 }
 
 
+
+
+
+/*
 uint8_t Settings_Save_to_File(network_settings_t *s) {
 	FRESULT fr;
 	int res;
@@ -132,15 +137,15 @@ uint8_t Settings_Synchronize(network_settings_t *s, network_settings_t *s_new) {
 	}
 	return changed;
 }
+*/
 
 
-
-static uint8_t Scanf_w_Quotes(char *str, char *field, char *value, int *n) {
+static uint8_t Scanf_w_Quotes(char *str, char *field, char *value ) {
 	char *q1, *q2;
 	int len;
 	char pattern[10];
-	sprintf(pattern, "%%%ds %%d ", WIFI_MAX_LEN-1 );
-	sscanf(str, pattern, field, n);
+	sprintf(pattern, "%%%ds", STR_MAX_LEN-1 );
+	sscanf(str, pattern, field);
 	//sscanf(str, "%s %d  ", field, n);
 	*value = '\0';
 	q1 = str;
@@ -154,8 +159,8 @@ static uint8_t Scanf_w_Quotes(char *str, char *field, char *value, int *n) {
 		while ((*q2 != '\0') && (*q2 != '\"'))
 			q2++;
 		len = (int)(q2 - q1) - 1;
-		if (len >= WIFI_MAX_LEN)
-			len = WIFI_MAX_LEN - 1;
+		if (len >= STR_MAX_LEN)
+			len = STR_MAX_LEN - 1;
 		memcpy(value, q1+1, len);
 	}
 	value[len] = '\0';
@@ -163,8 +168,8 @@ static uint8_t Scanf_w_Quotes(char *str, char *field, char *value, int *n) {
 }
 
 
-
+/*
 static uint32_t Settings_CRC(network_settings_t *s) {
 	return HAL_CRC_Calculate(&hcrc, (uint32_t*)s, sizeof(network_settings_t)/4 - 1);
 }
-
+*/

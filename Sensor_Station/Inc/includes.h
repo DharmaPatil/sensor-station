@@ -20,7 +20,7 @@
 #include "time.h"
 
 #include "sensors.h"
-
+#include "files.h"
 
 #include "interface.h"
 #include "sequencer.h"
