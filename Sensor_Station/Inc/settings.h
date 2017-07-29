@@ -29,9 +29,11 @@ typedef struct {
 	uint32_t crc;
 } network_settings_t; // must be < FLASH_PAGE_SIZE
 
-void Settings_Update(void);
-
-
+uint8_t Settings_Load_from_File(network_settings_t *s);
+uint8_t Settings_Save_to_File(network_settings_t *s);
+uint8_t Settings_Load_from_Flash(network_settings_t *s);
+uint8_t Settings_Save_to_Flash(network_settings_t *s);
+uint8_t Settings_Synchronize(network_settings_t *s, network_settings_t *s_new);
 
 //#if ( (size network_settings_t) > FLASH_PAGE_SIZE )
 //	#error "Network settings struct too large"

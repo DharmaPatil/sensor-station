@@ -1,8 +1,8 @@
 #include "console.h"
 
-#define CONSOLE_LINES 4
+#define CONSOLE_LINES 5
 #define CONSOLE_CHARS 32
-#define CONSOLE_FONT  font_medium //font_small_plus //small
+#define CONSOLE_FONT  font_small_plus // font_medium // //small
 
 uint8_t console_mode = 0;
 
@@ -28,6 +28,7 @@ void Console_Print_Char(char c) {
 		c_line++;
 		c_char = 0;
 		Console_Output();
+		HAL_Delay(300);
 	}
 	if (c_line >= CONSOLE_LINES) {
 		c_line = 0;
