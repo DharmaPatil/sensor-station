@@ -2,6 +2,7 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 #include <math.h>
 
 #include "types.h"
@@ -12,15 +13,15 @@
 #include "display.h"
 #include "console.h"
 
+#include "sd_card.h"
+#include "settings.h"
+
 #include "esp8266.h"
 #include "wifi.h"
 #include "time.h"
 
 #include "sensors.h"
-
-#include "sd_card.h"
-#include "settings.h"
-
+#include "files.h"
 
 #include "interface.h"
 #include "sequencer.h"
@@ -36,4 +37,6 @@ extern SPI_HandleTypeDef hspi1;
 extern TIM_HandleTypeDef htim3;
 
 extern uint8_t console_mode;
+
+extern CRC_HandleTypeDef hcrc;
 

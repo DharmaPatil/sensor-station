@@ -77,7 +77,14 @@ UART_HandleTypeDef huart1;
 
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
+
+RTC_TimeTypeDef s_time;
+RTC_DateTypeDef s_date;
+RTC_TimeTypeDef rtc_time;
+RTC_DateTypeDef rtc_date;
+
 FATFS fs;
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -103,15 +110,30 @@ void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
 /* Private function prototypes -----------------------------------------------*/
 
 /* USER CODE END PFP */
-
+void Pause(void) {
+	while (!Button(1)) {
+		HAL_Delay(100);
+	}
+	Console_Clear();
+}
 /* USER CODE BEGIN 0 */
 
+network_settings_t settings;
+network_settings_t settings_new;
 /* USER CODE END 0 */
 
 int main(void)
 {
 
   /* USER CODE BEGIN 1 */
+	uint8_t res;
+	uint8_t sd_card_availible = 0;
+	uint8_t fs_availible = 0;
+	uint8_t settings_exist = 0;
+	uint8_t wifi_connected = 0;
+	uint8_t time_synchonized = 0;
+	uint8_t settings_file_loaded = 0;
+	int file_counter = 0;
 
   /* USER CODE END 1 */
 
@@ -152,29 +174,49 @@ int main(void)
   Display_Init();
 	Time_Start_Interrupts();
 
-	RTC_TimeTypeDef s_time;
-	//RTC_DateTypeDef s_date;
+	console_mode = 1;
 
-	RTC_TimeTypeDef rtc_time;
-	RTC_DateTypeDef rtc_date;
+// FILE OPERATIONS
 
 
-	SD_Init();
-  HAL_Delay(500);
-	printf("Mount: %d \r\n", f_mount(&fs, USER_Path, 1));
-	Settings_Update();
-	printf("Unmount: %d \r\n", f_mount(&fs, USER_Path, 0));
 
+	res = SD_Init();
+	if (!res) {
+		printf("SD card OK \n");
+		sd_card_availible = 1;
+	} else {
+		printf("SD card not found \n");
+		sd_card_availible = 0;
+	}
 
-	HAL_Delay(1000);
+	if (sd_card_availible) {
+		res = f_mount(&fs, USER_Path, 1);
+		if (!res) {
+			printf("FS mount OK \n");
+			fs_availible = 1;
+		} else {
+			printf("FS error: %d \n", res);
+			fs_availible = 1;
+		}
+	}
 
-	HAL_RTC_GetTime( &hrtc, &rtc_time, RTC_FORMAT_BIN );
-	HAL_RTC_GetDate( &hrtc, &rtc_date, RTC_FORMAT_BIN );
+	Pause();
 
-	printf("%02d:%02d:%02d ", rtc_time.Hours, rtc_time.Minutes, rtc_time.Seconds);
-	printf("%d/%d/%d\r\n", rtc_date.Date, rtc_date.Month, rtc_date.Year);
+	if (fs_availible) {
+		res = Settings_Load_from_File(&settings_new);
+		if (!res) {
+			settings_file_loaded = 1;
+			printf("\"%s\" loaded: \n", SETTINGS_FILENAME);
+			Settings_Display(&settings_new);
+		} else {
+			settings_file_loaded = 0;
+			printf("\"%s\" error %d \n", SETTINGS_FILENAME, res);
+		}
+	}
 
+	Pause();
 
+<<<<<<< HEAD
 #if 1
   WiFi_Init();
   WiFi_Connect_to_AP("A.S.Tech Zyxel","areyougonnadie");
@@ -183,26 +225,83 @@ int main(void)
 	HAL_RTC_SetTime(&hrtc, &s_time, RTC_FORMAT_BIN);
 	HAL_RTCEx_BKUPWrite(&hrtc,RTC_BKP_DR1,0x32F2);
 #endif
+=======
+>>>>>>> multi-config
 
-	s_time.Hours = 23;
-	s_time.Minutes = 59;
-	s_time.Seconds = 50;
-//
-	HAL_RTC_SetTime(&hrtc, &s_time, RTC_FORMAT_BIN);
+	res = Settings_Load_from_Flash(&settings); // set zeros if wrong
+	if (!res) {
+		printf("Settings from flash: \n");
+		Settings_Display(&settings);
+	} else {
+		printf("Flash memory CRC error \n");
+	}
 
-//	Sequencer_Init();
-//	Sequencer_Start();
-//	while (1) {
-//		Sequencer_Tick();
-//		HAL_Delay(100);
-//	}
+	Pause();
 
-//	while (1) {
-//		if (Button(1))
-//			LED(1);
-//		if (Button(2))
-//			LED(0);
-//	}
+	if (settings_file_loaded) {
+		res = Settings_Synchronize(&settings, &settings_new); // printf there
+		if (res) {
+			Settings_Save_to_Flash(&settings);
+			printf("Settings updated \n");
+		} else {
+			printf("Settings not updated \n");
+		}
+	}
+
+	Pause();
+
+	printf("Done. \n");
+
+
+	while(1);
+
+
+
+
+
+
+
+// WIFI CONNECTION
+
+	settings_exist = 0;
+
+	if (settings_exist) {
+		WiFi_Init();
+		printf("Connecting to WiFi... \n");
+		res = WiFi_Connect_to_AP(settings.ssid, settings.password);
+		if (!res) {
+			printf("Successful \n");
+			wifi_connected = 1;
+		} else {
+			printf("Error \n");
+		}
+
+		if (wifi_connected) {
+			printf("Synchronizing time... \n");
+			res = WiFi_Synchronize_Time(settings.server, &s_time, &s_date);
+			if (!res) {
+				time_synchonized = 1;
+				HAL_RTC_SetDate(&hrtc, &s_date, RTC_FORMAT_BIN);
+				HAL_RTC_SetTime(&hrtc, &s_time, RTC_FORMAT_BIN);
+				HAL_RTCEx_BKUPWrite(&hrtc,RTC_BKP_DR1,0x32F2);
+				printf("Successful \n");
+			} else {
+				time_synchonized = 0;
+				printf("Error \n");
+			}
+		}
+	}
+
+
+
+	//file_counter = Files_Find_First_Availible();
+
+
+	File_Start();
+	File_Write_Line("123\n\r456\n\r");
+	File_Stop();
+
+
 
 
 
@@ -213,26 +312,32 @@ int main(void)
   	HAL_RTC_GetDate( &hrtc, &rtc_date, RTC_FORMAT_BIN );
 
   	printf("%02d:%02d:%02d ", rtc_time.Hours, rtc_time.Minutes, rtc_time.Seconds);
-  	printf("%d/%d/%d\r\n", rtc_date.Date, rtc_date.Month, rtc_date.Year);
-
-  	//HAL_Delay(500);
-  	//Display_Erase(8, 8, 48, 48);
-  	//Display_Refresh();
-
-
-  };
+  	printf("%d/%d/%d \n", rtc_date.Date, rtc_date.Month, rtc_date.Year);
+  }
 
 
 
-  SD_Init();
-  HAL_Delay(500);
+	res = f_mount(&fs, USER_Path, 0);
+	if (!res) {
+		printf("FS unmount OK \n");
+	} else {
+		printf("Cannot unmount FS \n");
+	}
 
-  printf("Mount: %d \r\n", f_mount(&fs, USER_Path, 1));
-  Settings_Update();
-  printf("Unmount: %d \r\n", f_mount(&fs, USER_Path, 0));
 
 
-  HAL_GPIO_WritePin(USB_ENABLE_GPIO_Port, USB_ENABLE_Pin, GPIO_PIN_SET);
+
+
+
+
+
+
+
+
+
+
+
+  //HAL_GPIO_WritePin(USB_ENABLE_GPIO_Port, USB_ENABLE_Pin, GPIO_PIN_SET);
 
 
 
@@ -265,11 +370,13 @@ int main(void)
 //
 //	Display_Refresh();
 //	sprintf(str, "Mount: %d\r\n", f_mount(&fs, USER_Path, 0) );
-  while(1) {
+
+	/*
+	while(1) {
   	if (!HAL_GPIO_ReadPin(BUTTON_1_GPIO_Port, BUTTON_1_Pin)) {
   		NVIC_SystemReset();
   	}
-  }
+  }*/
 
 
 
@@ -316,9 +423,12 @@ int main(void)
   {
 
   	DHT22_Conversion(0, &temp[0], &hum[0]);
-  	DHT22_Conversion(1, &temp[1], &hum[1]);
-  	MS5611_Conversion(&press);
-  	TGS4161_Conversion(&emf);
+  	printf("%d.%1d~C  %d%% \n", temp[0]/10, temp[0]%10, hum[0]/10  );
+
+
+  	//DHT22_Conversion(1, &temp[1], &hum[1]);
+  	//MS5611_Conversion(&press);
+  	//TGS4161_Conversion(&emf);
 
 	  HAL_Delay(2500);
 

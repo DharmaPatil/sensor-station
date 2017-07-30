@@ -127,10 +127,6 @@ uint8_t SD_Read_Register(uint8_t cmd, uint8_t* buf) {
 		card_capacity = blocknr * bl_len / SD_SECTOR_SIZE;
 	}
 
-	if (cmd == 9)	{
-		printf("Size: %d Mb \n", (int)memory_size);
-	}
-	
   spi_transfer(0xFF);  // get first crc byte
   spi_transfer(0xFF);  // get second crc byte
 
@@ -175,9 +171,9 @@ uint8_t SD_Init(void) {
 	retry = 0;                                     
 	do {
 		response = SD_Send_Command(APP_CMD, 0);
-		printf("App: %02X ", response);
+		//printf("App: %02X ", response);
 		response = SD_Send_Command(SD_SEND_OP_COND, 0x40000000);
-		printf("Op-cond: %02X \n", response);
+		//printf("Op-cond: %02X \n", response);
 		retry++;
 		if (retry > 0xFFE)
 			return 1;  	 
@@ -192,14 +188,12 @@ uint8_t SD_Init(void) {
 		if (retry++ > 0xFE)
 			break;
 	}
-	printf("SDHC: %d \n", SDHC);
-  printf("Ver: %d \n", SD_version);
+	printf("SDHC: %d Ver: %d \n", SDHC, SD_version);
 	
 	uint8_t b[16];
 	SD_Read_Register(9, b);
 	//SD_Read_Register(10, b);
-	
-	printf("Done.\n");
+	printf("Size: %d Mb \n", (int)memory_size);
 
 	//memset(buffer_00, 0x00, SD_SECTOR_SIZE);
 	//memset(buffer_FF, 0xFF, SD_SECTOR_SIZE);
