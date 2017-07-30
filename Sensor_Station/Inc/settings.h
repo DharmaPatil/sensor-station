@@ -10,7 +10,7 @@
 
 #define STR_MAX_LEN 32
 
-#define SETTINGS_FILENAME "SETTINGS.TXT"
+#define SETTINGS_FILENAME "settings.txt"
 
 typedef struct {
 	char ssid[STR_MAX_LEN];

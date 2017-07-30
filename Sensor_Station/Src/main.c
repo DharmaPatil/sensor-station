@@ -111,10 +111,12 @@ void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
 
 /* USER CODE END PFP */
 void Pause(void) {
-	while (!Button(1)) {
-		HAL_Delay(100);
+	if (console_mode) {
+		while (!Button(1)) {
+			HAL_Delay(100);
+		}
+		Console_Clear();
 	}
-	Console_Clear();
 }
 /* USER CODE BEGIN 0 */
 
@@ -134,6 +136,7 @@ int main(void)
 	uint8_t time_synchonized = 0;
 	uint8_t settings_file_loaded = 0;
 	int file_counter = 0;
+
 
   /* USER CODE END 1 */
 
@@ -206,55 +209,42 @@ int main(void)
 		res = Settings_Load_from_File(&settings_new);
 		if (!res) {
 			settings_file_loaded = 1;
-			printf("\"%s\" loaded: \n", SETTINGS_FILENAME);
+			printf("   %s: \n", SETTINGS_FILENAME);
 			Settings_Display(&settings_new);
 		} else {
 			settings_file_loaded = 0;
 			printf("\"%s\" error %d \n", SETTINGS_FILENAME, res);
 		}
+		Pause();
 	}
 
-	Pause();
 
-<<<<<<< HEAD
-#if 1
-  WiFi_Init();
-  WiFi_Connect_to_AP("A.S.Tech Zyxel","areyougonnadie");
-	WiFi_Synchronize_Time("91.226.136.155", &s_time, &s_date);
-	HAL_RTC_SetDate(&hrtc, &s_date, RTC_FORMAT_BIN);
-	HAL_RTC_SetTime(&hrtc, &s_time, RTC_FORMAT_BIN);
-	HAL_RTCEx_BKUPWrite(&hrtc,RTC_BKP_DR1,0x32F2);
-#endif
-=======
->>>>>>> multi-config
 
-	res = Settings_Load_from_Flash(&settings); // set zeros if wrong
+	res = Settings_Load_from_Flash(&settings);
 	if (!res) {
-		printf("Settings from flash: \n");
+		printf("   Internal flash: \n");
 		Settings_Display(&settings);
 	} else {
-		printf("Flash memory CRC error \n");
+		printf("Flash memory error \n");
 	}
 
 	Pause();
 
 	if (settings_file_loaded) {
-		res = Settings_Synchronize(&settings, &settings_new); // printf there
+		res = Settings_Synchronize(&settings, &settings_new);
 		if (res) {
 			Settings_Save_to_Flash(&settings);
 			printf("Settings updated \n");
 		} else {
-			printf("Settings not updated \n");
+			printf("Nothing to update \n");
 		}
+		Pause();
 	}
 
+
+	printf("Settings loaded \n");
+
 	Pause();
-
-	printf("Done. \n");
-
-
-	while(1);
-
 
 
 
@@ -263,7 +253,7 @@ int main(void)
 
 // WIFI CONNECTION
 
-	settings_exist = 0;
+	settings_exist = 1;
 
 	if (settings_exist) {
 		WiFi_Init();
@@ -293,8 +283,15 @@ int main(void)
 	}
 
 
+	console_mode = 1;
+	printf("Time: %d \n", time_synchonized);
+
+
+
 
 	//file_counter = Files_Find_First_Availible();
+	while (1);
+
 
 
 	File_Start();

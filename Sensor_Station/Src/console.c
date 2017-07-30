@@ -28,7 +28,7 @@ void Console_Print_Char(char c) {
 		c_line++;
 		c_char = 0;
 		Console_Output();
-		HAL_Delay(300);
+		HAL_Delay(150);
 	}
 	if (c_line >= CONSOLE_LINES) {
 		c_line = 0;
