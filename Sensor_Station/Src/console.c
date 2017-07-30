@@ -54,6 +54,11 @@ void Console_Output(void) {
 	Display_Refresh();
 }
 
-
+void Console_Clear(void) {
+	memset(console_array, 0, sizeof(console_array));
+	c_line = 0;
+	c_char = 0;
+	scroll = 0;
+}
 
 

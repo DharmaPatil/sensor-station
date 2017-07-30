@@ -110,10 +110,16 @@ void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
 /* Private function prototypes -----------------------------------------------*/
 
 /* USER CODE END PFP */
-
+void Pause(void) {
+	while (!Button(1)) {
+		HAL_Delay(100);
+	}
+	Console_Clear();
+}
 /* USER CODE BEGIN 0 */
 
 network_settings_t settings;
+network_settings_t settings_new;
 /* USER CODE END 0 */
 
 int main(void)
@@ -126,6 +132,7 @@ int main(void)
 	uint8_t settings_exist = 0;
 	uint8_t wifi_connected = 0;
 	uint8_t time_synchonized = 0;
+	uint8_t settings_file_loaded = 0;
 	int file_counter = 0;
 
   /* USER CODE END 1 */
@@ -193,19 +200,55 @@ int main(void)
 		}
 	}
 
+	Pause();
+
 	if (fs_availible) {
-		res = Settings_Load_from_File(&settings);
+		res = Settings_Load_from_File(&settings_new);
 		if (!res) {
-			settings_exist = 1;
-			printf("SSID: %s \n", settings.ssid);
-			printf("Password: %d* \n", strlen(settings.password));
-			printf("Server: %s \n", settings.server);
-			printf("Time zone: %d \n", settings.timezone);
+			settings_file_loaded = 1;
+			printf("\"%s\" loaded: \n", SETTINGS_FILENAME);
+			Settings_Display(&settings_new);
 		} else {
-			settings_exist = 0;
-			printf("Settings error: %d \n", res);
+			settings_file_loaded = 0;
+			printf("\"%s\" error %d \n", SETTINGS_FILENAME, res);
 		}
 	}
+
+	Pause();
+
+
+	res = Settings_Load_from_Flash(&settings); // set zeros if wrong
+	if (!res) {
+		printf("Settings from flash: \n");
+		Settings_Display(&settings);
+	} else {
+		printf("Flash memory CRC error \n");
+	}
+
+	Pause();
+
+	if (settings_file_loaded) {
+		res = Settings_Synchronize(&settings, &settings_new); // printf there
+		if (res) {
+			Settings_Save_to_Flash(&settings);
+			printf("Settings updated \n");
+		} else {
+			printf("Settings not updated \n");
+		}
+	}
+
+	Pause();
+
+	printf("Done. \n");
+
+
+	while(1);
+
+
+
+
+
+
 
 // WIFI CONNECTION
 

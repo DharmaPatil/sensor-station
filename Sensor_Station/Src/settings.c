@@ -1,36 +1,23 @@
 #include "settings.h"
 
 static uint8_t Scanf_w_Quotes(char *str, char *field, char *value);
-//static uint32_t Settings_CRC(network_settings_t *s);
+static uint32_t Settings_CRC(network_settings_t *s);
 
 
 static FIL file;
 
-/*
+
 uint8_t Settings_Load_from_Flash(network_settings_t *s) {
-	uint8_t i;
 	memcpy(s, (int*)SETTINGS_ADDRESS, sizeof(network_settings_t));
 	if (s->crc == Settings_CRC(s)) {
-		// display settings
-		for (i = 0; i < WIFI_MAX_NUM; i++) {
-			printf("SSID %d: \"%s\" \n", i+1, &(s->ssid[i][0]) );
-			printf("Password %d: %d* \n", i+1, strlen(&(s->pass[i][0])));
-			printf("\n");
-		}
-		for (i = 0; i < SERVER_MAX_NUM; i++) {
-			printf("Server %d: %s \n", i+1, &(s->server[i][0]) );
-		}
-		printf("\n");
-		printf("Timezone: %d\n", s->timezone );
-		printf("\n");
 		return 0;
 	} else {
 		memset(s, 0, sizeof(network_settings_t));
 		return 1;
 	}
-}*/
+}
 
-/*
+
 uint8_t Settings_Save_to_Flash(network_settings_t *s) {
 	uint32_t i;
 	uint32_t page_error;
@@ -46,7 +33,7 @@ uint8_t Settings_Save_to_Flash(network_settings_t *s) {
 		HAL_FLASH_Program(FLASH_TYPEPROGRAM_WORD, SETTINGS_ADDRESS+i*4, *((uint32_t*)s+i));
 	HAL_FLASH_Lock();
 	return 0;
-}*/
+}
 
 
 uint8_t Settings_Load_from_File(network_settings_t *s) {
@@ -79,24 +66,6 @@ uint8_t Settings_Load_from_File(network_settings_t *s) {
 
 
 
-/*
-uint8_t Settings_Save_to_File(network_settings_t *s) {
-	FRESULT fr;
-	int res;
-	int i;
-	fr = f_open(&file, SETTINGS_FILENAME, FA_WRITE|FA_CREATE_ALWAYS);
-	for (i = 0; i < WIFI_MAX_NUM; i++) {
-		res = f_printf(&file, "%s %d \"%s\"\n", SSID_STRING, i+1, &(s->ssid[i][0]) );
-		res = f_printf(&file, "%s %d \"\"\n", PASSWORD_STRING, i+1  );
-	}
-	for (i = 0; i < SERVER_MAX_NUM; i++) {
-		res = f_printf(&file, "%s %d \"%s\"\n", SERVER_STRING, i+1, &(s->server[i][0]) );
-	}
-	res = f_printf(&file, "%s %d\n", TIMEZONE_STRING, s->timezone );
-	f_close(&file);
-	return fr;
-}
-
 
 uint8_t Settings_Synchronize(network_settings_t *s, network_settings_t *s_new) {
 	uint8_t changed = 0;
@@ -104,40 +73,50 @@ uint8_t Settings_Synchronize(network_settings_t *s, network_settings_t *s_new) {
 		s->timezone = s_new->timezone;
 		changed = 1;
 		printf("Timezone updated: %d \n", (int)(s->timezone));
-		printf("\n");
 	}
-	for (int i = 0; i < WIFI_MAX_NUM; i++) {
-		if (strcmp(&(s->ssid[i][0]), &(s_new->ssid[i][0])) != 0) { // new ssid
-			strcpy(&(s->ssid[i][0]), &(s_new->ssid[i][0]));
-			strcpy(&(s->pass[i][0]), &(s_new->pass[i][0]));
+
+	if (strcmp(s->ssid, s_new->ssid) != 0) {
+		if (strlen(s_new->ssid[0]) != 0) {
+			strcpy(s->ssid, s_new->ssid);
 			changed = 1;
-			printf("Network %d updated: \n", i+1);
-			printf("ssid: \"%s\" \n", &(s->ssid[i][0]));
-			printf("pass: \"%s\" \n", &(s->pass[i][0]));
-			printf("\n");
-		} else { // same ssid
-			if (s_new->pass[i][0] != '\0') { // password exists
-				strcpy(&(s->pass[i][0]), &(s_new->pass[i][0]));
-				changed = 1;
-				printf("Network %d updated: \n", i+1);
-				printf("ssid: \"%s\" \n", &(s->ssid[i][0]));
-				printf("pass: \"%s\" \n", &(s->pass[i][0]));
-				printf("\n");
-			}
+			printf("SSID updated: \n");
+			printf("%s \n", (int)(s->ssid));
 		}
 	}
-	for (int i = 0; i < SERVER_MAX_NUM; i++) {
-		if (strcmp(&(s->server[i][0]), &(s_new->server[i][0])) != 0) {
-			strcpy(&(s->server[i][0]), &(s_new->server[i][0]));
+
+	if (strcmp(s->password, s_new->password) != 0) {
+		if (strlen(s_new->password[0]) != 0) {
+			strcpy(s->password, s_new->password);
 			changed = 1;
-			printf("Server %d updated: \n", i+1);
-			printf("%s \n", &(s->server[i][0]));
-			printf("\n");
+			printf("Password updated: \n");
+			printf("%s \n", (int)(s->password));
+		}
+	}
+
+	if (strcmp(s->server, s_new->server) != 0) {
+		if (strlen(s_new->server[0]) != 0) {
+			strcpy(s->server, s_new->server);
+			changed = 1;
+			printf("Server updated: \n");
+			printf("%s \n", (int)(s->server));
 		}
 	}
 	return changed;
 }
-*/
+
+
+void Settings_Display(network_settings_t *s) {
+	printf("SSID: %s \n", s->ssid);
+	printf("Password: %d* \n", strlen(s->password));
+	printf("Server: %s \n", s->server);
+	printf("Time zone: %d \n", s->timezone);
+};
+
+
+
+
+
+
 
 
 static uint8_t Scanf_w_Quotes(char *str, char *field, char *value ) {
@@ -168,8 +147,6 @@ static uint8_t Scanf_w_Quotes(char *str, char *field, char *value ) {
 }
 
 
-/*
 static uint32_t Settings_CRC(network_settings_t *s) {
 	return HAL_CRC_Calculate(&hcrc, (uint32_t*)s, sizeof(network_settings_t)/4 - 1);
 }
-*/

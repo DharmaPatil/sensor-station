@@ -1,8 +1,56 @@
 #include "files.h"
 
 static FIL file;
+
+
+
+
+
+
+
+
+
+
+
 static char filename[20];
 FILINFO fno;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 int Files_Find_First_Availible(void) {
 	FRESULT fr;
