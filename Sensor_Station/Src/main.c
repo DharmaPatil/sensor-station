@@ -175,7 +175,7 @@ int main(void)
 	printf("%d/%d/%d\r\n", rtc_date.Date, rtc_date.Month, rtc_date.Year);
 
 
-#if 0
+#if 1
   WiFi_Init();
   WiFi_Connect_to_AP("A.S.Tech Zyxel","areyougonnadie");
 	WiFi_Synchronize_Time("91.226.136.155", &s_time, &s_date);
