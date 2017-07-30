@@ -76,29 +76,29 @@ uint8_t Settings_Synchronize(network_settings_t *s, network_settings_t *s_new) {
 	}
 
 	if (strcmp(s->ssid, s_new->ssid) != 0) {
-		if (strlen(s_new->ssid[0]) != 0) {
+		if (strlen(s_new->ssid) != 0) {
 			strcpy(s->ssid, s_new->ssid);
 			changed = 1;
 			printf("SSID updated: \n");
-			printf("%s \n", (int)(s->ssid));
+			printf("%s \n", s->ssid);
 		}
 	}
 
 	if (strcmp(s->password, s_new->password) != 0) {
-		if (strlen(s_new->password[0]) != 0) {
+		if (strlen(s_new->password) != 0) {
 			strcpy(s->password, s_new->password);
 			changed = 1;
 			printf("Password updated: \n");
-			printf("%s \n", (int)(s->password));
+			printf("%s \n", s->password);
 		}
 	}
 
 	if (strcmp(s->server, s_new->server) != 0) {
-		if (strlen(s_new->server[0]) != 0) {
+		if (strlen(s_new->server) != 0) {
 			strcpy(s->server, s_new->server);
 			changed = 1;
 			printf("Server updated: \n");
-			printf("%s \n", (int)(s->server));
+			printf("%s \n", s->server);
 		}
 	}
 	return changed;
