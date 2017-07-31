@@ -48,6 +48,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "stm32f1xx_hal.h"
+#include "fatfs.h"
 #include "usb_device.h"
 
 /* USER CODE BEGIN Includes */
@@ -66,7 +67,6 @@ RTC_HandleTypeDef hrtc;
 
 SPI_HandleTypeDef hspi1;
 
-TIM_HandleTypeDef htim1;
 TIM_HandleTypeDef htim2;
 TIM_HandleTypeDef htim3;
 TIM_HandleTypeDef htim4;
@@ -83,7 +83,7 @@ RTC_DateTypeDef s_date;
 RTC_TimeTypeDef rtc_time;
 RTC_DateTypeDef rtc_date;
 
-FATFS fs;
+static FATFS fs;
 
 /* USER CODE END PV */
 
@@ -97,7 +97,6 @@ static void MX_SPI1_Init(void);
 static void MX_I2C2_Init(void);
 static void MX_ADC1_Init(void);
 static void MX_TIM4_Init(void);
-static void MX_TIM1_Init(void);
 static void MX_TIM3_Init(void);
 static void MX_TIM2_Init(void);
 static void MX_CRC_Init(void);
@@ -110,7 +109,14 @@ void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
 /* Private function prototypes -----------------------------------------------*/
 
 /* USER CODE END PFP */
+
+/* USER CODE BEGIN 0 */
+
 void Pause(void) {
+	//HAL_Delay(100);
+	//Console_Clear();
+	//return;
+
 	if (console_mode) {
 		while (!Button(1)) {
 			HAL_Delay(100);
@@ -118,7 +124,7 @@ void Pause(void) {
 		Console_Clear();
 	}
 }
-/* USER CODE BEGIN 0 */
+
 
 network_settings_t settings;
 network_settings_t settings_new;
@@ -165,12 +171,11 @@ int main(void)
   MX_I2C2_Init();
   MX_ADC1_Init();
   MX_TIM4_Init();
-  MX_TIM1_Init();
   MX_TIM3_Init();
   MX_TIM2_Init();
   MX_FATFS_Init();
-  MX_USB_DEVICE_Init();
   MX_CRC_Init();
+  MX_USB_DEVICE_Init();
 
   /* USER CODE BEGIN 2 */
 
@@ -290,7 +295,20 @@ int main(void)
 
 
 	//file_counter = Files_Find_First_Availible();
-	while (1);
+	Pause();
+	HAL_GPIO_WritePin(USB_ENABLE_GPIO_Port, USB_ENABLE_Pin, GPIO_PIN_SET);
+	printf("USB mass storage... \n");
+
+
+
+
+	Pause();
+	printf("Reset... \n");
+	HAL_Delay(1000);
+	NVIC_SystemReset();
+
+
+	while (1) {};
 
 
 
@@ -631,40 +649,6 @@ static void MX_SPI1_Init(void)
 
 }
 
-/* TIM1 init function */
-static void MX_TIM1_Init(void)
-{
-
-  TIM_ClockConfigTypeDef sClockSourceConfig;
-  TIM_MasterConfigTypeDef sMasterConfig;
-
-  htim1.Instance = TIM1;
-  htim1.Init.Prescaler = 0;
-  htim1.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim1.Init.Period = 89;
-  htim1.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
-  htim1.Init.RepetitionCounter = 0;
-  htim1.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
-  if (HAL_TIM_Base_Init(&htim1) != HAL_OK)
-  {
-    _Error_Handler(__FILE__, __LINE__);
-  }
-
-  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
-  if (HAL_TIM_ConfigClockSource(&htim1, &sClockSourceConfig) != HAL_OK)
-  {
-    _Error_Handler(__FILE__, __LINE__);
-  }
-
-  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
-  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
-  if (HAL_TIMEx_MasterConfigSynchronization(&htim1, &sMasterConfig) != HAL_OK)
-  {
-    _Error_Handler(__FILE__, __LINE__);
-  }
-
-}
-
 /* TIM2 init function */
 static void MX_TIM2_Init(void)
 {
@@ -895,6 +879,27 @@ static void MX_GPIO_Init(void)
 /* USER CODE BEGIN 4 */
 
 /* USER CODE END 4 */
+
+/**
+  * @brief  Period elapsed callback in non blocking mode
+  * @note   This function is called  when TIM1 interrupt took place, inside
+  * HAL_TIM_IRQHandler(). It makes a direct call to HAL_IncTick() to increment
+  * a global variable "uwTick" used as application time base.
+  * @param  htim : TIM handle
+  * @retval None
+  */
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+/* USER CODE BEGIN Callback 0 */
+
+/* USER CODE END Callback 0 */
+  if (htim->Instance == TIM1) {
+    HAL_IncTick();
+  }
+/* USER CODE BEGIN Callback 1 */
+
+/* USER CODE END Callback 1 */
+}
 
 /**
   * @brief  This function is executed in case of error occurrence.

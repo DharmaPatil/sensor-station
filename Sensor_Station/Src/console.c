@@ -3,6 +3,8 @@
 #define CONSOLE_LINES 5
 #define CONSOLE_CHARS 32
 #define CONSOLE_FONT  font_small_plus // font_medium // //small
+#define CONSOLE_DELAY 150
+
 
 uint8_t console_mode = 0;
 
@@ -28,7 +30,7 @@ void Console_Print_Char(char c) {
 		c_line++;
 		c_char = 0;
 		Console_Output();
-		HAL_Delay(150);
+		HAL_Delay(CONSOLE_DELAY);
 	}
 	if (c_line >= CONSOLE_LINES) {
 		c_line = 0;

@@ -5,7 +5,7 @@ extern network_settings_t settings;
 uint8_t WiFi_Connect_to_AP(char *ssid, char *password) {
 	uint8_t res;
 	HAL_GPIO_WritePin(WIFI_RESET_GPIO_Port, WIFI_RESET_Pin, GPIO_PIN_SET);
-	HAL_Delay(1000);
+	HAL_Delay(2000);
 	WiFi_Clear_Flags();
 	HAL_Delay(500);
 	//WiFi_Send_Command("AT+CWMODE=1\r\n");

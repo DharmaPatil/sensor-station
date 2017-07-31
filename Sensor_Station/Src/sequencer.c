@@ -6,7 +6,7 @@ uint8_t seq_active = 0;
 uint16_t seq_periods[25];
 uint16_t seq_values[25];
 
-char seq_ozzy[] = "2E 2- 2G 2- 1G 1- 1a 1- 2a 2- 1c 1b 1c 1b 1c 1b 1G 1- 2G 1a 1- 2a 2-";
+const char seq_ozzy[] = "2E 2- 2G 2- 1G 1- 1a 1- 2a 2- 1c 1b 1c 1b 1c 1b 1G 1- 2G 1a 1- 2a 2-";
 
 static uint8_t Sequencer_Get_Next(uint8_t *note, uint8_t *length);
 

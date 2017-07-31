@@ -184,7 +184,6 @@ USBD_StorageTypeDef USBD_Storage_Interface_fops_FS =
 int8_t STORAGE_Init_FS (uint8_t lun)
 {
   /* USER CODE BEGIN 2 */ 
-  //SD_Init();
   return (USBD_OK);
   /* USER CODE END 2 */ 
 }
@@ -202,7 +201,7 @@ int8_t STORAGE_GetCapacity_FS (uint8_t lun, uint32_t *block_num, uint16_t *block
 	extern uint32_t card_capacity;
 	*block_num  = card_capacity; // STORAGE_BLK_NBR;  0x8000;//
 	*block_size = SD_SECTOR_SIZE;// STORAGE_BLK_SIZ;
-  return (USBD_OK);
+	return (USBD_OK);
   /* USER CODE END 3 */ 
 }
 
@@ -246,7 +245,7 @@ int8_t STORAGE_Read_FS (uint8_t lun,
                         uint32_t blk_addr,                       
                         uint16_t blk_len)
 {
-  /* USER CODE BEGIN 6 */ 
+  /* USER CODE BEGIN 6 */
 	for ( int i = 0; i < blk_len; i++ ) {
 		SD_Read_Sector( blk_addr+i, buf + i*512 );
 	}
@@ -267,7 +266,6 @@ int8_t STORAGE_Write_FS (uint8_t lun,
                          uint16_t blk_len)
 {
   /* USER CODE BEGIN 7 */ 
-
 	for ( int i = 0; i < blk_len; i++ ) {
 		SD_Write_Sector( blk_addr+i, (uint8_t*)buf + i*512 );
 	}

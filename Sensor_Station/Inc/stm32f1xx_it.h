@@ -58,6 +58,7 @@ void RTC_IRQHandler(void);
 void DMA1_Channel1_IRQHandler(void);
 void DMA1_Channel7_IRQHandler(void);
 void USB_LP_CAN1_RX0_IRQHandler(void);
+void TIM1_UP_IRQHandler(void);
 void USART1_IRQHandler(void);
 
 #ifdef __cplusplus
